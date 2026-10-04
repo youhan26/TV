@@ -704,6 +704,7 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
     @Override
     public void onEpisodeClick(SourceGroup group, Flag flag, Episode episode) {
         if (TextUtils.equals(group.getKey(), getKey()) && shouldEnterFullscreen(episode)) return;
+        for (SourceGroup other : mGroups) if (other != group) other.deselect();
         Vod vod = group.getVod();
         if (vod.getSite() == null) vod.setSite(VodConfig.get().getSite(group.getKey()));
         mVod.playSource(vod, flag, episode);

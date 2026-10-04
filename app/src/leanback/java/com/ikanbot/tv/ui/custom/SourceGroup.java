@@ -135,17 +135,24 @@ public class SourceGroup {
         episodeAdapter.notifyItemChanged(position);
     }
 
+    public void deselect() {
+        for (Flag f : flags) f.getEpisodes().forEach(Episode::deselect);
+        episodePosition = -1;
+        if (episodeAdapter.getItemCount() > 0) episodeAdapter.notifyItemRangeChanged(0, episodeAdapter.getItemCount());
+    }
+
     private void onFlagClick(Flag item) {
         onFlagSelected(flagAdapter.indexOf(item));
     }
 
     private void onFlagSelected(int position) {
         if (position < 0 || position >= flags.size()) return;
-        if (flags.get(position) == flag) return;
-        selectFlagAt(position, flags.get(position));
+        binding.flag.post(() -> selectFlagAt(position, flags.get(position)));
     }
 
     private void selectFlagAt(int position, Flag item) {
+        if (position < 0 || position >= flags.size()) return;
+        if (item == flag) return;
         flag = item;
         for (Flag f : flags) f.setSelected(item);
         int prev = flagPosition;
