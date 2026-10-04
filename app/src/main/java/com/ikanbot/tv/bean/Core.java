@@ -6,7 +6,7 @@ import androidx.annotation.Nullable;
 
 import com.ikanbot.tv.server.Server;
 import com.ikanbot.tv.utils.UrlUtil;
-import com.ikanbot.hook.Hook;
+import com.fongmi.hook.Hook;
 import com.github.catvod.net.OkHttp;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;

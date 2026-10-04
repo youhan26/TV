@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.core.os.HandlerCompat;
 
 import com.ikanbot.tv.utils.Notify;
-import com.ikanbot.hook.Hook;
+import com.fongmi.hook.Hook;
 import com.github.catvod.Init;
 import com.google.gson.Gson;
 

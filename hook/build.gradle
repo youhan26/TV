@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = 'com.ikanbot.hook'
+    namespace = 'com.fongmi.hook'
 
     compileSdk libs.versions.compileSdk.get().toInteger()
 
