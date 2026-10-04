@@ -71,6 +71,7 @@ import com.ikanbot.tv.ui.adapter.QualityAdapter;
 import com.ikanbot.tv.ui.adapter.QuickAdapter;
 import com.ikanbot.tv.ui.custom.CustomKeyDownVod;
 import com.ikanbot.tv.ui.custom.CustomMovement;
+import com.ikanbot.tv.ui.custom.SourceGroup;
 import com.ikanbot.tv.ui.dialog.ContentDialog;
 import com.ikanbot.tv.ui.dialog.ParseDialog;
 import com.ikanbot.tv.ui.dialog.PlayerEngineDialog;
@@ -97,28 +98,25 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, CustomKeyDownVod.Listener, ParseDialog.Listener, ArrayAdapter.OnClickListener, FlagAdapter.OnClickListener, EpisodeAdapter.OnClickListener, QualityAdapter.OnClickListener, QuickAdapter.OnClickListener, Clock.Callback {
+public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, CustomKeyDownVod.Listener, ParseDialog.Listener, SourceGroup.Listener, Clock.Callback {
 
     private ActivityVideoBinding mBinding;
     private VideoViewModel mViewModel;
     private VodPlaybackController mVod;
-    private FlagAdapter mFlagAdapter;
-    private EpisodeAdapter mEpisodeAdapter;
-    private QualityAdapter mQualityAdapter;
-    private ArrayAdapter mArrayAdapter;
-    private QuickAdapter mQuickAdapter;
+    private final List<SourceGroup> mGroups = new ArrayList<>();
     private ViewGroup.LayoutParams mFrameParams;
     private CustomKeyDownVod mKeyDown;
     private Clock mClock;
     private View mFocus1;
     private View mFocus2;
     private Runnable mR1;
-    private Runnable mR2;
     private Runnable mR3;
     private Runnable mR4;
     private History mHistory;
     private boolean fullscreen;
     private boolean useParse;
+    private String mIndexKey = "";
+    private String mIndexId = "";
 
     public static void push(FragmentActivity activity, String text) {
         Uri uri = UrlUtil.uri(text);
@@ -205,15 +203,17 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
 
     @Override
     public String getHistoryKey() {
-        return getKey().concat(AppDatabase.SYMBOL).concat(getId()).concat(AppDatabase.SYMBOL) + VodConfig.getCid();
+        String key = mIndexKey.isEmpty() ? getKey() : mIndexKey;
+        String id = mIndexId.isEmpty() ? getId() : mIndexId;
+        return key.concat(AppDatabase.SYMBOL).concat(id).concat(AppDatabase.SYMBOL) + VodConfig.getCid();
     }
 
     private Site getSite() {
         return VodConfig.get().getSite(getKey());
     }
 
-    private Episode getEpisode() {
-        return mEpisodeAdapter.getActivated();
+    private Site getIndexSite() {
+        return VodConfig.get().getSite(mIndexKey.isEmpty() ? getKey() : mIndexKey);
     }
 
     private int getScale() {
@@ -270,14 +270,14 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
     @Override
     protected void initView(Bundle savedInstanceState) {
         super.initView(savedInstanceState);
+        mIndexKey = getKey();
+        mIndexId = getId();
         mFrameParams = mBinding.video.getLayoutParams();
         mClock = Clock.create(mBinding.widget.clock);
         mKeyDown = CustomKeyDownVod.create(this);
         mR1 = this::hideControl;
-        mR2 = this::updateFocus;
         mR3 = this::setTraffic;
         mR4 = this::showEmpty;
-        setRecyclerView();
         setVideoView();
         setViewModel();
         checkCast();
@@ -289,7 +289,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
     protected void initEvent() {
         mBinding.keep.setOnClickListener(view -> onKeep());
         mBinding.video.setOnClickListener(view -> onVideo());
-        mBinding.change.setOnClickListener(view -> onChange());
         mBinding.content.setOnClickListener(view -> onContent());
         mBinding.control.action.text.setOnClickListener(this::onTrack);
         mBinding.control.action.audio.setOnClickListener(this::onTrack);
@@ -314,42 +313,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         mBinding.control.action.ending.setOnLongClickListener(view -> onEndingReset());
         mBinding.control.action.opening.setOnLongClickListener(view -> onOpeningReset());
         mBinding.video.setOnTouchListener((view, event) -> mKeyDown.onTouchEvent(event));
-        mBinding.flag.addOnChildViewHolderSelectedListener(new OnChildViewHolderSelectedListener() {
-            @Override
-            public void onChildViewHolderSelected(@NonNull RecyclerView parent, @Nullable RecyclerView.ViewHolder child, int position, int subposition) {
-                if (mFlagAdapter.getItemCount() > 0) onItemClick(mFlagAdapter.get(position));
-            }
-        });
-        mBinding.episode.addOnChildViewHolderSelectedListener(new OnChildViewHolderSelectedListener() {
-            @Override
-            public void onChildViewHolderSelected(@NonNull RecyclerView parent, @Nullable RecyclerView.ViewHolder child, int position, int subposition) {
-                if (child != null && mBinding.video != mFocus1) mFocus1 = child.itemView;
-            }
-        });
-        mBinding.array.addOnChildViewHolderSelectedListener(new OnChildViewHolderSelectedListener() {
-            @Override
-            public void onChildViewHolderSelected(@NonNull RecyclerView parent, @Nullable RecyclerView.ViewHolder child, int position, int subposition) {
-                if (mEpisodeAdapter.getItemCount() > 20 && position > 1) mBinding.episode.setSelectedPosition((position - 2) * 20);
-            }
-        });
-    }
-
-    private void setRecyclerView() {
-        mBinding.flag.setHorizontalSpacing(ResUtil.dp2px(8));
-        mBinding.flag.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        mBinding.flag.setAdapter(mFlagAdapter = new FlagAdapter(this));
-        mBinding.episode.setHorizontalSpacing(ResUtil.dp2px(8));
-        mBinding.episode.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        mBinding.episode.setAdapter(mEpisodeAdapter = new EpisodeAdapter(this));
-        mBinding.quality.setHorizontalSpacing(ResUtil.dp2px(8));
-        mBinding.quality.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        mBinding.quality.setAdapter(mQualityAdapter = new QualityAdapter(this));
-        mBinding.array.setHorizontalSpacing(ResUtil.dp2px(8));
-        mBinding.array.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        mBinding.array.setAdapter(mArrayAdapter = new ArrayAdapter(this));
-        mBinding.quick.setHorizontalSpacing(ResUtil.dp2px(8));
-        mBinding.quick.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        mBinding.quick.setAdapter(mQuickAdapter = new QuickAdapter(this));
     }
 
     private void setVideoView() {
@@ -369,6 +332,7 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         observeWhenServiceReady(mViewModel.getSearch(), this::onSearchObserved);
         observeWhenServiceReady(mViewModel.getPreload(), this::onPreloadObserved);
         observeWhenServiceReady(mViewModel.getPlayback(), this::onPlaybackObserved);
+        initGroups();
     }
 
     private void onDetailObserved(VodDetailResult result) {
@@ -539,6 +503,8 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         checkKeepImg();
         setText(item);
         updateKeep();
+        SourceGroup group = getGroup(getKey());
+        if (group != null && group.getVod() == null) group.setVod(item);
     }
 
     @Override
@@ -557,7 +523,7 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
 
     @Override
     public void renderEmptyDetail() {
-        showEmpty();
+        mBinding.progressLayout.showContent();
     }
 
     @Override
@@ -567,48 +533,44 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
 
     @Override
     public void renderFlags(List<Flag> items) {
-        mBinding.flag.setVisibility(items.isEmpty() ? View.GONE : View.VISIBLE);
-        mFlagAdapter.addAll(items);
+        SourceGroup group = getGroup(getKey());
+        if (group != null) group.renderFlags(items);
     }
 
     @Override
     public void renderEpisodes(List<Episode> items) {
-        setEpisodeAdapter(items);
+        SourceGroup group = getGroup(getKey());
+        if (group != null) group.renderEpisodes(items);
     }
 
     @Override
     public void renderFlagSelection(Flag item) {
-        mBinding.flag.setSelectedPosition(mFlagAdapter.indexOf(item));
-        notifyItemChanged(mBinding.flag, mFlagAdapter);
+        SourceGroup group = getGroup(getKey());
+        if (group != null) group.selectFlag(item);
     }
 
     @Override
     public void renderEpisodeSelection(Episode item) {
-        notifyItemChanged(mBinding.episode, mEpisodeAdapter);
-        mBinding.episode.setSelectedPosition(mEpisodeAdapter.getPosition());
+        SourceGroup group = getGroup(getKey());
+        if (group != null) group.selectEpisode(item);
     }
 
     @Override
     public void renderReverseEpisodes(List<Episode> items, boolean scroll) {
-        setEpisodeAdapter(items);
-        if (scroll) mBinding.episode.setSelectedPosition(mEpisodeAdapter.getPosition());
+        SourceGroup group = getGroup(getKey());
+        if (group != null) group.renderEpisodes(items);
     }
 
     @Override
     public void renderQuality(Result result, boolean visible) {
-        mQualityAdapter.addAll(result);
-        setQualityVisible(visible);
     }
 
     @Override
     public void renderQualityVisible(boolean visible) {
-        setQualityVisible(visible);
     }
 
     @Override
     public void renderSources(List<Vod> items) {
-        mQuickAdapter.addAll(items);
-        mBinding.quick.setVisibility(mQuickAdapter.isEmpty() ? View.GONE : View.VISIBLE);
     }
 
     @Override
@@ -655,7 +617,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
 
     @Override
     public void onSearchStarted(String keyword) {
-        mQuickAdapter.clear();
     }
 
     @Override
@@ -741,74 +702,63 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
     }
 
     @Override
-    public void onItemClick(Flag item) {
-        mVod.selectFlag(item);
+    public void onEpisodeClick(SourceGroup group, Flag flag, Episode episode) {
+        if (TextUtils.equals(group.getKey(), getKey()) && shouldEnterFullscreen(episode)) return;
+        Vod vod = group.getVod();
+        if (vod.getSite() == null) vod.setSite(VodConfig.get().getSite(group.getKey()));
+        mVod.playSource(vod, flag, episode);
     }
 
-    private void setEpisodeAdapter(List<Episode> items) {
-        mBinding.episode.setVisibility(items.isEmpty() ? View.GONE : View.VISIBLE);
-        mEpisodeAdapter.addAll(items);
-        setArrayAdapter(items.size());
-        setR2Callback();
+    private SourceGroup getGroup(String key) {
+        for (SourceGroup group : mGroups) if (TextUtils.equals(group.getKey(), key)) return group;
+        return null;
     }
 
-    @Override
-    public void onItemClick(Episode item) {
-        if (shouldEnterFullscreen(item)) return;
-        mVod.selectEpisode(item);
+    private void initGroups() {
+        addGroup(getSite(), null, "", "");
+        String keyword = getVodName();
+        if (TextUtils.isEmpty(keyword)) return;
+        for (Site site : VodConfig.get().getSites()) {
+            if (TextUtils.equals(site.getKey(), getKey()) || !site.isSearchable()) continue;
+            aggregate(site, keyword);
+        }
     }
 
-    private void setQualityVisible(boolean visible) {
-        mBinding.quality.setVisibility(visible ? View.VISIBLE : View.GONE);
-        setR2Callback();
+    private SourceGroup addGroup(Site site, Vod vod, String matchedName, String originalName) {
+        String title = site.getName();
+        if (!TextUtils.isEmpty(matchedName) && !matchedName.equals(originalName)) title = title + "(" + matchedName + ")";
+        SourceGroup group = new SourceGroup(mBinding.sources, this);
+        group.setKey(site.getKey());
+        group.setTitle(title);
+        group.setVod(vod);
+        if (vod != null) group.renderFlags(vod.getFlags());
+        mGroups.add(group);
+        mBinding.sources.addView(group.getView());
+        return group;
     }
 
-    @Override
-    public void onItemClick(Result result) {
-        mVod.selectQuality(result);
+    private void aggregate(Site site, String keyword) {
+        new Thread(() -> {
+            try {
+                Result result = SiteApi.searchContent(site, keyword, true, "1");
+                Vod vod = match(result.getList(), keyword);
+                if (vod == null || isHostFinishing()) return;
+                Result detail = SiteApi.detailContent(site.getKey(), vod.getId());
+                Vod dv = detail.getVod();
+                if (dv == null || dv.getFlags().isEmpty() || isHostFinishing()) return;
+                dv.setSite(site);
+                App.post(() -> {
+                    if (!isHostFinishing()) addGroup(site, dv, vod.getName(), keyword);
+                });
+            } catch (Throwable ignored) {
+            }
+        }).start();
     }
 
-    private void setArrayAdapter(int size) {
-        List<String> items = new ArrayList<>();
-        items.add(getString(R.string.play_reverse));
-        items.add(getString(mHistory.getRevPlayText()));
-        mBinding.array.setVisibility(size > 1 ? View.VISIBLE : View.GONE);
-        if (mHistory.isRevSort()) for (int i = size; i > 0; i -= 20) items.add(i + "-" + Math.max(i - 19, 1));
-        else for (int i = 0; i < size; i += 20) items.add((i + 1) + "-" + Math.min(i + 20, size));
-        mArrayAdapter.addAll(items);
-    }
-
-    private int findFocusDown(int index) {
-        List<Integer> orders = Arrays.asList(R.id.array, R.id.flag, R.id.episode, R.id.quality, R.id.quick);
-        for (int i = 0; i < orders.size(); i++) if (i > index) if (isVisible(findViewById(orders.get(i)))) return orders.get(i);
-        return 0;
-    }
-
-    private int findFocusUp(int index) {
-        List<Integer> orders = Arrays.asList(R.id.array, R.id.flag, R.id.episode, R.id.quality, R.id.quick);
-        for (int i = orders.size() - 1; i >= 0; i--) if (i < index) if (isVisible(findViewById(orders.get(i)))) return orders.get(i);
-        return 0;
-    }
-
-    private void updateFocus() {
-        mEpisodeAdapter.setNextFocusUp(findFocusUp(2));
-        mFlagAdapter.setNextFocusDown(findFocusDown(1));
-        mEpisodeAdapter.setNextFocusDown(findFocusDown(2));
-        notifyItemChanged(mBinding.episode, mEpisodeAdapter);
-        notifyItemChanged(mBinding.flag, mFlagAdapter);
-    }
-
-    @Override
-    public void onRevSort() {
-        mVod.setRevSort(!mHistory.isRevSort());
-        mVod.reverseEpisode(false);
-    }
-
-    @Override
-    public void onRevPlay(TextView view) {
-        mVod.setRevPlay(!mHistory.isRevPlay());
-        view.setText(mHistory.getRevPlayText());
-        Notify.show(mHistory.getRevPlayHint());
+    private Vod match(List<Vod> items, String keyword) {
+        for (Vod item : items) if (item.getName().equals(keyword)) return item;
+        for (Vod item : items) if (item.getName().contains(keyword)) return item;
+        return null;
     }
 
     private boolean shouldEnterFullscreen(Episode item) {
@@ -822,7 +772,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         mBinding.video.requestFocus();
         mBinding.video.setForeground(null);
         mBinding.video.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-        mBinding.flag.setSelectedPosition(mFlagAdapter.getPosition());
         mKeyDown.setFull(true);
         setFullscreen(true);
         mFocus2 = null;
@@ -855,10 +804,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         if (!isFullscreen()) enterFullscreen();
     }
 
-    private void onChange() {
-        mVod.manualSwitchSource();
-    }
-
     private void onRepeat() {
         player().setRepeatOne(!player().isRepeatOne());
         mBinding.control.action.repeat.setSelected(player().isRepeatOne());
@@ -879,18 +824,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
 
     private void checkPrev() {
         mVod.prevEpisode(true);
-    }
-
-    private void onNext(boolean notify) {
-        Episode item = mEpisodeAdapter.getNext();
-        if (!item.isSelected()) onItemClick(item);
-        else if (notify) Notify.show(mHistory.isRevPlay() ? R.string.error_play_prev : R.string.error_play_next);
-    }
-
-    private void onPrev(boolean notify) {
-        Episode item = mEpisodeAdapter.getPrev();
-        if (!item.isSelected()) onItemClick(item);
-        else if (notify) Notify.show(mHistory.isRevPlay() ? R.string.error_play_next : R.string.error_play_prev);
     }
 
     private void onScale() {
@@ -1063,10 +996,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         else if (isVisible(mBinding.control.getRoot())) setR1Callback();
     }
 
-    private void setR2Callback() {
-        App.post(mR2, 500);
-    }
-
     private void setArtwork(String url) {
         mHistory.setVodPic(url);
         setArtwork();
@@ -1103,8 +1032,8 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         keep.setKey(getHistoryKey());
         keep.setCid(VodConfig.getCid());
         keep.setVodPic(mHistory.getVodPic());
-        keep.setVodName(mHistory.getVodName());
-        keep.setSiteName(getSite().getName());
+        keep.setVodName(getName());
+        keep.setSiteName(getIndexSite().getName());
         keep.setCreateTime(System.currentTimeMillis());
         keep.save();
     }
@@ -1240,11 +1169,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
 
     private void setMediaOptionVisible() {
         PlaybackAction.setMediaOptions(player(), mBinding.control.action.edition, mBinding.control.action.chapter);
-    }
-
-    @Override
-    public void onItemClick(Vod item) {
-        mVod.selectSource(item);
     }
 
     @Override
@@ -1410,7 +1334,7 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         saveHistory(true);
         DanmakuApi.cancel();
         RefreshEvent.keep();
-        App.removeCallbacks(mR1, mR2, mR3, mR4);
+        App.removeCallbacks(mR1, mR3, mR4);
         super.onDestroy();
     }
 }

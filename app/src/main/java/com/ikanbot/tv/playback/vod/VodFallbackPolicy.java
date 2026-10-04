@@ -24,15 +24,13 @@ class VodFallbackPolicy {
     }
 
     void playbackError() {
-        fallbackToNextLineOrSource();
+        if (host.isSiteChangeable()) fallbackToNextLine();
     }
 
     void emptyFlag() {
-        fallbackToNextLineOrSource();
     }
 
     void emptyDetail() {
-        fallbackToNextSource(false);
     }
 
     void manualSwitchSource() {

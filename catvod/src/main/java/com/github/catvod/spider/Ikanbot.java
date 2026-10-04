@@ -11,12 +11,18 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,10 +46,25 @@ public class Ikanbot extends Spider {
     private static final String DEFAULT_HOST = "https://www1.ikanbot.com";
     private static final String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
     private static final String HOT = "%E7%83%AD%E9%97%A8"; // “热门”
+    private static final long CACHE_TTL = 30 * 60_000L; // 30 分钟
     private static final Pattern ID_REGEX = Pattern.compile("/play/(\\d+)");
+
+    private static final Map<String, Cached> CACHE = new ConcurrentHashMap<>();
+
+    private static final class Cached {
+
+        final String body;
+        final long time;
+
+        Cached(String body, long time) {
+            this.body = body;
+            this.time = time;
+        }
+    }
 
     private String host = DEFAULT_HOST;
     private OkHttpClient redirectClient;
+    private Context context;
 
     // 搜索分页游标：本站 /search 用 search_after 游标(n) 翻页，必须沿用上一页返回的“下一页”链接。
     private String searchKey = "";
@@ -52,6 +73,7 @@ public class Ikanbot extends Spider {
     @Override
     public void init(Context context, String extend) throws Exception {
         super.init(context);
+        this.context = context;
         try {
             String h = new JSONObject(extend).optString("host");
             if (h != null && !h.isEmpty()) host = h;
@@ -80,6 +102,52 @@ public class Ikanbot extends Spider {
         }
     }
 
+    private String fetchCached(String url, String referer) throws IOException {
+        Cached cached = CACHE.get(url);
+        if (cached != null && System.currentTimeMillis() - cached.time < CACHE_TTL) return cached.body;
+        File file = cacheFile(url);
+        String disk = readCache(file);
+        if (disk != null) {
+            CACHE.put(url, new Cached(disk, file.lastModified()));
+            return disk;
+        }
+        String body = fetch(url, referer);
+        CACHE.put(url, new Cached(body, System.currentTimeMillis()));
+        writeCache(file, body);
+        return body;
+    }
+
+    private File cacheFile(String url) {
+        if (context == null) return null;
+        return new File(new File(context.getCacheDir(), "ikanbot_cache"), Integer.toHexString(url.hashCode()) + ".cache");
+    }
+
+    private String readCache(File file) {
+        if (file == null || !file.exists()) return null;
+        if (System.currentTimeMillis() - file.lastModified() >= CACHE_TTL) return null;
+        try (FileInputStream in = new FileInputStream(file)) {
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            byte[] buf = new byte[4096];
+            int n;
+            while ((n = in.read(buf)) != -1) out.write(buf, 0, n);
+            return new String(out.toByteArray(), StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private void writeCache(File file, String body) {
+        if (file == null) return;
+        try {
+            File parent = file.getParentFile();
+            if (parent != null && !parent.exists()) parent.mkdirs();
+            try (FileOutputStream out = new FileOutputStream(file)) {
+                out.write(body.getBytes(StandardCharsets.UTF_8));
+            }
+        } catch (Exception ignored) {
+        }
+    }
+
     private String abs(String path) {
         return path.startsWith("http") ? path : host + path;
     }
@@ -101,7 +169,7 @@ public class Ikanbot extends Spider {
         types.put(new JSONObject().put("type_id", "tv").put("type_name", "剧集"));
         JSONObject result = new JSONObject();
         result.put("class", types);
-        result.put("list", parseItems(fetch(abs("/"), null)));
+        result.put("list", parseItems(fetchCached(abs("/"), null)));
         return result.toString();
     }
 
@@ -115,7 +183,7 @@ public class Ikanbot extends Spider {
         int page = parseInt(pg, 1);
         String kind = "tv".equals(tid) ? "index-tv" : "index-movie";
         String path = page <= 1 ? "/hot/" + kind + "-" + HOT + ".html" : "/hot/" + kind + "-" + HOT + "-p-" + page + ".html";
-        JSONArray list = parseItems(fetch(abs(path), null));
+        JSONArray list = parseItems(fetchCached(abs(path), null));
         JSONObject result = new JSONObject();
         result.put("page", page);
         result.put("pagecount", list.length() == 0 ? Math.max(1, page - 1) : page + 1);
@@ -133,7 +201,7 @@ public class Ikanbot extends Spider {
         if (videoId.isEmpty()) return "{}";
 
         String playUrl = abs("/play/" + videoId);
-        Document doc = Jsoup.parse(fetch(playUrl, null));
+        Document doc = Jsoup.parse(fetchCached(playUrl, null));
 
         String curId = hidden(doc, "current_id");
         if (curId.isEmpty()) curId = videoId;
@@ -173,7 +241,7 @@ public class Ikanbot extends Spider {
 
         String token = computeToken(curId, eToken);
         String apiUrl = abs("/api/getResN?videoId=" + curId + "&mtype=" + mtype + "&token=" + token);
-        List<List<Ep>> lines = parseLines(fetch(apiUrl, playUrl));
+        List<List<Ep>> lines = parseLines(fetchCached(apiUrl, playUrl));
 
         StringBuilder from = new StringBuilder();
         StringBuilder urls = new StringBuilder();

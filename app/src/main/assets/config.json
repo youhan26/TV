@@ -11,6 +11,93 @@
       "changeable": 1,
       "categories": ["剧集", "电影"],
       "categoryNames": {"剧集": "电视"}
+    },
+    {
+      "key": "索尼",
+      "name": "电影电视剧·索尼[直连]",
+      "type": 0,
+      "api": "https://suoniapi.com/api.php/provide/vod/at/xml/",
+      "searchable": 1,
+      "categories": ["动作片", "喜剧片", "爱情片", "科幻片", "恐怖片", "剧情片", "战争片", "国产剧", "欧美剧", "港剧", "台剧", "韩剧", "日剧", "泰剧", "海外剧", "大陆综艺", "港台综艺", "日韩综艺", "欧美综艺", "国产动漫", "日韩动漫", "欧美动漫", "港台动漫", "海外动漫"]
+    },
+    {
+      "key": "量子",
+      "name": "电影电视剧·量子[直连]",
+      "type": 1,
+      "api": "https://cj.lziapi.com/api.php/provide/vod/",
+      "searchable": 1,
+      "categories": ["动作片", "喜剧片", "爱情片", "科幻片", "恐怖片", "剧情片", "战争片", "国产剧", "香港剧", "韩国剧", "欧美剧", "台湾剧", "日本剧", "海外剧", "泰国剧", "大陆综艺", "港台综艺", "日韩综艺", "欧美综艺", "国产动漫", "日韩动漫", "欧美动漫", "港台动漫", "海外动漫"]
+    },
+    {
+      "key": "尤酷",
+      "name": "电影电视剧·尤酷[直连]",
+      "type": 1,
+      "api": "https://api.ukuapi.com/api.php/provide/vod/?ac=list",
+      "searchable": 1,
+      "categories": ["综艺", "动漫", "动作片", "喜剧片", "爱情片", "科幻片", "恐怖片", "剧情片", "战争片", "国产剧", "港澳剧", "日剧", "欧美剧", "动漫电影", "台湾剧", "韩剧", "泰剧", "奇幻片", "犯罪片"],
+      "header": { "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1" }
+    },
+    {
+      "key": "极速",
+      "name": "电影电视剧·极速[直连]",
+      "type": 1,
+      "api": "https://jszyapi.com/api.php/provide/vod/?ac=list",
+      "searchable": 1,
+      "categories": ["欧美剧", "香港剧", "韩剧", "日剧", "马泰剧", "动作片", "爱情片", "喜剧片", "科幻片", "恐怖片", "剧情片", "战争片", "动漫", "内地剧", "动画片", "中国动漫", "日本动漫", "综艺", "台湾剧", "大陆综艺", "日韩综艺", "港台综艺", "欧美综艺", "灾难片", "悬疑片", "犯罪片", "奇幻片"],
+      "header": { "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1" }
+    },
+    {
+      "key": "暴風",
+      "name": "电影电视剧·暴風[直连]",
+      "type": 1,
+      "api": "https://bfzyapi.com/api.php/provide/vod/?ac=list",
+      "searchable": 1,
+      "changeable": 1
+    },
+    {
+      "key": "百度",
+      "name": "电影电视剧·百度[直连]",
+      "type": 1,
+      "api": "https://api.apibdzy.com/api.php/provide/vod?ac=list",
+      "searchable": 1,
+      "categories": ["国产动漫", "日韩动漫", "大陆剧", "欧美剧", "韩剧", "日剧", "动作片", "喜剧片", "爱情片", "科幻片", "恐怖片", "剧情片", "战争片"],
+      "header": { "User-Agent": "Mozilla/5.0" }
+    },
+    {
+      "key": "天涯",
+      "name": "电影电视剧·天涯",
+      "type": 1,
+      "api": "http://tyyszy.com/api.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1
+    },
+    {
+      "key": "建安",
+      "name": "电影电视剧·建安",
+      "type": 1,
+      "api": "http://154.219.117.232:9981/jacloudapi.php/provide/vod",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1
+    },
+    {
+      "key": "卧龙",
+      "name": "电影电视剧·卧龙[直连]",
+      "type": 1,
+      "api": "https://wolongzyw.com/api.php/provide/vod/?ac=list",
+      "searchable": 1,
+      "changeable": 1
+    }
+  ],
+  "lives": [
+    {
+      "name": "移动IPTV(需IPv6)",
+      "url": "https://raw.githubusercontent.com/qist/tvbox/master/tvboxtv.txt",
+      "ua": "okhttp/3.8.1",
+      "timeout": 20,
+      "epg": "https://develop202.github.io/migu_video/playback.xml",
+      "logo": "https://logo.wyfc.qzz.io/{name}.png"
     }
   ]
 }

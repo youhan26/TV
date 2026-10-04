@@ -22,7 +22,7 @@ public class FlagAdapter extends RecyclerView.Adapter<FlagAdapter.ViewHolder> {
     public FlagAdapter(OnClickListener listener) {
         mListener = listener;
         mItems = new ArrayList<>();
-        nextFocusDown = R.id.episode;
+        nextFocusDown = 0;
     }
 
     public void addAll(List<Flag> items) {

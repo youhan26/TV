@@ -225,6 +225,36 @@ public class VodPlaybackController {
         requestDetail();
     }
 
+    public void playSource(Vod item, Flag flag, Episode episode) {
+        boolean sameSource = host.getVodKey().equals(item.getSiteKey());
+        if (!sameSource) {
+            saveCurrentHistory();
+            preloader.clear();
+            state.clearPlayRequest();
+            state.setAutoFallback(false);
+            host.prepareSource(item);
+            item.checkPic(host.getVodPic());
+            item.checkName(host.getVodName());
+            state.setFlags(item.getFlags());
+            History history = historyPolicy.findOrCreate(host.getHistoryKey(), host.getVodMark(), item);
+            state.setHistory(history);
+            lastHistory = history;
+            host.renderDetail(item, history);
+            host.renderHistory(history);
+            host.onDetailFallbackCancelled();
+        }
+        Flag selected = resolveFlag(flag);
+        for (Flag f : state.getFlags()) f.setSelected(selected);
+        host.renderFlagSelection(selected);
+        host.renderEpisodes(selected.getEpisodes());
+        saveCurrentHistory();
+        for (Flag f : state.getFlags()) f.toggle(f == selected, episode);
+        historyPolicy.updateEpisode(state.getHistory(), selected, episode);
+        host.renderEpisodeSelection(episode);
+        if (host.isFullscreenForPlayback()) host.showEpisodeReady(episode);
+        playEpisode(episode);
+    }
+
     public void search(String keyword) {
         fallbackPolicy.search(keyword, false);
     }
@@ -362,14 +392,7 @@ public class VodPlaybackController {
             host.finishVod();
             return;
         }
-        String name = host.getVodName();
-        if (name.isEmpty()) {
-            host.renderEmptyDetail();
-        } else {
-            host.renderFallbackName(name);
-            host.onDetailFallbackScheduled();
-            fallbackPolicy.emptyDetail();
-        }
+        host.renderEmptyDetail();
     }
 
     private void detailLoaded(Vod item) {

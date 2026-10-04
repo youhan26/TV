@@ -18,15 +18,14 @@
         android:foreground="@drawable/selector_video"
         android:nextFocusLeft="@id/video"
         android:nextFocusRight="@id/content"
-        android:nextFocusUp="@id/video"
-        android:nextFocusDown="@id/flag">
+        android:nextFocusUp="@id/video">
 
         <androidx.media3.ui.PlayerView
             android:id="@+id/player"
             style="@style/Player.Vod"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:surface_type="surface_view" />
+            app:surface_type="texture_view" />
 
         <include
             android:id="@+id/widget"
@@ -174,7 +173,6 @@
             android:focusableInTouchMode="true"
             android:gravity="center"
             android:nextFocusUp="@id/actor"
-            android:nextFocusDown="@id/array"
             android:singleLine="true"
             android:text="@string/detail_desc"
             android:textColor="@color/white"
@@ -192,30 +190,11 @@
             android:focusableInTouchMode="true"
             android:gravity="center"
             android:nextFocusUp="@id/actor"
-            android:nextFocusDown="@id/array"
             android:singleLine="true"
             android:text="@string/keep"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:drawableStartCompat="@drawable/ic_detail_keep_off" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/change"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/selector_item"
-            android:drawablePadding="6dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:gravity="center"
-            android:nextFocusRight="@id/change"
-            android:nextFocusUp="@id/actor"
-            android:nextFocusDown="@id/array"
-            android:singleLine="true"
-            android:text="@string/play_change"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:drawableStartCompat="@drawable/ic_detail_change" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -227,68 +206,10 @@
         android:overScrollMode="never">
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/sources"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="8dp">
-
-            <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/array"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:visibility="gone" />
-
-            <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/flag"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:visibility="gone"
-                tools:visibility="visible" />
-
-            <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/episode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:visibility="gone" />
-
-            <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/quality"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:visibility="gone"
-                tools:visibility="visible" />
-
-            <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/quick"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:visibility="gone" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
+            android:paddingBottom="8dp" />
     </androidx.core.widget.NestedScrollView>
 </com.ikanbot.tv.ui.custom.ProgressLayout>

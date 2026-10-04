@@ -47,6 +47,10 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHold
         return mItems.isEmpty() ? new Episode() : mItems.get(getPosition());
     }
 
+    public Episode get(int position) {
+        return mItems.get(position);
+    }
+
     public Episode getNext() {
         int current = getPosition();
         int max = getItemCount() - 1;
