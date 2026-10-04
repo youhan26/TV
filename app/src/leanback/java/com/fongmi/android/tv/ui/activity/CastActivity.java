@@ -14,7 +14,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Player;
 import androidx.media3.common.VideoSize;
-import androidx.media3.ui.PlayerSeekView;
 import androidx.media3.ui.PlayerView;
 import androidx.viewbinding.ViewBinding;
 
@@ -83,10 +82,6 @@ public class CastActivity extends PlaybackActivity implements CustomKeyDownVod.L
         return mBinding.player;
     }
 
-    @Override
-    protected PlayerSeekView getSeekView() {
-        return mBinding.control.seek;
-    }
 
     @Override
     protected void onServiceConnected() {
@@ -131,7 +126,6 @@ public class CastActivity extends PlaybackActivity implements CustomKeyDownVod.L
     }
 
     private void setVideoView() {
-        setSeekNextFocusDown(R.id.reset);
         setScale(scale = PlayerSetting.getScale());
         setActionFocusBoundary(mBinding.control.action.getRoot());
         PlayerEngineDialog.setText(mBinding.control.action.player);

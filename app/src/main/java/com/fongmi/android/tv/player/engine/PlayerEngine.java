@@ -15,8 +15,8 @@ import java.util.List;
 
 public interface PlayerEngine {
 
-    int SOFT = C.DECODE_SOFTWARE;
-    int HARD = C.DECODE_HARDWARE;
+    int SOFT = 0;
+    int HARD = 1;
 
     Type getType();
 
@@ -74,8 +74,7 @@ public interface PlayerEngine {
     }
 
     enum Type {
-        EXO,
-        MPV
+        EXO
     }
 
     record SecondarySubtitleState(@Nullable TrackSelectionOverride primarySelection, @Nullable TrackSelectionOverride explicitSelection, List<TrackSelectionOverride> secondaryCandidates, boolean secondaryPromotedToPrimary) {

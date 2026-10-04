@@ -99,6 +99,10 @@ public class Site implements Parcelable {
     private List<String> categories;
 
     @Ignore
+    @SerializedName("categoryNames")
+    private Map<String, String> categoryNames;
+
+    @Ignore
     @SerializedName("header")
     @JsonAdapter(HeaderAdapter.class)
     private Map<String, String> header;
@@ -240,6 +244,10 @@ public class Site implements Parcelable {
 
     public void setCategories(List<String> categories) {
         this.categories = categories;
+    }
+
+    public Map<String, String> getCategoryNames() {
+        return categoryNames == null ? new HashMap<>() : categoryNames;
     }
 
     public Map<String, String> getHeader() {

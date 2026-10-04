@@ -22,16 +22,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
 import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Product;
 import com.fongmi.android.tv.R;
 import com.fongmi.android.tv.Updater;
 import com.fongmi.android.tv.api.config.LiveConfig;
 import com.fongmi.android.tv.api.config.VodConfig;
 import com.fongmi.android.tv.api.config.WallConfig;
 import com.fongmi.android.tv.bean.Cache;
+import com.fongmi.android.tv.bean.Class;
 import com.fongmi.android.tv.bean.Config;
 import com.fongmi.android.tv.bean.Func;
 import com.fongmi.android.tv.bean.History;
+import com.fongmi.android.tv.bean.Keep;
 import com.fongmi.android.tv.bean.Result;
 import com.fongmi.android.tv.bean.Site;
 import com.fongmi.android.tv.bean.Style;
@@ -57,6 +58,7 @@ import com.fongmi.android.tv.ui.dialog.SiteDialog;
 import com.fongmi.android.tv.ui.presenter.FuncPresenter;
 import com.fongmi.android.tv.ui.presenter.HeaderPresenter;
 import com.fongmi.android.tv.ui.presenter.HistoryPresenter;
+import com.fongmi.android.tv.ui.presenter.KeepPresenter;
 import com.fongmi.android.tv.ui.presenter.ProgressPresenter;
 import com.fongmi.android.tv.ui.presenter.VodPresenter;
 import com.fongmi.android.tv.utils.Clock;
@@ -69,7 +71,6 @@ import com.fongmi.android.tv.utils.ResUtil;
 import com.fongmi.android.tv.utils.UrlUtil;
 import com.fongmi.android.tv.utils.Util;
 import com.github.catvod.net.OkHttp;
-import com.google.common.collect.Lists;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -79,13 +80,15 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public class HomeActivity extends BaseActivity implements CustomTitleView.Listener, VodPresenter.OnClickListener, FuncPresenter.OnClickListener, HistoryPresenter.OnClickListener {
+public class HomeActivity extends BaseActivity implements CustomTitleView.Listener, VodPresenter.OnClickListener, FuncPresenter.OnClickListener, HistoryPresenter.OnClickListener, KeepPresenter.OnClickListener {
 
     private ActivityHomeBinding mBinding;
     private ArrayObjectAdapter mHistoryAdapter;
+    private ArrayObjectAdapter mKeepAdapter;
     private ArrayObjectAdapter mFuncAdapter;
     private ArrayObjectAdapter mAdapter;
     private HistoryPresenter mPresenter;
+    private KeepPresenter mKeepPresenter;
     private SiteViewModel mViewModel;
     private Result mResult;
     private Clock mClock;
@@ -171,6 +174,7 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
         selector.addPresenter(ListRow.class, new CustomRowPresenter(16), VodPresenter.class);
         selector.addPresenter(ListRow.class, new CustomRowPresenter(16), FuncPresenter.class);
         selector.addPresenter(ListRow.class, new CustomRowPresenter(16, FocusHighlight.ZOOM_FACTOR_SMALL, HorizontalGridView.FOCUS_SCROLL_ALIGNED), HistoryPresenter.class);
+        selector.addPresenter(ListRow.class, new CustomRowPresenter(16, FocusHighlight.ZOOM_FACTOR_SMALL, HorizontalGridView.FOCUS_SCROLL_ALIGNED), KeepPresenter.class);
         mBinding.recycler.setAdapter(new ItemBridgeAdapter(mAdapter = new ArrayObjectAdapter(selector)));
         mBinding.recycler.setVerticalSpacing(ResUtil.dp2px(16));
     }
@@ -178,17 +182,18 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
     private void setViewModel() {
         mViewModel = new ViewModelProvider(this).get(SiteViewModel.class);
         mViewModel.getResult().observe(this, result -> {
-            mAdapter.remove("progress");
-            addVideo(mResult = result);
+            mResult = result;
+            setFunc();
             Cache.clear().put(result);
         });
     }
 
     private void setAdapter() {
         mHistoryAdapter = new ArrayObjectAdapter(mPresenter = new HistoryPresenter(this));
+        mKeepAdapter = new ArrayObjectAdapter(mKeepPresenter = new KeepPresenter(this));
         mAdapter.add(new ListRow(mFuncAdapter = new ArrayObjectAdapter(new FuncPresenter(this))));
         mAdapter.add(R.string.home_history);
-        mAdapter.add(R.string.home_recommend);
+        mAdapter.add(R.string.home_keep);
     }
 
     private void setTitle() {
@@ -241,39 +246,15 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
     }
 
     private void getVideo() {
-        mResult = Result.empty();
-        int index = getRecommendIndex();
-        boolean gone = mAdapter.indexOf("progress") == -1;
-        boolean hasItem = gone && mAdapter.size() > index;
-        if (hasItem) mAdapter.removeItems(index, mAdapter.size() - index);
-        if (gone) mAdapter.add("progress");
         mViewModel.homeContent();
-    }
-
-    private void addVideo(Result result) {
-        Style style = result.getStyle(getHome().getStyle());
-        if (style.isList()) mAdapter.addAll(mAdapter.size(), result.getList());
-        else addGrid(result.getList(), style);
-    }
-
-    private void addGrid(List<Vod> items, Style style) {
-        List<ListRow> rows = new ArrayList<>();
-        VodPresenter presenter = new VodPresenter(this, style);
-        for (List<Vod> part : Lists.partition(items, Product.getColumn(style))) {
-            ArrayObjectAdapter adapter = new ArrayObjectAdapter(presenter);
-            adapter.addAll(0, part);
-            rows.add(new ListRow(adapter));
-        }
-        mAdapter.addAll(mAdapter.size(), rows);
     }
 
     private void setFunc() {
         List<Func> items = new ArrayList<>();
-        items.add(Func.create(R.string.home_vod));
-        if (LiveConfig.hasUrl()) items.add(Func.create(R.string.home_live));
+        items.add(Func.create(R.string.home_home));
+        for (Class type : mResult.getTypes()) items.add(Func.create(type.getTypeId(), type.getTypeName()));
         items.add(Func.create(R.string.home_search));
         items.add(Func.create(R.string.home_keep));
-        items.add(Func.create(R.string.home_push));
         items.add(Func.create(R.string.home_setting));
         mFuncAdapter.setItems(items, new BaseDiffCallback<Func>());
     }
@@ -285,12 +266,25 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
     private void getHistory(boolean renew) {
         List<History> items = History.get();
         int historyIndex = getHistoryIndex();
-        int recommendIndex = getRecommendIndex();
-        boolean exist = recommendIndex - historyIndex == 2;
+        boolean exist = getKeepIndex() - historyIndex == 2;
         if (renew) mHistoryAdapter = new ArrayObjectAdapter(mPresenter = new HistoryPresenter(this));
         if ((items.isEmpty() && exist) || (renew && exist)) mAdapter.removeItems(historyIndex, 1);
         if ((!items.isEmpty() && !exist) || (renew && exist)) mAdapter.add(historyIndex, new ListRow(mHistoryAdapter));
         mHistoryAdapter.setItems(items, new BaseDiffCallback<History>());
+    }
+
+    private void getKeep() {
+        getKeep(false);
+    }
+
+    private void getKeep(boolean renew) {
+        List<Keep> items = Keep.getVod();
+        int keepIndex = getKeepIndex();
+        boolean exist = mAdapter.size() > keepIndex && mAdapter.get(keepIndex) instanceof ListRow;
+        if (renew) mKeepAdapter = new ArrayObjectAdapter(mKeepPresenter = new KeepPresenter(this));
+        if ((items.isEmpty() && exist) || (renew && exist)) mAdapter.removeItems(keepIndex, 1);
+        if ((!items.isEmpty() && !exist) || (renew && exist)) mAdapter.add(keepIndex, new ListRow(mKeepAdapter));
+        mKeepAdapter.setItems(items, new BaseDiffCallback<Keep>());
     }
 
     private void setHistoryDelete(boolean delete) {
@@ -309,8 +303,8 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
         return mAdapter.indexOf(R.string.home_history) + 1;
     }
 
-    private int getRecommendIndex() {
-        return mAdapter.indexOf(R.string.home_recommend) + 1;
+    private int getKeepIndex() {
+        return mAdapter.indexOf(R.string.home_keep) + 1;
     }
 
     private void setLogo() {
@@ -322,6 +316,7 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
         switch (event.type()) {
             case VOD:
                 RefreshEvent.history();
+                RefreshEvent.keep();
                 RefreshEvent.home();
                 setLogo();
                 break;
@@ -344,9 +339,13 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
             case HISTORY:
                 getHistory();
                 break;
+            case KEEP:
+                getKeep();
+                break;
             case SIZE:
                 getVideo();
                 getHistory(true);
+                getKeep(true);
                 break;
         }
     }
@@ -388,10 +387,9 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
 
     @Override
     public void onItemClick(Func item) {
-        if (item.getResId() == R.string.home_vod) VodActivity.start(this, mResult);
-        else if (item.getResId() == R.string.home_live) LiveActivity.start(this);
+        if (item.isClass()) VodActivity.start(this, getHome().getKey(), mResult, item.getTypeId());
+        else if (item.getResId() == R.string.home_home) mBinding.recycler.scrollToPosition(0);
         else if (item.getResId() == R.string.home_keep) KeepActivity.start(this);
-        else if (item.getResId() == R.string.home_push) PushActivity.start(this);
         else if (item.getResId() == R.string.home_search) SearchActivity.start(this);
         else if (item.getResId() == R.string.home_setting) SettingActivity.start(this);
     }
@@ -413,6 +411,28 @@ public class HomeActivity extends BaseActivity implements CustomTitleView.Listen
     @Override
     public void onItemClick(History item) {
         VideoActivity.start(this, item.getSiteKey(), item.getVodId(), item.getVodName(), item.getVodPic());
+    }
+
+    @Override
+    public void onItemClick(Keep item) {
+        Config config = Config.find(item.getCid());
+        if (config == null) CollectActivity.start(this, item.getVodName());
+        else if (item.getCid() != VodConfig.getCid()) loadConfig(config, item);
+        else VideoActivity.start(this, item.getSiteKey(), item.getVodId(), item.getVodName(), item.getVodPic());
+    }
+
+    private void loadConfig(Config config, Keep item) {
+        VodConfig.load(config, new Callback() {
+            @Override
+            public void success() {
+                VideoActivity.start(getActivity(), item.getSiteKey(), item.getVodId(), item.getVodName(), item.getVodPic());
+            }
+
+            @Override
+            public void error(String msg) {
+                Notify.show(msg);
+            }
+        });
     }
 
     @Override

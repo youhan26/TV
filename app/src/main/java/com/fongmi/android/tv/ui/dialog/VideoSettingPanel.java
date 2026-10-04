@@ -301,11 +301,11 @@ final class VideoSettingPanel {
     }
 
     private boolean isMpv() {
-        return isPlayerAvailable() && player.getEngine() == PlayerSetting.ENGINE_MPV;
+        return false;
     }
 
     private boolean supportsSharpness() {
-        return !isMpv() || player.supportsVideoSharpness();
+        return player.supportsVideoSharpness();
     }
 
     private int getUnsupportedText() {

@@ -239,10 +239,18 @@ public class SiteApi {
 
     private static void setTypes(@NonNull Site site, @NonNull Result result) {
         result.getTypes().stream().filter(type -> result.getFilters().containsKey(type.getTypeId())).forEach(type -> type.setFilters(result.getFilters().get(type.getTypeId())));
-        if (site.getCategories().isEmpty()) return;
-        Map<String, Class> typeByName = new HashMap<>();
-        result.getTypes().forEach(type -> typeByName.put(type.getTypeName(), type));
-        List<Class> types = site.getCategories().stream().map(typeByName::get).filter(Objects::nonNull).toList();
-        if (!types.isEmpty()) result.setTypes(types);
+        if (!site.getCategories().isEmpty()) {
+            Map<String, Class> typeByName = new HashMap<>();
+            result.getTypes().forEach(type -> typeByName.put(type.getTypeName(), type));
+            List<Class> types = site.getCategories().stream().map(typeByName::get).filter(Objects::nonNull).toList();
+            if (!types.isEmpty()) result.setTypes(types);
+        }
+        Map<String, String> names = site.getCategoryNames();
+        if (!names.isEmpty()) {
+            result.getTypes().forEach(type -> {
+                String name = names.get(type.getTypeName());
+                if (!TextUtils.isEmpty(name)) type.setTypeName(name);
+            });
+        }
     }
 }

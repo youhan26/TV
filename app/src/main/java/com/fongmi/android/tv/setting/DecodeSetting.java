@@ -1,7 +1,5 @@
 package com.fongmi.android.tv.setting;
 
-import androidx.media3.common.DolbyVisionOutputPolicy;
-
 import com.github.catvod.utils.Prefers;
 
 public class DecodeSetting {
@@ -30,15 +28,6 @@ public class DecodeSetting {
         Prefers.put("decode_video_prefer", videoPrefer);
     }
 
-    public static @DolbyVisionOutputPolicy.Mode int getDolbyVisionOutputPolicy() {
-        int mode = Prefers.getInt("decode_dolby_vision_output_policy", DolbyVisionOutputPolicy.AUTO);
-        return mode >= DolbyVisionOutputPolicy.AUTO && mode <= DolbyVisionOutputPolicy.ASSUME_UNSUPPORTED ? mode : DolbyVisionOutputPolicy.AUTO;
-    }
-
-    public static void putDolbyVisionOutputPolicy(@DolbyVisionOutputPolicy.Mode int mode) {
-        Prefers.put("decode_dolby_vision_output_policy", mode);
-    }
-
     public static boolean isPreferAAC() {
         return Prefers.getBoolean("decode_prefer_aac", Prefers.getBoolean("prefer_aac"));
     }
@@ -53,7 +42,7 @@ public class DecodeSetting {
 
     public static void putTunnel(boolean tunnel) {
         Prefers.put("decode_tunnel", tunnel);
-        if (PlayerSetting.isExo() && tunnel) PlayerSetting.putRender(PlayerSetting.RENDER_SURFACE);
+        if (tunnel) PlayerSetting.putRender(PlayerSetting.RENDER_SURFACE);
     }
 
     public static boolean isTunnelingEnabled() {

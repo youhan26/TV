@@ -25,6 +25,7 @@ dependencies {
     api libs.bundles.okhttp
     api libs.gson
     api libs.guava
+    api libs.jsoup
     api libs.juniversalchardet
     api libs.logger
     api libs.preference

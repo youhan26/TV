@@ -3,6 +3,7 @@ package com.fongmi.android.tv.ui.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,19 +42,28 @@ public class VodActivity extends BaseActivity implements TypeAdapter.OnClickList
     private View mOldView;
 
     public static void start(Activity activity, Result result) {
-        start(activity, VodConfig.get().getHome().getKey(), result);
+        start(activity, VodConfig.get().getHome().getKey(), result, "");
     }
 
     public static void start(Activity activity, String key, Result result) {
+        start(activity, key, result, "");
+    }
+
+    public static void start(Activity activity, String key, Result result, String typeId) {
         if (result == null || result.getTypes().isEmpty()) return;
         Intent intent = new Intent(activity, VodActivity.class);
         intent.putExtra("key", key);
         intent.putExtra("result", result);
+        intent.putExtra("typeId", typeId);
         activity.startActivity(intent);
     }
 
     private String getKey() {
         return getIntent().getStringExtra("key");
+    }
+
+    private String getTypeId() {
+        return getIntent().getStringExtra("typeId");
     }
 
     private Result getResult() {
@@ -78,6 +88,17 @@ public class VodActivity extends BaseActivity implements TypeAdapter.OnClickList
         setRecyclerView();
         setTypes();
         setPager();
+        setType(getTypeId());
+    }
+
+    private void setType(String typeId) {
+        if (TextUtils.isEmpty(typeId)) return;
+        for (int i = 0; i < mAdapter.getItemCount(); i++) {
+            if (!typeId.equals(mAdapter.get(i).getTypeId())) continue;
+            mBinding.pager.setCurrentItem(i);
+            mBinding.recycler.setSelectedPosition(i);
+            break;
+        }
     }
 
     @Override

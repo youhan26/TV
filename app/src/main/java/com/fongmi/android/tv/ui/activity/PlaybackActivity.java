@@ -4,7 +4,6 @@ import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.view.View;
@@ -24,11 +23,7 @@ import androidx.media3.common.VideoSize;
 import androidx.media3.exoplayer.drm.FrameworkMediaDrm;
 import androidx.media3.session.MediaController;
 import androidx.media3.session.SessionToken;
-import androidx.media3.ui.PlayerSeekView;
 import androidx.media3.ui.PlayerView;
-import androidx.media3.ui.TimeBar;
-import androidx.media3.ui.danmaku.DanmakuConfig;
-import androidx.media3.ui.danmaku.DanmakuPlayerViewController;
 
 import com.fongmi.android.tv.R;
 import com.fongmi.android.tv.bean.Result;
@@ -36,22 +31,18 @@ import com.fongmi.android.tv.playback.PlaybackIntent;
 import com.fongmi.android.tv.player.PlayerManager;
 import com.fongmi.android.tv.player.media.PlaySpec;
 import com.fongmi.android.tv.service.PlaybackService;
-import com.fongmi.android.tv.setting.DanmakuSetting;
 import com.fongmi.android.tv.setting.PlayerSetting;
 import com.fongmi.android.tv.setting.SubtitleSetting;
 import com.fongmi.android.tv.ui.base.BaseActivity;
 import com.fongmi.android.tv.utils.ResUtil;
-import com.github.catvod.net.OkHttp;
 import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public abstract class PlaybackActivity extends BaseActivity implements MediaController.Listener, Player.Listener, ServiceConnection {
 
-    private final DanmakuPlayerViewController danmakuController = new DanmakuPlayerViewController();
     private final List<ServiceReadyObserver<?>> serviceReadyObservers = new ArrayList<>();
     private final List<Runnable> foreverObserverRemovers = new ArrayList<>();
     private ListenableFuture<MediaController> mControllerFuture;
@@ -120,8 +111,6 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
 
     protected abstract PlaybackService.NavigationCallback getNavigationCallback();
 
-    protected abstract PlayerSeekView getSeekView();
-
     protected abstract PlayerView getPlayerView();
 
     protected abstract String getPlaybackKey();
@@ -151,8 +140,6 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     }
 
     public void toggleDebugView() {
-        getPlayerView().toggleDebugView();
-        PlayerSetting.putDebug(getPlayerView().isDebugViewVisible());
     }
 
     public void onChoose() {
@@ -165,11 +152,6 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     public void onShare(CharSequence title, String url, Map<String, String> headers) {
         PlaybackIntent.share(this, url, headers, title);
         setRedirect(true);
-    }
-
-    protected void setSeekNextFocusDown(int id) {
-        View timeBar = getSeekView().findViewById(androidx.media3.ui.R.id.exo_progress);
-        if (timeBar != null) timeBar.setNextFocusDownId(id);
     }
 
     protected void setActionFocusBoundary(View view) {
@@ -283,30 +265,9 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     private void onControllerConnected() {
         try {
             mController = mControllerFuture.get();
-            getSeekView().setPlayer(mController);
             mController.addListener(this);
-            updateKeyIncrement();
         } catch (Exception ignored) {
         }
-    }
-
-    private void addSeekListener() {
-        getSeekView().getTimeBar().addListener(new TimeBar.OnScrubListener() {
-            @Override
-            public void onScrubStart(@NonNull TimeBar timeBar, long position) {
-                PlaybackActivity.this.setScrubbing(true);
-            }
-
-            @Override
-            public void onScrubMove(@NonNull TimeBar timeBar, long position) {
-                PlaybackActivity.this.setScrubbing(true);
-            }
-
-            @Override
-            public void onScrubStop(@NonNull TimeBar timeBar, long position, boolean canceled) {
-                PlaybackActivity.this.onScrubStop(canceled);
-            }
-        });
     }
 
     protected boolean isScrubbing() {
@@ -325,27 +286,6 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     }
 
     protected void onScrubbingChanged(boolean scrubbing) {
-    }
-
-    private void updateKeyIncrement() {
-        long durationMs = mController == null ? C.TIME_UNSET : mController.getDuration();
-        long incrementMs = getKeyTimeIncrementMs(durationMs);
-        TimeBar timeBar = getSeekView().getTimeBar();
-        timeBar.setKeyTimeIncrement(incrementMs);
-    }
-
-    private long getKeyTimeIncrementMs(long durationMs) {
-        if (durationMs > TimeUnit.HOURS.toMillis(3)) {
-            return TimeUnit.MINUTES.toMillis(5);
-        } else if (durationMs > TimeUnit.MINUTES.toMillis(30)) {
-            return TimeUnit.MINUTES.toMillis(1);
-        } else if (durationMs > TimeUnit.MINUTES.toMillis(15)) {
-            return TimeUnit.SECONDS.toMillis(30);
-        } else if (durationMs > TimeUnit.MINUTES.toMillis(10)) {
-            return TimeUnit.SECONDS.toMillis(15);
-        } else {
-            return TimeUnit.SECONDS.toMillis(10);
-        }
     }
 
     private PendingIntent buildSessionIntent() {
@@ -411,28 +351,16 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
 
     private void syncPlayerView(Player player) {
         player().bindPlayerView(getPlayerView());
-        danmakuController.bind(getPlayerView());
         getPlayerView().setPlayer(player);
-        syncDanmakuSource();
         restoreDebugView();
     }
 
     private void restoreDebugView() {
-        if (PlayerSetting.isDebug() && !getPlayerView().isDebugViewVisible()) getPlayerView().toggleDebugView();
     }
 
     private void configurePlayerView() {
         PlayerView playerView = getPlayerView();
-        playerView.setRender(PlayerSetting.getRender());
-        danmakuController.setOkHttpClient(OkHttp.player());
-        danmakuController.setEnabled(DanmakuSetting.isShow());
-        danmakuController.setConfig(DanmakuSetting.getConfig());
         SubtitleSetting.applyStyle(playerView.getSubtitleView());
-    }
-
-    private void syncDanmakuSource() {
-        if (mService == null || !isOwner()) return;
-        danmakuController.setDataSource(player().getSelectedDanmakuUri());
     }
 
     private void releasePlaybackService() {
@@ -469,7 +397,6 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     private void releaseController() {
         if (mControllerFuture != null) MediaController.releaseFuture(mControllerFuture);
         if (mController != null) mController.removeListener(this);
-        if (mController != null) getSeekView().setPlayer(null);
         mControllerFuture = null;
         mController = null;
     }
@@ -525,26 +452,6 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
         public void onPlayerRebuild(Player player) {
             if (isOwner()) syncPlayerView(player);
         }
-
-        @Override
-        public void onDanmakuSourceChanged(@Nullable Uri uri) {
-            if (isOwner()) danmakuController.setDataSource(uri);
-        }
-
-        @Override
-        public void onDanmakuConfigChanged(DanmakuConfig config) {
-            if (isOwner()) danmakuController.setConfig(config);
-        }
-
-        @Override
-        public void onDanmakuEnabledChanged(boolean enabled) {
-            if (isOwner()) danmakuController.setEnabled(enabled);
-        }
-
-        @Override
-        public void onDanmakuSent(String text) {
-            if (isOwner()) danmakuController.sendNow(text);
-        }
     };
 
     @Override
@@ -552,12 +459,6 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
         super.initView(savedInstanceState);
         configurePlayerView();
         bindPlaybackService();
-        addSeekListener();
-    }
-
-    @Override
-    public void onEvents(@NonNull Player player, @NonNull Player.Events events) {
-        if (events.containsAny(Player.EVENT_TIMELINE_CHANGED, Player.EVENT_POSITION_DISCONTINUITY, Player.EVENT_MEDIA_ITEM_TRANSITION, Player.EVENT_PLAYBACK_STATE_CHANGED, Player.EVENT_AVAILABLE_COMMANDS_CHANGED)) updateKeyIncrement();
     }
 
     @Override
@@ -623,7 +524,6 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     protected void onDestroy() {
         clearObservers();
         detachPlayerView();
-        danmakuController.close();
         super.onDestroy();
         releasePlaybackService();
     }

@@ -2,6 +2,7 @@ package com.fongmi.android.tv.api.loader;
 
 import android.text.TextUtils;
 
+import com.fongmi.android.tv.App;
 import com.fongmi.android.tv.api.config.LiveConfig;
 import com.fongmi.android.tv.api.config.VodConfig;
 import com.fongmi.android.tv.bean.Live;
@@ -9,6 +10,7 @@ import com.fongmi.android.tv.bean.Site;
 import com.fongmi.android.tv.utils.Task;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderNull;
+import com.github.catvod.spider.Ikanbot;
 import com.github.catvod.utils.Crypto;
 
 import org.json.JSONObject;
@@ -16,6 +18,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import dalvik.system.DexClassLoader;
 
@@ -24,11 +27,13 @@ public class BaseLoader {
     private final JarLoader jarLoader;
     private final PyLoader pyLoader;
     private final JsLoader jsLoader;
+    private final ConcurrentHashMap<String, Spider> builtins;
 
     private BaseLoader() {
         jarLoader = new JarLoader();
         pyLoader = new PyLoader();
         jsLoader = new JsLoader();
+        builtins = new ConcurrentHashMap<>();
     }
 
     public static BaseLoader get() {
@@ -52,14 +57,30 @@ public class BaseLoader {
             jarLoader.clear();
             pyLoader.clear();
             jsLoader.clear();
+            builtins.values().forEach(Spider::destroy);
+            builtins.clear();
         });
     }
 
     public Spider getSpider(String key, String api, String ext, String jar) {
         if (isPy(api)) return pyLoader.getSpider(key, api, ext);
         else if (isJs(api)) return jsLoader.getSpider(key, api, ext, jar);
+        else if ("csp_Ikanbot".equals(api)) return builtin(key, ext);
         else if (isCsp(api)) return jarLoader.getSpider(key, api, ext, jar);
         else return new SpiderNull();
+    }
+
+    private Spider builtin(String key, String ext) {
+        return builtins.computeIfAbsent(key, k -> {
+            Spider spider = new Ikanbot();
+            spider.siteKey = k;
+            try {
+                spider.init(App.get(), ext);
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+            return spider;
+        });
     }
 
     public Spider getSpider(String key) {

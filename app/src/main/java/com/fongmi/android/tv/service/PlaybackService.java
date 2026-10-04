@@ -23,7 +23,6 @@ import androidx.media3.session.SessionCommand;
 import androidx.media3.session.SessionCommands;
 import androidx.media3.session.SessionError;
 import androidx.media3.session.SessionResult;
-import androidx.media3.ui.danmaku.DanmakuConfig;
 
 import com.fongmi.android.tv.App;
 import com.fongmi.android.tv.BuildConfig;
@@ -513,11 +512,6 @@ public class PlaybackService extends MediaLibraryService implements MediaLibrary
     }
 
     @Override
-    public void onDanmakuConfigChanged(DanmakuConfig config) {
-        playerCallbacks.forEach(callback -> callback.onDanmakuConfigChanged(config));
-    }
-
-    @Override
     public void onDanmakuEnabledChanged(boolean enabled) {
         playerCallbacks.forEach(callback -> callback.onDanmakuEnabledChanged(enabled));
     }
@@ -610,9 +604,6 @@ public class PlaybackService extends MediaLibraryService implements MediaLibrary
         }
 
         default void onDanmakuSourceChanged(@Nullable Uri uri) {
-        }
-
-        default void onDanmakuConfigChanged(DanmakuConfig config) {
         }
 
         default void onDanmakuEnabledChanged(boolean enabled) {

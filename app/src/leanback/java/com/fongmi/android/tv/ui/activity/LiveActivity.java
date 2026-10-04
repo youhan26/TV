@@ -16,7 +16,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Player;
 import androidx.media3.common.VideoSize;
-import androidx.media3.ui.PlayerSeekView;
 import androidx.media3.ui.PlayerView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
@@ -141,10 +140,6 @@ public class LiveActivity extends PlaybackActivity implements GroupAdapter.OnCli
         return mBinding.player;
     }
 
-    @Override
-    protected PlayerSeekView getSeekView() {
-        return mBinding.control.seek;
-    }
 
     @Override
     protected void onServiceConnected() {
@@ -209,7 +204,6 @@ public class LiveActivity extends PlaybackActivity implements GroupAdapter.OnCli
 
     private void setVideoView() {
         setScale(LiveSetting.getScale());
-        setSeekNextFocusDown(R.id.config);
         setActionFocusBoundary(mBinding.control.action.getRoot());
         PlayerEngineDialog.setText(mBinding.control.action.player);
         mBinding.control.action.invert.setSelected(LiveSetting.isInvert());

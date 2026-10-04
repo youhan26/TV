@@ -1,0 +1,16 @@
+{
+  "name": "爱看TV",
+  "sites": [
+    {
+      "key": "ikanbot",
+      "name": "爱看TV",
+      "type": 3,
+      "api": "csp_Ikanbot",
+      "ext": "{\"host\":\"https://www1.ikanbot.com\"}",
+      "searchable": 1,
+      "changeable": 1,
+      "categories": ["剧集", "电影"],
+      "categoryNames": {"剧集": "电视"}
+    }
+  ]
+}

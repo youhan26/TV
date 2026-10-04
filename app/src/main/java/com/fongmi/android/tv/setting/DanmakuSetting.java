@@ -5,8 +5,6 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import androidx.media3.ui.danmaku.DanmakuConfig;
-
 import com.fongmi.android.tv.api.config.VodConfig;
 import com.fongmi.android.tv.player.subtitle.ExternalFont;
 import com.github.catvod.utils.Prefers;
@@ -120,7 +118,7 @@ public class DanmakuSetting {
     }
 
     public static int getStyleMode() {
-        return Prefers.getInt("danmaku_style_mode", DanmakuConfig.STYLE_STROKE);
+        return Prefers.getInt("danmaku_style_mode", 0);
     }
 
     public static void putStyleMode(int value) {
@@ -128,7 +126,7 @@ public class DanmakuSetting {
     }
 
     public static int getColorMode() {
-        return Prefers.getInt("danmaku_color_mode", DanmakuConfig.COLOR_MODE_DEFAULT);
+        return Prefers.getInt("danmaku_color_mode", 0);
     }
 
     public static void putColorMode(int value) {
@@ -317,80 +315,4 @@ public class DanmakuSetting {
         return VodConfig.get().getConfig().getDanmaku();
     }
 
-    public static void resetAppearance() {
-        DanmakuConfig config = DanmakuConfig.DEFAULT;
-        putTextScale(config.textScale);
-        putTransparency(config.transparency);
-        putTextBold(config.textBold);
-        putFont(null);
-        putStyleMode(config.styleMode);
-        putShadowTransparency(config.shadowTransparency);
-        putStrokeWidthMultiplier(config.strokeWidthMultiplier);
-        putProjectionOffsetX(config.projectionOffsetXMultiplier);
-        putProjectionOffsetY(config.projectionOffsetYMultiplier);
-        putProjectionTransparency(config.projectionTransparency);
-        putColorMode(config.colorMode);
-    }
-
-    public static void resetTiming() {
-        DanmakuConfig config = DanmakuConfig.DEFAULT;
-        putDurationMs(config.durationMs);
-        putFixedDurationMs(config.fixedDurationMs);
-        putTimeOffsetMs(config.timeOffsetMs);
-    }
-
-    public static void resetDensity() {
-        DanmakuConfig config = DanmakuConfig.DEFAULT;
-        putMaxOnScreen(config.maxOnScreen);
-        putScrollAreaRatio(config.scrollAreaRatio);
-        putScrollGapRatio(config.scrollGapRatio);
-        putLineSpacing(config.lineSpacing);
-        putMaxScrollLines(config.maxScrollLines);
-        putMaxTopLines(config.maxTopLines);
-        putMaxBottomLines(config.maxBottomLines);
-    }
-
-    public static void resetDisplay() {
-        DanmakuConfig config = DanmakuConfig.DEFAULT;
-        putShowScroll(config.showScroll);
-        putShowTop(config.showTop);
-        putShowBottom(config.showBottom);
-        putShowReverse(config.showReverse);
-        putShowPositioned(config.showPositioned);
-        putShowSubtitle(config.showSubtitle);
-        putShowSpecial(config.showSpecial);
-    }
-
-    public static DanmakuConfig getConfig() {
-        return new DanmakuConfig.Builder()
-                .setTextScale(getTextScale())
-                .setTransparency(getTransparency())
-                .setTextBold(isTextBold())
-                .setTypeface(getTypeface())
-                .setStyleMode(getStyleMode())
-                .setShadowTransparency(getShadowTransparency())
-                .setStrokeWidthMultiplier(getStrokeWidthMultiplier())
-                .setProjectionOffsetXMultiplier(getProjectionOffsetX())
-                .setProjectionOffsetYMultiplier(getProjectionOffsetY())
-                .setProjectionTransparency(getProjectionTransparency())
-                .setColorMode(getColorMode())
-                .setDurationMs(getDurationMs())
-                .setFixedDurationMs(getFixedDurationMs())
-                .setTimeOffsetMs(getTimeOffsetMs())
-                .setMaxOnScreen(getMaxOnScreen())
-                .setScrollAreaRatio(getScrollAreaRatio())
-                .setScrollGapRatio(getScrollGapRatio())
-                .setLineSpacing(getLineSpacing())
-                .setMaxScrollLines(getMaxScrollLines())
-                .setMaxTopLines(getMaxTopLines())
-                .setMaxBottomLines(getMaxBottomLines())
-                .setShowScroll(isShowScroll())
-                .setShowTop(isShowTop())
-                .setShowBottom(isShowBottom())
-                .setShowReverse(isShowReverse())
-                .setShowPositioned(isShowPositioned())
-                .setShowSubtitle(isShowSubtitle())
-                .setShowSpecial(isShowSpecial())
-                .build();
-    }
 }

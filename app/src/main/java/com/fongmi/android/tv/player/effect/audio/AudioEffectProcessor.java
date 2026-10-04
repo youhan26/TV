@@ -3,7 +3,6 @@ package com.fongmi.android.tv.player.effect.audio;
 import androidx.annotation.NonNull;
 import androidx.media3.common.C;
 import androidx.media3.common.audio.BaseAudioProcessor;
-import androidx.media3.mpvplayer.audio.AudioChannelMix;
 
 import java.nio.ByteBuffer;
 
@@ -161,7 +160,7 @@ public final class AudioEffectProcessor extends BaseAudioProcessor {
     }
 
     private void applyStereo(float[] samples) {
-        setStereo(samples, AudioChannelMix.mixStereoLeft(samples), AudioChannelMix.mixStereoRight(samples));
+        setStereo(samples, mixStereoLeft(samples), mixStereoRight(samples));
     }
 
     private void setStereo(float[] samples, float left, float right) {
@@ -171,16 +170,34 @@ public final class AudioEffectProcessor extends BaseAudioProcessor {
     }
 
     private void applyMono(float[] samples) {
-        float mono = sanitize(AudioChannelMix.mixMono(samples));
+        float mono = sanitize(mixMono(samples));
         samples[0] = mono;
         samples[1] = mono;
         clearExtraChannels(samples);
     }
 
     private void applyReverse(float[] samples) {
-        float left = AudioChannelMix.mixStereoLeft(samples);
-        float right = AudioChannelMix.mixStereoRight(samples);
+        float left = mixStereoLeft(samples);
+        float right = mixStereoRight(samples);
         setStereo(samples, right, left);
+    }
+
+    private static float mixStereoLeft(float[] samples) {
+        if (samples.length == 1) return samples[0];
+        if (samples.length == 2) return samples[0];
+        return 0.5f * (samples[0] + 0.7071f * (samples[2] + samples[4]));
+    }
+
+    private static float mixStereoRight(float[] samples) {
+        if (samples.length == 1) return samples[0];
+        if (samples.length == 2) return samples[1];
+        return 0.5f * (samples[1] + 0.7071f * (samples[2] + samples[5]));
+    }
+
+    private static float mixMono(float[] samples) {
+        float sum = 0.0f;
+        for (float sample : samples) sum += sample;
+        return samples.length == 0 ? 0.0f : sum / samples.length;
     }
 
     private void clearExtraChannels(float[] samples) {

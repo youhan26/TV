@@ -1,18 +1,15 @@
 package com.fongmi.android.tv.player.exo;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.media3.common.Format;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.Player;
-import androidx.media3.common.TrackSelectionOverride;
 import androidx.media3.common.Tracks;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.audio.AudioSink;
 import androidx.media3.exoplayer.source.MediaSource;
-import androidx.media3.ui.PlayerView;
 
 import com.fongmi.android.tv.player.effect.PlayerEffect;
 import com.fongmi.android.tv.player.engine.PlayerEngine;
@@ -22,19 +19,15 @@ import com.fongmi.android.tv.player.media.PlaySpec;
 public class ExoPlayerEngine implements PlayerEngine, AnalyticsListener {
 
     private final ExoErrorMessageProvider provider;
-    private final ExoSubtitleController subtitles;
     private final ExoPlayerSession session;
     private final ExoPlayerEffect effect;
-    private final ExoDiskPreload preload;
     private final ExoPlayer player;
     private PlaySpec spec;
 
     public ExoPlayerEngine(int decode, Player.Listener listener) {
         this.effect = new ExoPlayerEffect();
-        this.preload = new ExoDiskPreload();
         this.provider = new ExoErrorMessageProvider();
         this.session = new ExoPlayerSession(decode, listener, effect.getAudioProcessor());
-        this.subtitles = new ExoSubtitleController(session);
         this.player = session.player();
         this.player.addAnalyticsListener(this);
         this.effect.setPlayer(player);
@@ -62,7 +55,7 @@ public class ExoPlayerEngine implements PlayerEngine, AnalyticsListener {
 
     @Override
     public boolean needsRebuild() {
-        return session.hasLibassSettingChanged();
+        return false;
     }
 
     @Override
@@ -83,16 +76,14 @@ public class ExoPlayerEngine implements PlayerEngine, AnalyticsListener {
 
     @Override
     public void release() {
-        subtitles.release();
         player.removeAnalyticsListener(this);
-        preload.release();
         effect.release();
         session.release();
     }
 
     @Override
     public void setDecode(int decode) {
-        session.setDecode(decode);
+        // ExoPlayer 自动选择解码器，无需手动切换
     }
 
     @Override
@@ -112,28 +103,7 @@ public class ExoPlayerEngine implements PlayerEngine, AnalyticsListener {
     }
 
     @Override
-    public void bindPlayerView(PlayerView playerView) {
-        subtitles.bindPlayerView(playerView);
-    }
-
-    @Override
-    public void applySubtitleStyle() {
-        subtitles.applySubtitleStyle();
-    }
-
-    @Override
-    public SecondarySubtitleState getSecondarySubtitleState() {
-        return subtitles.getSecondarySubtitleState();
-    }
-
-    @Override
-    public void setSecondarySubtitleSelection(@Nullable TrackSelectionOverride selection) {
-        subtitles.setSecondarySubtitleSelection(selection);
-    }
-
-    @Override
     public void stop() {
-        preload.stop();
         player.stop();
     }
 
@@ -158,7 +128,6 @@ public class ExoPlayerEngine implements PlayerEngine, AnalyticsListener {
         effect.clearAudioEffect();
         if (source == null) player.setMediaItem(item, position);
         else player.setMediaSource(source, position);
-        preload.start(player, item);
         prepareAndPlay();
     }
 
