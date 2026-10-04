@@ -174,17 +174,9 @@ public class Util {
         return "leanback".equals(BuildConfig.FLAVOR);
     }
 
-    public static boolean isMobile() {
-        return "mobile".equals(BuildConfig.FLAVOR);
-    }
-
     public static boolean isFullscreen(Activity activity) {
         if (activity == null || activity.getWindow() == null) return false;
         return isLeanback() || (activity.getWindow().getAttributes().flags & WindowManager.LayoutParams.FLAG_FULLSCREEN) != 0;
-    }
-
-    public static boolean isFullscreenLand(Activity activity) {
-        return isFullscreen(activity) && !isLeanback() && ResUtil.isLand(activity);
     }
 
     public static String format(StringBuilder builder, Formatter formatter, long timeMs) {

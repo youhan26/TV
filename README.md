@@ -8,7 +8,7 @@
 
 ## 開始使用
 
-1. 安裝適合裝置的 APK：`leanback` 為電視版，`mobile` 為手機版；依 Android 系統支援的 ABI 選擇 `arm64-v8a` 或 `armeabi-v7a`。最低需求為 Android 7.0（API 24）。
+1. 安裝電視版 APK（`leanback`），依 Android 系統支援的 ABI 選擇 `arm64-v8a` 或 `armeabi-v7a`。最低需求為 Android 7.0（API 24）。
 2. 在設定中加入自己的配置，格式與欄位見[配置範例](https://fongmi.github.io/TV/config/#examples)。
 3. 也可從系統檔案管理員開啟媒體檔案，或透過推送入口播放媒體網址。
 
@@ -32,7 +32,7 @@
 | [本地 API](https://fongmi.github.io/TV/local/) | 播放控制、推送、檔案與同步端點 |
 | [網站維護](website/README.md) | 靜態網站建置與 GitHub Pages 發布 |
 
-`app/src/main/` 為共用邏輯，`app/src/leanback/`、`app/src/mobile/` 為各自的 UI。模組清單見 [settings.gradle](settings.gradle)，SDK 與依賴版本見 [libs.versions.toml](gradle/libs.versions.toml)。
+`app/src/main/` 為共用邏輯，`app/src/leanback/` 為電視版 UI。模組清單見 [settings.gradle](settings.gradle)，SDK 與依賴版本見 [libs.versions.toml](gradle/libs.versions.toml)。
 
 ## Windows 建置
 
@@ -54,11 +54,7 @@ storePassword=your-keystore-password
 在儲存庫根目錄以 PowerShell 執行：
 
 ```powershell
-# 電視版
 .\gradlew.bat :app:assembleLeanbackRelease
-
-# 手機版
-.\gradlew.bat :app:assembleMobileRelease
 ```
 
 APK 按 ABI 分包並輸出至 `Release/apk/`。簽章不同的 APK 不能直接覆蓋既有安裝。網站位於 `website/`，可獨立建置，不需編譯 Android App。

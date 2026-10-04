@@ -145,16 +145,12 @@ public class Device implements Diffable<Device>, Comparable<Device> {
         return getType() == 0;
     }
 
-    public boolean isMobile() {
-        return getType() == 1;
-    }
-
     public boolean isDLNA() {
         return getType() == 2;
     }
 
     public boolean isApp() {
-        return isLeanback() || isMobile();
+        return isLeanback();
     }
 
     public String getHost() {

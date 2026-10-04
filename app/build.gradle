@@ -34,9 +34,6 @@ android {
         leanback {
             dimension "device"
         }
-        mobile {
-            dimension "device"
-        }
     }
 
     buildFeatures {
@@ -117,8 +114,6 @@ dependencies {
     implementation libs.textdrawable
     leanbackImplementation libs.leanback
     leanbackImplementation libs.androidautosize
-    mobileImplementation libs.biometric
-    mobileImplementation libs.zxing.android.embedded
     annotationProcessor libs.room.compiler
     annotationProcessor libs.eventbus.annotation.processor
     annotationProcessor libs.glide.compiler
