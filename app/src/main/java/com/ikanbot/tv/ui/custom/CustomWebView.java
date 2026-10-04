@@ -3,6 +3,7 @@ package com.ikanbot.tv.ui.custom;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.net.http.SslError;
 import android.text.TextUtils;
@@ -25,30 +26,46 @@ import com.ikanbot.tv.impl.ParseCallback;
 import com.ikanbot.tv.setting.Setting;
 import com.ikanbot.tv.ui.dialog.WebDialog;
 import com.ikanbot.tv.utils.Sniffer;
+import com.ikanbot.tv.utils.Task;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderDebug;
+import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Util;
 import com.google.common.net.HttpHeaders;
 
 import java.io.ByteArrayInputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import okhttp3.Call;
+import okhttp3.HttpUrl;
+import okhttp3.Response;
 
 public class CustomWebView extends WebView implements DialogInterface.OnDismissListener {
 
     private static final String TAG = CustomWebView.class.getSimpleName();
 
     private static final Pattern PLAYER = Pattern.compile("player.*https?://");
+    private static final Pattern EXTINF = Pattern.compile("#EXTINF:\\s*([0-9.]+)");
+    private static final List<String> SECOND_LEVEL = Arrays.asList("com.cn", "net.cn", "org.cn", "gov.cn", "edu.cn", "co.jp", "ne.jp", "or.jp", "co.kr", "com.tw", "com.hk", "com.au", "co.uk", "com.sg");
     private static final String BLANK = "about:blank";
     private static final int MAX_URLS = 5;
+    private static final long MIN_MEDIA_MS = 10_000L;
 
     private final AtomicReference<ParseCallback> callbackRef = new AtomicReference<>();
+    private final Set<String> rejected = Collections.synchronizedSet(new HashSet<>());
     private LinkedHashSet<String> urls;
     private WebResourceResponse empty;
+    private volatile String mediaDomain;
     private WebDialog dialog;
     private Runnable timer;
     private boolean stopped;
@@ -124,7 +141,7 @@ public class CustomWebView extends WebView implements DialogInterface.OnDismissL
                 Map<String, String> headers = request.getRequestHeaders();
                 if (url.contains("/cdn-cgi/challenge-platform/")) post(() -> showDialog());
                 if (detect && PLAYER.matcher(url).find() && addUrl(url)) onParseAdd(headers, url);
-                else if (isVideoFormat(url)) onParseSuccess(headers, url);
+                else if (isVideoFormat(url)) checkMedia(headers, url);
                 return super.shouldInterceptRequest(view, request);
             }
 
@@ -207,6 +224,102 @@ public class CustomWebView extends WebView implements DialogInterface.OnDismissL
         ParseCallback cb = callbackRef.get();
         if (cb == null) return;
         post(() -> CustomWebView.create(App.get()).start(key, from, headers, url, click, cb, false));
+    }
+
+    /**
+     * 嗅探到的媒体先过两道校验，避免把广告当成正片交出去：
+     * 1. 域名一致：记录已接受媒体的域名，之后域名不一致的丢弃（广告多来自跳转后的广告站）；
+     * 2. 时长下限：小于 {@link #MIN_MEDIA_MS} 的丢弃（前置广告通常只有几秒）。
+     */
+    private void checkMedia(Map<String, String> headers, String url) {
+        if (stopped || rejected.contains(url)) return;
+        String domain = domain(url);
+        String accepted = mediaDomain;
+        if (accepted != null && !accepted.equals(domain)) {
+            rejected.add(url);
+            SpiderDebug.log(TAG, "drop media by domain: %s (accepted=%s)", url, accepted);
+            return;
+        }
+        Task.execute(() -> {
+            long duration = probeDuration(url, headers, 0);
+            App.post(() -> {
+                if (stopped || rejected.contains(url)) return;
+                if (duration >= 0 && duration < MIN_MEDIA_MS) {
+                    rejected.add(url);
+                    SpiderDebug.log(TAG, "drop media by duration: %dms %s", duration, url);
+                    return;
+                }
+                if (mediaDomain == null) mediaDomain = domain;
+                SpiderDebug.log(TAG, "accept media: duration=%dms %s", duration, url);
+                onParseSuccess(headers, url);
+            });
+        });
+    }
+
+    private long probeDuration(String url, Map<String, String> headers, int depth) {
+        try {
+            return isHls(url) ? hlsDuration(url, headers, depth) : mediaDuration(url, headers);
+        } catch (Throwable e) {
+            return -1;
+        }
+    }
+
+    private boolean isHls(String url) {
+        String path = Uri.parse(url).getPath();
+        return path != null && path.toLowerCase().contains(".m3u8");
+    }
+
+    private long hlsDuration(String url, Map<String, String> headers, int depth) throws Exception {
+        if (depth > 2) return -1;
+        try (Response res = request(url, headers).execute()) {
+            String text = res.body().string();
+            if (!text.contains("#EXTM3U")) return -1;
+            if (text.contains("#EXT-X-STREAM-INF")) {
+                for (String line : text.split("\n")) {
+                    line = line.trim();
+                    if (line.isEmpty() || line.startsWith("#")) continue;
+                    HttpUrl base = HttpUrl.parse(url);
+                    return hlsDuration(base == null ? line : base.resolve(line).toString(), headers, depth + 1);
+                }
+                return -1;
+            }
+            if (!text.contains("#EXT-X-ENDLIST")) return -1;
+            Matcher matcher = EXTINF.matcher(text);
+            double total = 0;
+            while (matcher.find()) total += Double.parseDouble(matcher.group(1));
+            return (long) (total * 1000);
+        }
+    }
+
+    private long mediaDuration(String url, Map<String, String> headers) {
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        try {
+            if (headers == null || headers.isEmpty()) retriever.setDataSource(url);
+            else retriever.setDataSource(url, headers);
+            String value = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
+            return TextUtils.isEmpty(value) ? -1 : Long.parseLong(value);
+        } catch (Throwable e) {
+            return -1;
+        } finally {
+            try {
+                retriever.release();
+            } catch (Throwable ignored) {
+            }
+        }
+    }
+
+    private Call request(String url, Map<String, String> headers) {
+        return headers == null || headers.isEmpty() ? OkHttp.newCall(url) : OkHttp.newCall(url, headers);
+    }
+
+    private String domain(String url) {
+        String host = Uri.parse(url).getHost();
+        if (TextUtils.isEmpty(host)) return "";
+        if (host.matches("\\d+(\\.\\d+){3}")) return host;
+        String[] parts = host.split("\\.");
+        if (parts.length <= 2) return host;
+        String last = parts[parts.length - 2] + "." + parts[parts.length - 1];
+        return SECOND_LEVEL.contains(last) && parts.length >= 3 ? parts[parts.length - 3] + "." + last : last;
     }
 
     private void onParseSuccess(Map<String, String> headers, String url) {
