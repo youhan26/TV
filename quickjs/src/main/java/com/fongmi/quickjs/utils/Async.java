@@ -1,4 +1,4 @@
-package com.fongmi.quickjs.utils;
+package com.ikanbot.quickjs.utils;
 
 import com.whl.quickjs.wrapper.JSCallFunction;
 import com.whl.quickjs.wrapper.JSFunction;

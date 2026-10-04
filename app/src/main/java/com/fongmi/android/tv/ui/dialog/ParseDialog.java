@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -9,10 +9,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.bean.Parse;
-import com.fongmi.android.tv.databinding.DialogParseBinding;
-import com.fongmi.android.tv.ui.adapter.ParseAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.bean.Parse;
+import com.ikanbot.tv.databinding.DialogParseBinding;
+import com.ikanbot.tv.ui.adapter.ParseAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
 
 public class ParseDialog extends BaseBottomSheetDialog implements ParseAdapter.OnClickListener {
 

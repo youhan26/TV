@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.playback.live;
+package com.ikanbot.tv.playback.live;
 
 public interface LiveDataSource {
 

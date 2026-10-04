@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.exo;
+package com.ikanbot.tv.player.exo;
 
 import android.content.Context;
 
@@ -23,12 +23,12 @@ import androidx.media3.exoplayer.source.preload.DefaultPreloadManager;
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector;
 import androidx.media3.exoplayer.util.EventLogger;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.BuildConfig;
-import com.fongmi.android.tv.player.track.LangUtil;
-import com.fongmi.android.tv.setting.DecodeSetting;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.SpeedSetting;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.BuildConfig;
+import com.ikanbot.tv.player.track.LangUtil;
+import com.ikanbot.tv.setting.DecodeSetting;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.SpeedSetting;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.ResUtil;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public abstract class BaseAlertDialog extends DialogFragment {

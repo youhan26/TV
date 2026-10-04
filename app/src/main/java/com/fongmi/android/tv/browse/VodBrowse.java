@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.browse;
+package com.ikanbot.tv.browse;
 
 import android.text.TextUtils;
 
@@ -7,18 +7,18 @@ import androidx.annotation.Nullable;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 
-import com.fongmi.android.tv.api.SiteApi;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.bean.Flag;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.db.AppDatabase;
-import com.fongmi.android.tv.playback.vod.VodHistoryPolicy;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.api.SiteApi;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.bean.Flag;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.db.AppDatabase;
+import com.ikanbot.tv.playback.vod.VodHistoryPolicy;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.utils.Task;
 import com.github.catvod.utils.Trans;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;

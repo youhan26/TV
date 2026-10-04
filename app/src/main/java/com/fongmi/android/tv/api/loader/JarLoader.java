@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.api.loader;
+package com.ikanbot.tv.api.loader;
 
 import android.content.Context;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.utils.Download;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.utils.Download;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderNull;
 import com.github.catvod.net.OkHttp;

@@ -1,11 +1,11 @@
-package com.fongmi.android.tv.db.dao;
+package com.ikanbot.tv.db.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.fongmi.android.tv.bean.Track;
+import com.ikanbot.tv.bean.Track;
 
 import java.util.List;
 

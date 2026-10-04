@@ -1,14 +1,14 @@
-package com.fongmi.android.tv.player.extractor;
+package com.ikanbot.tv.player.extractor;
 
 import android.net.Uri;
 import android.os.SystemClock;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.exception.ExtractException;
-import com.fongmi.android.tv.utils.Download;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.exception.ExtractException;
+import com.ikanbot.tv.utils.Download;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.utils.Crypto;
 import com.github.catvod.utils.Path;
 import com.xunlei.downloadlib.XLTaskHelper;

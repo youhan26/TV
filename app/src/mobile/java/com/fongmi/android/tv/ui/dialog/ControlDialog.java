@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,18 +11,18 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Parse;
-import com.fongmi.android.tv.databinding.ActivityVideoBinding;
-import com.fongmi.android.tv.databinding.DialogControlBinding;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.setting.SpeedSetting;
-import com.fongmi.android.tv.ui.adapter.ParseAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.SliderUtil;
-import com.fongmi.android.tv.utils.Timer;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Parse;
+import com.ikanbot.tv.databinding.ActivityVideoBinding;
+import com.ikanbot.tv.databinding.DialogControlBinding;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.setting.SpeedSetting;
+import com.ikanbot.tv.ui.adapter.ParseAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.SliderUtil;
+import com.ikanbot.tv.utils.Timer;
 import com.google.android.material.slider.Slider;
 
 import java.util.Arrays;

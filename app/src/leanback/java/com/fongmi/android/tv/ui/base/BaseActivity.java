@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.base;
+package com.ikanbot.tv.ui.base;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
@@ -15,8 +15,8 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.ui.custom.CustomWallView;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.ui.custom.CustomWallView;
+import com.ikanbot.tv.utils.Util;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

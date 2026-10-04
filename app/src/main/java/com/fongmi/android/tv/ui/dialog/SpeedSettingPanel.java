@@ -1,15 +1,15 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.View;
 import android.widget.TextView;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogSpeedSettingBinding;
-import com.fongmi.android.tv.databinding.ViewSettingSliderBinding;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.setting.SpeedSetting;
-import com.fongmi.android.tv.utils.SliderUtil;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogSpeedSettingBinding;
+import com.ikanbot.tv.databinding.ViewSettingSliderBinding;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.setting.SpeedSetting;
+import com.ikanbot.tv.utils.SliderUtil;
+import com.ikanbot.tv.utils.Util;
 import com.google.android.material.slider.Slider;
 
 final class SpeedSettingPanel {

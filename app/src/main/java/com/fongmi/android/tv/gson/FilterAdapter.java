@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.gson;
+package com.ikanbot.tv.gson;
 
-import com.fongmi.android.tv.bean.Filter;
+import com.ikanbot.tv.bean.Filter;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;

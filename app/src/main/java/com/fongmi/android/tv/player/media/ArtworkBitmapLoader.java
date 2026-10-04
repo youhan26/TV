@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.media;
+package com.ikanbot.tv.player.media;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,8 +10,8 @@ import androidx.media3.datasource.DataSourceBitmapLoader;
 import androidx.media3.session.MediaSession;
 
 import com.bumptech.glide.load.model.GlideUrl;
-import com.fongmi.android.tv.utils.ImgUtil;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.utils.ImgUtil;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.net.OkHttp;
 import com.google.common.io.ByteStreams;
 import com.google.common.util.concurrent.Futures;

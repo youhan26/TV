@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.graphics.RectF;
 import android.text.Layout;
@@ -12,9 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.utils.KeyUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class CustomMovement extends ScrollingMovementMethod {
 

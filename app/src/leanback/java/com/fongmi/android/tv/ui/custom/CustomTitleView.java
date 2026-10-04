@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -9,13 +9,13 @@ import android.view.animation.Animation;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.impl.SiteListener;
-import com.fongmi.android.tv.utils.KeyUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.impl.SiteListener;
+import com.ikanbot.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.ResUtil;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.List;

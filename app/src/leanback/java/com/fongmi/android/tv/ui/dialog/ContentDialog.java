@@ -1,12 +1,12 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.DialogContentBinding;
-import com.fongmi.android.tv.ui.custom.CustomMovement;
+import com.ikanbot.tv.databinding.DialogContentBinding;
+import com.ikanbot.tv.ui.custom.CustomMovement;
 import com.github.bassaer.library.MDColor;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 

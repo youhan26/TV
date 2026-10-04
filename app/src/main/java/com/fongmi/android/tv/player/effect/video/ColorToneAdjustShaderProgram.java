@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.effect.video;
+package com.ikanbot.tv.player.effect.video;
 
 import androidx.media3.common.VideoFrameProcessingException;
 

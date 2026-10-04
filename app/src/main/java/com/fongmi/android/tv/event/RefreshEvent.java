@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.event;
+package com.ikanbot.tv.event;
 
-import com.fongmi.android.tv.bean.Vod;
+import com.ikanbot.tv.bean.Vod;
 
 import org.greenrobot.eventbus.EventBus;
 

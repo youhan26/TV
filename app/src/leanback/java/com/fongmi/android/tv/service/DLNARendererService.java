@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.service;
+package com.ikanbot.tv.service;
 
 import android.app.Notification;
 import android.content.ComponentName;
@@ -12,16 +12,16 @@ import androidx.core.app.NotificationCompat;
 import androidx.media3.common.C;
 import androidx.media3.common.Player;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.dlna.CastAction;
-import com.fongmi.android.tv.dlna.DLNAAvTransportImpl;
-import com.fongmi.android.tv.dlna.DLNARenderingControlImpl;
-import com.fongmi.android.tv.dlna.DLNAServiceConfiguration;
-import com.fongmi.android.tv.dlna.RenderState;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.dlna.CastAction;
+import com.ikanbot.tv.dlna.DLNAAvTransportImpl;
+import com.ikanbot.tv.dlna.DLNARenderingControlImpl;
+import com.ikanbot.tv.dlna.DLNAServiceConfiguration;
+import com.ikanbot.tv.dlna.RenderState;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.tv.utils.Util;
 
 import org.jupnp.UpnpServiceConfiguration;
 import org.jupnp.android.AndroidUpnpServiceImpl;

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.databinding.AdapterSiteBinding;
-import com.fongmi.android.tv.setting.Setting;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.databinding.AdapterSiteBinding;
+import com.ikanbot.tv.setting.Setting;
 
 import java.util.ArrayList;
 import java.util.List;

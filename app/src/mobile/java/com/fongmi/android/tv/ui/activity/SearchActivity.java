@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,10 +6,10 @@ import android.os.Bundle;
 
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.ActivitySearchBinding;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.ui.fragment.SearchFragment;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.ActivitySearchBinding;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.ui.fragment.SearchFragment;
 
 public class SearchActivity extends BaseActivity {
 

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.fragment;
+package com.ikanbot.tv.ui.fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,19 +8,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.FragmentSettingPlayerBinding;
-import com.fongmi.android.tv.impl.BufferListener;
-import com.fongmi.android.tv.impl.UaListener;
-import com.fongmi.android.tv.player.mpv.MpvUtil;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.activity.HomeActivity;
-import com.fongmi.android.tv.ui.base.BaseFragment;
-import com.fongmi.android.tv.ui.dialog.BufferDialog;
-import com.fongmi.android.tv.ui.dialog.MpvConfDialog;
-import com.fongmi.android.tv.ui.dialog.UaDialog;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.FragmentSettingPlayerBinding;
+import com.ikanbot.tv.impl.BufferListener;
+import com.ikanbot.tv.impl.UaListener;
+import com.ikanbot.tv.player.mpv.MpvUtil;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.activity.HomeActivity;
+import com.ikanbot.tv.ui.base.BaseFragment;
+import com.ikanbot.tv.ui.dialog.BufferDialog;
+import com.ikanbot.tv.ui.dialog.MpvConfDialog;
+import com.ikanbot.tv.ui.dialog.UaDialog;
+import com.ikanbot.tv.utils.ResUtil;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class SettingPlayerFragment extends BaseFragment implements UaListener, BufferListener {

@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.api;
+package com.ikanbot.tv.api;
 
 import android.util.Base64;
 
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Crypto;
 import com.github.catvod.utils.Json;

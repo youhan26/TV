@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.playback.vod;
+package com.ikanbot.tv.playback.vod;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Flag;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.bean.Vod;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Flag;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.bean.Vod;
 
 import java.util.ArrayList;
 import java.util.List;

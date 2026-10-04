@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.playback;
+package com.ikanbot.tv.playback;
 
-import com.fongmi.android.tv.bean.Result;
+import com.ikanbot.tv.bean.Result;
 
 public record PlaybackResult<T>(T request, Result result) {
 }

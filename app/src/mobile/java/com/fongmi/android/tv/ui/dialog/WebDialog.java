@@ -1,11 +1,11 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.DialogInterface;
 import android.view.View;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class WebDialog {

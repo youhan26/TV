@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -17,22 +17,22 @@ import androidx.media3.common.MediaMetadata;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.SubtitleApi;
-import com.fongmi.android.tv.bean.Sub;
-import com.fongmi.android.tv.bean.SubtitleSearchItem;
-import com.fongmi.android.tv.bean.SubtitleSearchPage;
-import com.fongmi.android.tv.databinding.DialogSubtitleSearchBinding;
-import com.fongmi.android.tv.impl.SubtitleListener;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.setting.SubtitleSetting;
-import com.fongmi.android.tv.ui.adapter.SubtitleAdapter;
-import com.fongmi.android.tv.ui.custom.CustomScroller;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
-import com.fongmi.android.tv.utils.KeyUtil;
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.SubtitleApi;
+import com.ikanbot.tv.bean.Sub;
+import com.ikanbot.tv.bean.SubtitleSearchItem;
+import com.ikanbot.tv.bean.SubtitleSearchPage;
+import com.ikanbot.tv.databinding.DialogSubtitleSearchBinding;
+import com.ikanbot.tv.impl.SubtitleListener;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.setting.SubtitleSetting;
+import com.ikanbot.tv.ui.adapter.SubtitleAdapter;
+import com.ikanbot.tv.ui.custom.CustomScroller;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Util;
 
 import java.util.ArrayDeque;
 import java.util.List;

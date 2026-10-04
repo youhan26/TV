@@ -1,23 +1,23 @@
-package com.fongmi.android.tv.model;
+package com.ikanbot.tv.model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.media3.common.C;
 
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.api.LiveApi;
-import com.fongmi.android.tv.bean.Channel;
-import com.fongmi.android.tv.bean.Epg;
-import com.fongmi.android.tv.bean.Live;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.exception.ExtractException;
-import com.fongmi.android.tv.playback.PlaybackResult;
-import com.fongmi.android.tv.playback.live.LiveDataSource;
-import com.fongmi.android.tv.playback.live.LivePlayRequest;
-import com.fongmi.android.tv.playback.live.LivePlaybackController;
-import com.fongmi.android.tv.playback.live.LivePlaybackHost;
-import com.fongmi.android.tv.playback.live.LivePlaybackState;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.api.LiveApi;
+import com.ikanbot.tv.bean.Channel;
+import com.ikanbot.tv.bean.Epg;
+import com.ikanbot.tv.bean.Live;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.exception.ExtractException;
+import com.ikanbot.tv.playback.PlaybackResult;
+import com.ikanbot.tv.playback.live.LiveDataSource;
+import com.ikanbot.tv.playback.live.LivePlayRequest;
+import com.ikanbot.tv.playback.live.LivePlaybackController;
+import com.ikanbot.tv.playback.live.LivePlaybackHost;
+import com.ikanbot.tv.playback.live.LivePlaybackState;
 
 import java.time.ZoneId;
 import java.util.concurrent.Callable;

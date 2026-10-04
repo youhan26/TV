@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,12 +13,12 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogLinkBinding;
-import com.fongmi.android.tv.ui.activity.VideoActivity;
-import com.fongmi.android.tv.utils.FileChooser;
-import com.fongmi.android.tv.utils.Sniffer;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogLinkBinding;
+import com.ikanbot.tv.ui.activity.VideoActivity;
+import com.ikanbot.tv.utils.FileChooser;
+import com.ikanbot.tv.utils.Sniffer;
+import com.ikanbot.tv.utils.Util;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class LinkDialog extends BaseAlertDialog {

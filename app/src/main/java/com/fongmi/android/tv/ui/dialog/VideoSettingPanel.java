@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.annotation.SuppressLint;
 import android.view.KeyEvent;
@@ -6,16 +6,16 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogVideoSettingBinding;
-import com.fongmi.android.tv.databinding.ViewSettingSliderBinding;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.player.effect.video.VideoEffectPreset;
-import com.fongmi.android.tv.player.effect.video.VideoEffectProfile;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.VideoSetting;
-import com.fongmi.android.tv.utils.SliderUtil;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogVideoSettingBinding;
+import com.ikanbot.tv.databinding.ViewSettingSliderBinding;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.player.effect.video.VideoEffectPreset;
+import com.ikanbot.tv.player.effect.video.VideoEffectProfile;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.VideoSetting;
+import com.ikanbot.tv.utils.SliderUtil;
+import com.ikanbot.tv.utils.Util;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.slider.Slider;

@@ -1,20 +1,20 @@
-package com.fongmi.android.tv.api;
+package com.ikanbot.tv.api;
 
 import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 import androidx.collection.ArrayMap;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Class;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.player.extractor.Source;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Sniffer;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Class;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.player.extractor.Source;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Sniffer;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.net.OkHttp;

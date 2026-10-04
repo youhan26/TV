@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.model;
+package com.ikanbot.tv.model;
 
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.utils.Task;
 import com.google.common.util.concurrent.FluentFuture;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;

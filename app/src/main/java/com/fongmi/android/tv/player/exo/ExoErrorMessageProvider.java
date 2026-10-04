@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.exo;
+package com.ikanbot.tv.player.exo;
 
 import androidx.media3.common.PlaybackException;
 

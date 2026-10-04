@@ -1,13 +1,13 @@
-package com.fongmi.android.tv;
+package com.ikanbot.tv;
 
 import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.startup.Initializer;
 
-import com.fongmi.android.tv.event.EventIndex;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.activity.CrashActivity;
+import com.ikanbot.tv.event.EventIndex;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.activity.CrashActivity;
 import com.github.catvod.bean.Doh;
 import com.github.catvod.net.OkHttp;
 import com.orhanobut.logger.AndroidLogAdapter;

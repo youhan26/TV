@@ -1,4 +1,4 @@
-package com.fongmi.android.tv;
+package com.ikanbot.tv;
 
 import java.util.concurrent.TimeUnit;
 

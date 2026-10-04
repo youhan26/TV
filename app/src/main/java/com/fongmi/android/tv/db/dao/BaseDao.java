@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.db.dao;
+package com.ikanbot.tv.db.dao;
 
 import androidx.room.Dao;
 import androidx.room.Insert;

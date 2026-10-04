@@ -1,12 +1,12 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogThemeBinding;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.adapter.ThemeAdapter;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogThemeBinding;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.adapter.ThemeAdapter;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class ThemeDialog extends BaseAlertDialog implements ThemeAdapter.OnClickListener {

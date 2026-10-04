@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,10 +10,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.ActivityFileBinding;
-import com.fongmi.android.tv.ui.adapter.FileAdapter;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.utils.PermissionUtil;
+import com.ikanbot.tv.databinding.ActivityFileBinding;
+import com.ikanbot.tv.ui.adapter.FileAdapter;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.utils.PermissionUtil;
 import com.github.catvod.utils.Path;
 
 import java.io.File;

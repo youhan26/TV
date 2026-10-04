@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -7,9 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.databinding.AdapterSearchBinding;
-import com.fongmi.android.tv.utils.ImgUtil;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.databinding.AdapterSearchBinding;
+import com.ikanbot.tv.utils.ImgUtil;
 
 public class SearchAdapter extends BaseDiffAdapter<Vod, SearchAdapter.ViewHolder> {
 

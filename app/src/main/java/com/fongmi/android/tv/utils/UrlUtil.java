@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.server.Server;
+import com.ikanbot.tv.server.Server;
 import com.github.catvod.utils.Path;
 import com.github.catvod.utils.UriUtil;
 import com.google.common.net.HttpHeaders;

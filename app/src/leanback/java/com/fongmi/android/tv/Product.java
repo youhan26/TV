@@ -1,8 +1,8 @@
-package com.fongmi.android.tv;
+package com.ikanbot.tv;
 
-import com.fongmi.android.tv.bean.Style;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.bean.Style;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class Product {
 

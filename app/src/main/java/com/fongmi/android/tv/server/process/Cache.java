@@ -1,9 +1,9 @@
-package com.fongmi.android.tv.server.process;
+package com.ikanbot.tv.server.process;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.server.Nano;
-import com.fongmi.android.tv.server.impl.Process;
+import com.ikanbot.tv.server.Nano;
+import com.ikanbot.tv.server.impl.Process;
 import com.github.catvod.utils.Prefers;
 
 import java.util.Map;

@@ -1,11 +1,11 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.content.Intent;
 import android.os.CountDownTimer;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.event.ActionEvent;
-import com.fongmi.android.tv.service.PlaybackService;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.event.ActionEvent;
+import com.ikanbot.tv.service.PlaybackService;
 
 import java.util.concurrent.TimeUnit;
 

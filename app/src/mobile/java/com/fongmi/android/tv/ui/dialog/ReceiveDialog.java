@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +10,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.databinding.DialogReceiveBinding;
-import com.fongmi.android.tv.event.CastEvent;
-import com.fongmi.android.tv.impl.Callback;
-import com.fongmi.android.tv.ui.activity.VideoActivity;
-import com.fongmi.android.tv.utils.ImgUtil;
-import com.fongmi.android.tv.utils.Notify;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.databinding.DialogReceiveBinding;
+import com.ikanbot.tv.event.CastEvent;
+import com.ikanbot.tv.impl.Callback;
+import com.ikanbot.tv.ui.activity.VideoActivity;
+import com.ikanbot.tv.utils.ImgUtil;
+import com.ikanbot.tv.utils.Notify;
 
 public class ReceiveDialog extends BaseBottomSheetDialog {
 

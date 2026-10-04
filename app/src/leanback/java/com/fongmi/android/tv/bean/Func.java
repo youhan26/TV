@@ -1,12 +1,12 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.impl.Diffable;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.impl.Diffable;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class Func implements Diffable<Func> {
 

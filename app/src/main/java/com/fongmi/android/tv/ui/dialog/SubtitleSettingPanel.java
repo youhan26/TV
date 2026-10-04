@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,15 +16,15 @@ import androidx.media3.ui.CaptionStyleCompat;
 import androidx.media3.ui.DefaultTrackNameProvider;
 import androidx.media3.ui.SubtitleView;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogSubtitleSettingBinding;
-import com.fongmi.android.tv.databinding.ViewSettingSliderBinding;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.player.engine.PlayerEngine.SecondarySubtitleState;
-import com.fongmi.android.tv.player.subtitle.ExternalFont;
-import com.fongmi.android.tv.setting.SubtitleSetting;
-import com.fongmi.android.tv.utils.SliderUtil;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogSubtitleSettingBinding;
+import com.ikanbot.tv.databinding.ViewSettingSliderBinding;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.player.engine.PlayerEngine.SecondarySubtitleState;
+import com.ikanbot.tv.player.subtitle.ExternalFont;
+import com.ikanbot.tv.setting.SubtitleSetting;
+import com.ikanbot.tv.utils.SliderUtil;
+import com.ikanbot.tv.utils.Util;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;

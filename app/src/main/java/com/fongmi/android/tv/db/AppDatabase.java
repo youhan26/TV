@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.db;
+package com.ikanbot.tv.db;
 
 import android.content.Context;
 
@@ -6,21 +6,21 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.bean.Config;
-import com.fongmi.android.tv.bean.Device;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.bean.Keep;
-import com.fongmi.android.tv.bean.Live;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.bean.Track;
-import com.fongmi.android.tv.db.dao.ConfigDao;
-import com.fongmi.android.tv.db.dao.DeviceDao;
-import com.fongmi.android.tv.db.dao.HistoryDao;
-import com.fongmi.android.tv.db.dao.KeepDao;
-import com.fongmi.android.tv.db.dao.LiveDao;
-import com.fongmi.android.tv.db.dao.SiteDao;
-import com.fongmi.android.tv.db.dao.TrackDao;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.bean.Config;
+import com.ikanbot.tv.bean.Device;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.bean.Keep;
+import com.ikanbot.tv.bean.Live;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.bean.Track;
+import com.ikanbot.tv.db.dao.ConfigDao;
+import com.ikanbot.tv.db.dao.DeviceDao;
+import com.ikanbot.tv.db.dao.HistoryDao;
+import com.ikanbot.tv.db.dao.KeepDao;
+import com.ikanbot.tv.db.dao.LiveDao;
+import com.ikanbot.tv.db.dao.SiteDao;
+import com.ikanbot.tv.db.dao.TrackDao;
 
 @Database(entities = {Keep.class, Site.class, Live.class, Track.class, Config.class, Device.class, History.class}, version = AppDatabase.VERSION)
 public abstract class AppDatabase extends RoomDatabase {

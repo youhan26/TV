@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +10,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.DialogTimerBinding;
-import com.fongmi.android.tv.utils.Timer;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.databinding.DialogTimerBinding;
+import com.ikanbot.tv.utils.Timer;
+import com.ikanbot.tv.utils.Util;
 
 import java.util.Formatter;
 import java.util.Locale;

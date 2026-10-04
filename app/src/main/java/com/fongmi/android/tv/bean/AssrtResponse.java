@@ -1,9 +1,9 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.gson.AssrtListAdapter;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.gson.AssrtListAdapter;
 import com.google.gson.JsonElement;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;

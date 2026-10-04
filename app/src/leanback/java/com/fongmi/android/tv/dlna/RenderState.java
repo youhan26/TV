@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.dlna;
+package com.ikanbot.tv.dlna;
 
 public enum RenderState {
     IDLE, PREPARING, PLAYING, PAUSED, STOPPED

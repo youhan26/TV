@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,11 +7,11 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.Product;
-import com.fongmi.android.tv.bean.Keep;
-import com.fongmi.android.tv.databinding.AdapterVodBinding;
-import com.fongmi.android.tv.utils.ImgUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.Product;
+import com.ikanbot.tv.bean.Keep;
+import com.ikanbot.tv.databinding.AdapterVodBinding;
+import com.ikanbot.tv.utils.ImgUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class KeepAdapter extends BaseDiffAdapter<Keep, KeepAdapter.ViewHolder> {
 

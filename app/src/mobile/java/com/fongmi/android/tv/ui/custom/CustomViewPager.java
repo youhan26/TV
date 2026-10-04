@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;

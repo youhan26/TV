@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 

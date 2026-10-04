@@ -1,4 +1,4 @@
-package com.fongmi.chaquo;
+package com.ikanbot.chaquo;
 
 import com.chaquo.python.PyObject;
 import com.chaquo.python.Python;

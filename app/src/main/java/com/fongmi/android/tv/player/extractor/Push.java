@@ -1,11 +1,11 @@
-package com.fongmi.android.tv.player.extractor;
+package com.ikanbot.tv.player.extractor;
 
 import android.net.Uri;
 import android.os.SystemClock;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.ui.activity.VideoActivity;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.ui.activity.VideoActivity;
+import com.ikanbot.tv.utils.UrlUtil;
 
 public class Push implements Source.Extractor {
 

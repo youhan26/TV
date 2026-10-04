@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.playback.live;
+package com.ikanbot.tv.playback.live;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.bean.Channel;
-import com.fongmi.android.tv.bean.EpgData;
+import com.ikanbot.tv.bean.Channel;
+import com.ikanbot.tv.bean.EpgData;
 
 import java.util.Objects;
 

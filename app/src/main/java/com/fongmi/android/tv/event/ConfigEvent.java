@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.event;
+package com.ikanbot.tv.event;
 
-import com.fongmi.android.tv.setting.LiveSetting;
+import com.ikanbot.tv.setting.LiveSetting;
 
 import org.greenrobot.eventbus.EventBus;
 

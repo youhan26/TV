@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.subtitle;
+package com.ikanbot.tv.player.subtitle;
 
 import android.util.Xml;
 

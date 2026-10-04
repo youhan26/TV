@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.app.PendingIntent;
 import android.content.ComponentName;
@@ -23,23 +23,26 @@ import androidx.media3.common.VideoSize;
 import androidx.media3.exoplayer.drm.FrameworkMediaDrm;
 import androidx.media3.session.MediaController;
 import androidx.media3.session.SessionToken;
+import com.ikanbot.tv.ui.custom.PlayerSeekView;
 import androidx.media3.ui.PlayerView;
+import androidx.media3.ui.TimeBar;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.playback.PlaybackIntent;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.player.media.PlaySpec;
-import com.fongmi.android.tv.service.PlaybackService;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.SubtitleSetting;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.playback.PlaybackIntent;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.player.media.PlaySpec;
+import com.ikanbot.tv.service.PlaybackService;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.SubtitleSetting;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.utils.ResUtil;
 import com.google.common.util.concurrent.ListenableFuture;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public abstract class PlaybackActivity extends BaseActivity implements MediaController.Listener, Player.Listener, ServiceConnection {
 
@@ -111,6 +114,8 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
 
     protected abstract PlaybackService.NavigationCallback getNavigationCallback();
 
+    protected abstract PlayerSeekView getSeekView();
+
     protected abstract PlayerView getPlayerView();
 
     protected abstract String getPlaybackKey();
@@ -152,6 +157,11 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     public void onShare(CharSequence title, String url, Map<String, String> headers) {
         PlaybackIntent.share(this, url, headers, title);
         setRedirect(true);
+    }
+
+    protected void setSeekNextFocusDown(int id) {
+        View timeBar = getSeekView().findViewById(androidx.media3.ui.R.id.exo_progress);
+        if (timeBar != null) timeBar.setNextFocusDownId(id);
     }
 
     protected void setActionFocusBoundary(View view) {
@@ -265,9 +275,30 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     private void onControllerConnected() {
         try {
             mController = mControllerFuture.get();
+            getSeekView().setPlayer(mController);
             mController.addListener(this);
+            updateKeyIncrement();
         } catch (Exception ignored) {
         }
+    }
+
+    private void addSeekListener() {
+        getSeekView().getTimeBar().addListener(new TimeBar.OnScrubListener() {
+            @Override
+            public void onScrubStart(@NonNull TimeBar timeBar, long position) {
+                PlaybackActivity.this.setScrubbing(true);
+            }
+
+            @Override
+            public void onScrubMove(@NonNull TimeBar timeBar, long position) {
+                PlaybackActivity.this.setScrubbing(true);
+            }
+
+            @Override
+            public void onScrubStop(@NonNull TimeBar timeBar, long position, boolean canceled) {
+                PlaybackActivity.this.onScrubStop(canceled);
+            }
+        });
     }
 
     protected boolean isScrubbing() {
@@ -286,6 +317,27 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     }
 
     protected void onScrubbingChanged(boolean scrubbing) {
+    }
+
+    private void updateKeyIncrement() {
+        long durationMs = mController == null ? C.TIME_UNSET : mController.getDuration();
+        long incrementMs = getKeyTimeIncrementMs(durationMs);
+        TimeBar timeBar = getSeekView().getTimeBar();
+        timeBar.setKeyTimeIncrement(incrementMs);
+    }
+
+    private long getKeyTimeIncrementMs(long durationMs) {
+        if (durationMs > TimeUnit.HOURS.toMillis(3)) {
+            return TimeUnit.MINUTES.toMillis(5);
+        } else if (durationMs > TimeUnit.MINUTES.toMillis(30)) {
+            return TimeUnit.MINUTES.toMillis(1);
+        } else if (durationMs > TimeUnit.MINUTES.toMillis(15)) {
+            return TimeUnit.SECONDS.toMillis(30);
+        } else if (durationMs > TimeUnit.MINUTES.toMillis(10)) {
+            return TimeUnit.SECONDS.toMillis(15);
+        } else {
+            return TimeUnit.SECONDS.toMillis(10);
+        }
     }
 
     private PendingIntent buildSessionIntent() {
@@ -397,6 +449,7 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
     private void releaseController() {
         if (mControllerFuture != null) MediaController.releaseFuture(mControllerFuture);
         if (mController != null) mController.removeListener(this);
+        if (mController != null) getSeekView().setPlayer(null);
         mControllerFuture = null;
         mController = null;
     }
@@ -459,6 +512,12 @@ public abstract class PlaybackActivity extends BaseActivity implements MediaCont
         super.initView(savedInstanceState);
         configurePlayerView();
         bindPlaybackService();
+        addSeekListener();
+    }
+
+    @Override
+    public void onEvents(@NonNull Player player, @NonNull Player.Events events) {
+        if (events.containsAny(Player.EVENT_TIMELINE_CHANGED, Player.EVENT_POSITION_DISCONTINUITY, Player.EVENT_MEDIA_ITEM_TRANSITION, Player.EVENT_PLAYBACK_STATE_CHANGED, Player.EVENT_AVAILABLE_COMMANDS_CHANGED)) updateKeyIncrement();
     }
 
     @Override

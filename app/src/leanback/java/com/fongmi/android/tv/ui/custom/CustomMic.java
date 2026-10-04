@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,10 +17,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.fragment.app.FragmentActivity;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.utils.KeyUtil;
-import com.fongmi.android.tv.utils.PermissionUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.PermissionUtil;
+import com.ikanbot.tv.utils.ResUtil;
 import com.github.bassaer.library.MDColor;
 
 import java.util.List;

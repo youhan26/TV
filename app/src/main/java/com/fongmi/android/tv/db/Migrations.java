@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.db;
+package com.ikanbot.tv.db;
 
 import androidx.annotation.NonNull;
 import androidx.room.migration.Migration;

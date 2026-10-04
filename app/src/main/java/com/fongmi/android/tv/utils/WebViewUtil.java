@@ -1,9 +1,9 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.content.pm.PackageManager;
 import android.webkit.CookieManager;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 
 import java.util.Set;
 

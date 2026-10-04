@@ -1,7 +1,7 @@
-package com.fongmi.android.tv.player.effect;
+package com.ikanbot.tv.player.effect;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.player.effect.audio.AudioEffectBands;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.player.effect.audio.AudioEffectBands;
 
 public interface PlayerEffect {
 

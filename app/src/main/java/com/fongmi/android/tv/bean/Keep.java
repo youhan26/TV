@@ -1,14 +1,14 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.db.AppDatabase;
-import com.fongmi.android.tv.impl.Diffable;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.db.AppDatabase;
+import com.ikanbot.tv.impl.Diffable;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 

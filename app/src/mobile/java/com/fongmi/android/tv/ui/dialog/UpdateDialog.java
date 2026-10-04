@@ -1,12 +1,12 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogUpdateBinding;
-import com.fongmi.android.tv.impl.UpdateListener;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogUpdateBinding;
+import com.ikanbot.tv.impl.UpdateListener;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Locale;

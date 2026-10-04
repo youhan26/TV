@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,7 +6,7 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.ui.base.ViewType;
+import com.ikanbot.tv.ui.base.ViewType;
 import com.google.gson.annotations.SerializedName;
 
 public class Style implements Parcelable {

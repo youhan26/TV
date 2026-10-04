@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.exo;
+package com.ikanbot.tv.player.exo;
 
 import androidx.annotation.NonNull;
 import androidx.media3.common.C;
@@ -21,8 +21,8 @@ import androidx.media3.extractor.DefaultExtractorsFactory;
 import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.ts.TsExtractor;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.setting.PreloadSetting;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.setting.PreloadSetting;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Path;
 

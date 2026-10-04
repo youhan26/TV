@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import static android.widget.ImageView.ScaleType.CENTER_CROP;
 import static android.widget.ImageView.ScaleType.FIT_CENTER;
@@ -22,11 +22,11 @@ import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.LazyHeaders;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.impl.CustomTarget;
-import com.fongmi.android.tv.server.Server;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.impl.CustomTarget;
+import com.ikanbot.tv.server.Server;
 import com.github.catvod.utils.Crypto;
 import com.github.catvod.utils.Json;
 import com.google.common.cache.Cache;

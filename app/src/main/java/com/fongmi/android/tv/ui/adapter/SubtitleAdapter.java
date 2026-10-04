@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.bean.SubtitleSearchItem;
-import com.fongmi.android.tv.databinding.AdapterSubtitleBinding;
+import com.ikanbot.tv.bean.SubtitleSearchItem;
+import com.ikanbot.tv.databinding.AdapterSubtitleBinding;
 
 import java.util.ArrayList;
 import java.util.List;

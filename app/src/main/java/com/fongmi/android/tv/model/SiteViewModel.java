@@ -1,15 +1,15 @@
-package com.fongmi.android.tv.model;
+package com.ikanbot.tv.model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.api.SiteApi;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.exception.ExtractException;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.api.SiteApi;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.exception.ExtractException;
 import com.github.catvod.utils.Trans;
 
 import java.util.HashMap;

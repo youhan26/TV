@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import static androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
 
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.fongmi.android.tv.ui.base.BaseFragment;
+import com.ikanbot.tv.ui.base.BaseFragment;
 
 import java.util.function.IntFunction;
 

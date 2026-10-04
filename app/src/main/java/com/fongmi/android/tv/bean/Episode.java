@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,8 +6,8 @@ import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.impl.Diffable;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.impl.Diffable;
+import com.ikanbot.tv.utils.Util;
 import com.github.catvod.utils.Trans;
 import com.google.gson.annotations.SerializedName;
 

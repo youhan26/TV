@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,16 +12,16 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.config.LiveConfig;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.api.config.WallConfig;
-import com.fongmi.android.tv.bean.Config;
-import com.fongmi.android.tv.databinding.DialogConfigBinding;
-import com.fongmi.android.tv.impl.ConfigListener;
-import com.fongmi.android.tv.ui.custom.CustomTextListener;
-import com.fongmi.android.tv.utils.FileChooser;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.config.LiveConfig;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.api.config.WallConfig;
+import com.ikanbot.tv.bean.Config;
+import com.ikanbot.tv.databinding.DialogConfigBinding;
+import com.ikanbot.tv.impl.ConfigListener;
+import com.ikanbot.tv.ui.custom.CustomTextListener;
+import com.ikanbot.tv.utils.FileChooser;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class ConfigDialog extends BaseAlertDialog {

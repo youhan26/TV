@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,17 +18,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewpager.widget.ViewPager;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Class;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.databinding.ActivityVodBinding;
-import com.fongmi.android.tv.event.RefreshEvent;
-import com.fongmi.android.tv.ui.adapter.TypeAdapter;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.ui.fragment.FolderFragment;
-import com.fongmi.android.tv.utils.KeyUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Class;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.databinding.ActivityVodBinding;
+import com.ikanbot.tv.event.RefreshEvent;
+import com.ikanbot.tv.ui.adapter.TypeAdapter;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.ui.fragment.FolderFragment;
+import com.ikanbot.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;

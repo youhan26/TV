@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -10,13 +10,13 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.player.subtitle.ExternalFont;
-import com.fongmi.android.tv.utils.FileChooser;
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.player.subtitle.ExternalFont;
+import com.ikanbot.tv.utils.FileChooser;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Task;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 

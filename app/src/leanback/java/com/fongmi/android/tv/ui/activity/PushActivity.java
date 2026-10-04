@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,14 +9,14 @@ import android.view.View;
 
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.ActivityPushBinding;
-import com.fongmi.android.tv.server.Server;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.utils.QRCode;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Sniffer;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.ActivityPushBinding;
+import com.ikanbot.tv.server.Server;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.utils.QRCode;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Sniffer;
+import com.ikanbot.tv.utils.Util;
 
 public class PushActivity extends BaseActivity {
 

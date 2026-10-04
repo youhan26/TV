@@ -1,19 +1,19 @@
-package com.fongmi.android.tv.api;
+package com.ikanbot.tv.api;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.config.LiveConfig;
-import com.fongmi.android.tv.api.parser.EpgParser;
-import com.fongmi.android.tv.api.parser.LiveParser;
-import com.fongmi.android.tv.bean.Channel;
-import com.fongmi.android.tv.bean.Epg;
-import com.fongmi.android.tv.bean.EpgData;
-import com.fongmi.android.tv.bean.Group;
-import com.fongmi.android.tv.bean.Live;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.player.extractor.Source;
-import com.fongmi.android.tv.utils.Formatters;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.config.LiveConfig;
+import com.ikanbot.tv.api.parser.EpgParser;
+import com.ikanbot.tv.api.parser.LiveParser;
+import com.ikanbot.tv.bean.Channel;
+import com.ikanbot.tv.bean.Epg;
+import com.ikanbot.tv.bean.EpgData;
+import com.ikanbot.tv.bean.Group;
+import com.ikanbot.tv.bean.Live;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.player.extractor.Source;
+import com.ikanbot.tv.utils.Formatters;
 import com.github.catvod.net.OkHttp;
 
 import java.time.LocalDate;

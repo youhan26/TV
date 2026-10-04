@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.widget.TextView;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

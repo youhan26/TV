@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.impl;
+package com.ikanbot.tv.impl;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 
 import java.io.IOException;
 import java.util.concurrent.atomic.AtomicInteger;

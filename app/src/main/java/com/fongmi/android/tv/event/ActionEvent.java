@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.event;
+package com.ikanbot.tv.event;
 
-import com.fongmi.android.tv.BuildConfig;
+import com.ikanbot.tv.BuildConfig;
 
 public final class ActionEvent {
 

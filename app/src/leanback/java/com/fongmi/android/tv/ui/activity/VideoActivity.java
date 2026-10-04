@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -23,71 +23,70 @@ import androidx.media3.common.C;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Player;
 import androidx.media3.common.VideoSize;
+import com.ikanbot.tv.ui.custom.PlayerSeekView;
 import androidx.media3.ui.PlayerView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
 import com.bumptech.glide.request.transition.Transition;
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.DanmakuApi;
-import com.fongmi.android.tv.api.SiteApi;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Danmaku;
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.bean.Flag;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.bean.Keep;
-import com.fongmi.android.tv.bean.Parse;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.bean.Sub;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.databinding.ActivityVideoBinding;
-import com.fongmi.android.tv.db.AppDatabase;
-import com.fongmi.android.tv.event.RefreshEvent;
-import com.fongmi.android.tv.impl.CustomTarget;
-import com.fongmi.android.tv.model.VideoViewModel;
-import com.fongmi.android.tv.playback.PlaybackAction;
-import com.fongmi.android.tv.playback.PlaybackIntent;
-import com.fongmi.android.tv.playback.PlaybackReset;
-import com.fongmi.android.tv.playback.PlaybackResult;
-import com.fongmi.android.tv.playback.vod.VodDetailResult;
-import com.fongmi.android.tv.playback.vod.VodPlayRequest;
-import com.fongmi.android.tv.playback.vod.VodPlaybackController;
-import com.fongmi.android.tv.playback.vod.VodPlaybackHost;
-import com.fongmi.android.tv.playback.vod.VodPlaybackMedia;
-import com.fongmi.android.tv.player.media.PlaySpec;
-import com.fongmi.android.tv.service.PlaybackService;
-import com.fongmi.android.tv.setting.DanmakuSetting;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.SpeedSetting;
-import com.fongmi.android.tv.ui.adapter.ArrayAdapter;
-import com.fongmi.android.tv.ui.adapter.EpisodeAdapter;
-import com.fongmi.android.tv.ui.adapter.FlagAdapter;
-import com.fongmi.android.tv.ui.adapter.PartAdapter;
-import com.fongmi.android.tv.ui.adapter.QualityAdapter;
-import com.fongmi.android.tv.ui.adapter.QuickAdapter;
-import com.fongmi.android.tv.ui.custom.CustomKeyDownVod;
-import com.fongmi.android.tv.ui.custom.CustomMovement;
-import com.fongmi.android.tv.ui.dialog.ContentDialog;
-import com.fongmi.android.tv.ui.dialog.ParseDialog;
-import com.fongmi.android.tv.ui.dialog.PlayerEngineDialog;
-import com.fongmi.android.tv.ui.dialog.SpeedSettingDialog;
-import com.fongmi.android.tv.ui.dialog.TrackDialog;
-import com.fongmi.android.tv.utils.Clock;
-import com.fongmi.android.tv.utils.FileChooser;
-import com.fongmi.android.tv.utils.FileUtil;
-import com.fongmi.android.tv.utils.ImgUtil;
-import com.fongmi.android.tv.utils.KeyUtil;
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.android.tv.utils.PartUtil;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Sniffer;
-import com.fongmi.android.tv.utils.Traffic;
-import com.fongmi.android.tv.utils.UrlUtil;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.DanmakuApi;
+import com.ikanbot.tv.api.SiteApi;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Danmaku;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.bean.Flag;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.bean.Keep;
+import com.ikanbot.tv.bean.Parse;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.bean.Sub;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.databinding.ActivityVideoBinding;
+import com.ikanbot.tv.db.AppDatabase;
+import com.ikanbot.tv.event.RefreshEvent;
+import com.ikanbot.tv.impl.CustomTarget;
+import com.ikanbot.tv.model.VideoViewModel;
+import com.ikanbot.tv.playback.PlaybackAction;
+import com.ikanbot.tv.playback.PlaybackIntent;
+import com.ikanbot.tv.playback.PlaybackReset;
+import com.ikanbot.tv.playback.PlaybackResult;
+import com.ikanbot.tv.playback.vod.VodDetailResult;
+import com.ikanbot.tv.playback.vod.VodPlayRequest;
+import com.ikanbot.tv.playback.vod.VodPlaybackController;
+import com.ikanbot.tv.playback.vod.VodPlaybackHost;
+import com.ikanbot.tv.playback.vod.VodPlaybackMedia;
+import com.ikanbot.tv.player.media.PlaySpec;
+import com.ikanbot.tv.service.PlaybackService;
+import com.ikanbot.tv.setting.DanmakuSetting;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.SpeedSetting;
+import com.ikanbot.tv.ui.adapter.ArrayAdapter;
+import com.ikanbot.tv.ui.adapter.EpisodeAdapter;
+import com.ikanbot.tv.ui.adapter.FlagAdapter;
+import com.ikanbot.tv.ui.adapter.QualityAdapter;
+import com.ikanbot.tv.ui.adapter.QuickAdapter;
+import com.ikanbot.tv.ui.custom.CustomKeyDownVod;
+import com.ikanbot.tv.ui.custom.CustomMovement;
+import com.ikanbot.tv.ui.dialog.ContentDialog;
+import com.ikanbot.tv.ui.dialog.ParseDialog;
+import com.ikanbot.tv.ui.dialog.PlayerEngineDialog;
+import com.ikanbot.tv.ui.dialog.SpeedSettingDialog;
+import com.ikanbot.tv.ui.dialog.TrackDialog;
+import com.ikanbot.tv.utils.Clock;
+import com.ikanbot.tv.utils.FileChooser;
+import com.ikanbot.tv.utils.FileUtil;
+import com.ikanbot.tv.utils.ImgUtil;
+import com.ikanbot.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Sniffer;
+import com.ikanbot.tv.utils.Traffic;
+import com.ikanbot.tv.utils.UrlUtil;
+import com.ikanbot.tv.utils.Util;
 import com.github.bassaer.library.MDColor;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -107,7 +106,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
     private EpisodeAdapter mEpisodeAdapter;
     private QualityAdapter mQualityAdapter;
     private ArrayAdapter mArrayAdapter;
-    private PartAdapter mPartAdapter;
     private QuickAdapter mQuickAdapter;
     private ViewGroup.LayoutParams mFrameParams;
     private CustomKeyDownVod mKeyDown;
@@ -248,6 +246,10 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         return mBinding.player;
     }
 
+    @Override
+    protected PlayerSeekView getSeekView() {
+        return mBinding.control.seek;
+    }
 
     @Override
     protected void onServiceConnected() {
@@ -345,15 +347,13 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         mBinding.array.setHorizontalSpacing(ResUtil.dp2px(8));
         mBinding.array.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         mBinding.array.setAdapter(mArrayAdapter = new ArrayAdapter(this));
-        mBinding.part.setHorizontalSpacing(ResUtil.dp2px(8));
-        mBinding.part.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
-        mBinding.part.setAdapter(mPartAdapter = new PartAdapter(item -> mVod.search(item)));
         mBinding.quick.setHorizontalSpacing(ResUtil.dp2px(8));
         mBinding.quick.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         mBinding.quick.setAdapter(mQuickAdapter = new QuickAdapter(this));
     }
 
     private void setVideoView() {
+        setSeekNextFocusDown(R.id.next);
         setActionFocusBoundary(mBinding.control.action.getRoot());
         PlayerEngineDialog.setText(mBinding.control.action.player);
     }
@@ -551,7 +551,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
     private void renderVodMetadata(String name, String pic) {
         if (name.isEmpty() && pic.isEmpty()) return;
         if (!name.isEmpty()) mBinding.name.setText(name);
-        if (!name.isEmpty()) setPartAdapter();
         if (!pic.isEmpty()) setArtwork();
         updateKeep();
     }
@@ -619,7 +618,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         mBinding.control.action.ending.setText(history.getEnding() <= 0 ? getString(R.string.play_ed) : Util.timeMs(history.getEnding()));
         player().setSpeed(SpeedSetting.getPlayback());
         setScale(getScale());
-        setPartAdapter();
     }
 
     @Override
@@ -657,7 +655,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
 
     @Override
     public void onSearchStarted(String keyword) {
-        mBinding.part.setTag(keyword);
         mQuickAdapter.clear();
     }
 
@@ -782,24 +779,22 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
     }
 
     private int findFocusDown(int index) {
-        List<Integer> orders = Arrays.asList(R.id.flag, R.id.quality, R.id.episode, R.id.array, R.id.part, R.id.quick);
+        List<Integer> orders = Arrays.asList(R.id.array, R.id.flag, R.id.episode, R.id.quality, R.id.quick);
         for (int i = 0; i < orders.size(); i++) if (i > index) if (isVisible(findViewById(orders.get(i)))) return orders.get(i);
         return 0;
     }
 
     private int findFocusUp(int index) {
-        List<Integer> orders = Arrays.asList(R.id.flag, R.id.quality, R.id.episode, R.id.array, R.id.part, R.id.quick);
+        List<Integer> orders = Arrays.asList(R.id.array, R.id.flag, R.id.episode, R.id.quality, R.id.quick);
         for (int i = orders.size() - 1; i >= 0; i--) if (i < index) if (isVisible(findViewById(orders.get(i)))) return orders.get(i);
         return 0;
     }
 
     private void updateFocus() {
-        mPartAdapter.setNextFocusUp(findFocusUp(4));
         mEpisodeAdapter.setNextFocusUp(findFocusUp(2));
-        mFlagAdapter.setNextFocusDown(findFocusDown(0));
+        mFlagAdapter.setNextFocusDown(findFocusDown(1));
         mEpisodeAdapter.setNextFocusDown(findFocusDown(2));
         notifyItemChanged(mBinding.episode, mEpisodeAdapter);
-        notifyItemChanged(mBinding.part, mPartAdapter);
         notifyItemChanged(mBinding.flag, mFlagAdapter);
     }
 
@@ -1089,12 +1084,6 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
                 mBinding.player.setDefaultArtwork(errorDrawable);
             }
         });
-    }
-
-    private void setPartAdapter() {
-        mPartAdapter.addAll(PartUtil.split(mHistory.getVodName()));
-        mBinding.part.setVisibility(View.VISIBLE);
-        setR2Callback();
     }
 
     private void saveHistory(boolean exit) {

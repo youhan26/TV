@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.app.Dialog;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.utils.Util;
 import com.google.android.material.sidesheet.SideSheetDialog;
 
 public abstract class BaseSideSheetDialog extends AppCompatDialogFragment {

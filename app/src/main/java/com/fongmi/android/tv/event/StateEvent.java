@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.event;
+package com.ikanbot.tv.event;
 
 import org.greenrobot.eventbus.EventBus;
 

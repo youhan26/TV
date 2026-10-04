@@ -1,13 +1,13 @@
-package com.fongmi.android.tv.playback.vod;
+package com.ikanbot.tv.playback.vod;
 
 import androidx.annotation.Nullable;
 import androidx.media3.common.MediaMetadata;
 
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.bean.Flag;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Vod;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.bean.Flag;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Vod;
 
 import java.util.ArrayList;
 import java.util.HashSet;

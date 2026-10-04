@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.exo;
+package com.ikanbot.tv.player.exo;
 
 import androidx.annotation.NonNull;
 import androidx.media3.common.Format;
@@ -11,10 +11,10 @@ import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.audio.AudioSink;
 import androidx.media3.exoplayer.source.MediaSource;
 
-import com.fongmi.android.tv.player.effect.PlayerEffect;
-import com.fongmi.android.tv.player.engine.PlayerEngine;
-import com.fongmi.android.tv.player.media.MediaItemFactory;
-import com.fongmi.android.tv.player.media.PlaySpec;
+import com.ikanbot.tv.player.effect.PlayerEffect;
+import com.ikanbot.tv.player.engine.PlayerEngine;
+import com.ikanbot.tv.player.media.MediaItemFactory;
+import com.ikanbot.tv.player.media.PlaySpec;
 
 public class ExoPlayerEngine implements PlayerEngine, AnalyticsListener {
 

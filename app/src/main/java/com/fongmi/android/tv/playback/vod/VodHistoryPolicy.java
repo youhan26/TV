@@ -1,17 +1,17 @@
-package com.fongmi.android.tv.playback.vod;
+package com.ikanbot.tv.playback.vod;
 
 import android.text.TextUtils;
 
 import androidx.media3.common.C;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.bean.Flag;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.event.RefreshEvent;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.bean.Flag;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.event.RefreshEvent;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.utils.Task;
 
 public class VodHistoryPolicy {
 

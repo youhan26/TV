@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.extractor;
+package com.ikanbot.tv.player.extractor;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.net.Uri;
 import android.os.IBinder;
 import android.os.SystemClock;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.forcetech.Util;
 import com.github.catvod.net.OkHttp;
 import com.google.common.net.HttpHeaders;

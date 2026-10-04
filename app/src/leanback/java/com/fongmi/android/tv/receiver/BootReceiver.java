@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.receiver;
+package com.ikanbot.tv.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,8 +8,8 @@ import android.net.Network;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.api.config.LiveConfig;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.api.config.LiveConfig;
 
 public class BootReceiver extends BroadcastReceiver {
 

@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.impl;
+package com.ikanbot.tv.impl;
 
-import com.fongmi.android.tv.bean.Live;
+import com.ikanbot.tv.bean.Live;
 
 public interface LiveListener {
 

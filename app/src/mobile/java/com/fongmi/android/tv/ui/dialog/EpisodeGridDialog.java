@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -10,11 +10,11 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.databinding.DialogEpisodeGridBinding;
-import com.fongmi.android.tv.ui.adapter.EpisodeAdapter;
-import com.fongmi.android.tv.ui.fragment.EpisodeFragment;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.databinding.DialogEpisodeGridBinding;
+import com.ikanbot.tv.ui.adapter.EpisodeAdapter;
+import com.ikanbot.tv.ui.fragment.EpisodeFragment;
+import com.ikanbot.tv.utils.ResUtil;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 import java.util.ArrayList;

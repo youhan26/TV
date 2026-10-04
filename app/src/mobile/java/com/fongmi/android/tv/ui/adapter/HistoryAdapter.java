@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.databinding.AdapterVodBinding;
-import com.fongmi.android.tv.utils.ImgUtil;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.databinding.AdapterVodBinding;
+import com.ikanbot.tv.utils.ImgUtil;
 
 public class HistoryAdapter extends BaseDiffAdapter<History, HistoryAdapter.ViewHolder> {
 

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.browse;
+package com.ikanbot.tv.browse;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,8 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.MediaMetadata;
 
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.player.media.MediaItemFactory;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.player.media.MediaItemFactory;
 import com.google.common.collect.ImmutableList;
 
 import java.util.Map;

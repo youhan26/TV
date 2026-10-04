@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.exo;
+package com.ikanbot.tv.player.exo;
 
 import android.util.Log;
 
@@ -14,7 +14,7 @@ import androidx.media3.exoplayer.source.preload.PreloadException;
 import androidx.media3.exoplayer.source.preload.PreloadManagerListener;
 import androidx.media3.exoplayer.trackselection.TrackSelector;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 
 final class ExoPlayerSession {
 

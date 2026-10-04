@@ -1,12 +1,12 @@
-package com.fongmi.quickjs.method;
+package com.ikanbot.quickjs.method;
 
 import android.net.Uri;
 
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 
-import com.fongmi.quickjs.bean.Req;
-import com.fongmi.quickjs.utils.Connect;
+import com.ikanbot.quickjs.bean.Req;
+import com.ikanbot.quickjs.utils.Connect;
 import com.github.catvod.utils.Crypto;
 import com.github.catvod.Proxy;
 import com.github.catvod.utils.Trans;

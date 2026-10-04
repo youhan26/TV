@@ -1,7 +1,7 @@
-package com.fongmi.android.tv.setting;
+package com.ikanbot.tv.setting;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.utils.ResUtil;
 import com.github.catvod.utils.Prefers;
 
 public class Setting {

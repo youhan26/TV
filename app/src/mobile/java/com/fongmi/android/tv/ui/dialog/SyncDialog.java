@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,23 +15,23 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Config;
-import com.fongmi.android.tv.bean.Device;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.bean.Keep;
-import com.fongmi.android.tv.databinding.DialogDeviceBinding;
-import com.fongmi.android.tv.impl.Callback;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.activity.ScanActivity;
-import com.fongmi.android.tv.ui.adapter.DeviceAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.ScanTask;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Config;
+import com.ikanbot.tv.bean.Device;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.bean.Keep;
+import com.ikanbot.tv.databinding.DialogDeviceBinding;
+import com.ikanbot.tv.impl.Callback;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.activity.ScanActivity;
+import com.ikanbot.tv.ui.adapter.DeviceAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.ScanTask;
+import com.ikanbot.tv.utils.Task;
 import com.github.catvod.net.OkHttp;
 
 import java.io.IOException;

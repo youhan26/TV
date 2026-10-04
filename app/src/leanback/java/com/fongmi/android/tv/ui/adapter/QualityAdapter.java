@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.databinding.AdapterQualityBinding;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.databinding.AdapterQualityBinding;
 
 public class QualityAdapter extends RecyclerView.Adapter<QualityAdapter.ViewHolder> {
 

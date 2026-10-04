@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.util.Base64;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 import com.github.catvod.utils.Util;
 import com.google.gson.annotations.SerializedName;
 

@@ -1,12 +1,12 @@
-package com.fongmi.android.tv.setting;
+package com.ikanbot.tv.setting;
 
 import android.graphics.Typeface;
 import android.text.TextUtils;
 
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.player.subtitle.ExternalFont;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.player.subtitle.ExternalFont;
 import com.github.catvod.utils.Prefers;
 
 public class DanmakuSetting {

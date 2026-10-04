@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.annotation.SuppressLint;
 import android.view.KeyEvent;
@@ -9,18 +9,18 @@ import android.view.ViewGroup;
 
 import androidx.media3.common.Format;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogAudioSettingBinding;
-import com.fongmi.android.tv.databinding.ViewSettingSliderBinding;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.player.effect.audio.AudioChannelMode;
-import com.fongmi.android.tv.player.effect.audio.AudioEffectBands;
-import com.fongmi.android.tv.player.effect.audio.AudioEffectConfig;
-import com.fongmi.android.tv.player.effect.audio.AudioEffectPreset;
-import com.fongmi.android.tv.player.effect.audio.AudioPresetLevels;
-import com.fongmi.android.tv.setting.AudioSetting;
-import com.fongmi.android.tv.utils.SliderUtil;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogAudioSettingBinding;
+import com.ikanbot.tv.databinding.ViewSettingSliderBinding;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.player.effect.audio.AudioChannelMode;
+import com.ikanbot.tv.player.effect.audio.AudioEffectBands;
+import com.ikanbot.tv.player.effect.audio.AudioEffectConfig;
+import com.ikanbot.tv.player.effect.audio.AudioEffectPreset;
+import com.ikanbot.tv.player.effect.audio.AudioPresetLevels;
+import com.ikanbot.tv.setting.AudioSetting;
+import com.ikanbot.tv.utils.SliderUtil;
+import com.ikanbot.tv.utils.Util;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.materialswitch.MaterialSwitch;

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -17,14 +17,14 @@ import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.api.config.RuleConfig;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.impl.ParseCallback;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.dialog.WebDialog;
-import com.fongmi.android.tv.utils.Sniffer;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.api.config.RuleConfig;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.impl.ParseCallback;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.dialog.WebDialog;
+import com.ikanbot.tv.utils.Sniffer;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderDebug;
 import com.github.catvod.utils.Util;

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.DialogInterface;
 import android.text.TextUtils;
@@ -7,10 +7,10 @@ import android.view.inputmethod.EditorInfo;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogSubtitleApiBinding;
-import com.fongmi.android.tv.impl.SubtitleListener;
-import com.fongmi.android.tv.setting.SubtitleSetting;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogSubtitleApiBinding;
+import com.ikanbot.tv.impl.SubtitleListener;
+import com.ikanbot.tv.setting.SubtitleSetting;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class SubtitleApiDialog extends BaseAlertDialog {

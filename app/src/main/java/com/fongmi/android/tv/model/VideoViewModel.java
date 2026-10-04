@@ -1,19 +1,19 @@
-package com.fongmi.android.tv.model;
+package com.ikanbot.tv.model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.api.SiteApi;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.exception.ExtractException;
-import com.fongmi.android.tv.playback.PlaybackResult;
-import com.fongmi.android.tv.playback.vod.VodDataSource;
-import com.fongmi.android.tv.playback.vod.VodDetailResult;
-import com.fongmi.android.tv.playback.vod.VodPlayRequest;
-import com.fongmi.android.tv.playback.vod.VodPlaybackController;
-import com.fongmi.android.tv.playback.vod.VodPlaybackHost;
-import com.fongmi.android.tv.playback.vod.VodPlaybackState;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.api.SiteApi;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.exception.ExtractException;
+import com.ikanbot.tv.playback.PlaybackResult;
+import com.ikanbot.tv.playback.vod.VodDataSource;
+import com.ikanbot.tv.playback.vod.VodDetailResult;
+import com.ikanbot.tv.playback.vod.VodPlayRequest;
+import com.ikanbot.tv.playback.vod.VodPlaybackController;
+import com.ikanbot.tv.playback.vod.VodPlaybackHost;
+import com.ikanbot.tv.playback.vod.VodPlaybackState;
 
 public class VideoViewModel extends SiteViewModel implements VodDataSource {
 

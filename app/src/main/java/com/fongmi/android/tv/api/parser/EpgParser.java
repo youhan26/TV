@@ -1,16 +1,16 @@
-package com.fongmi.android.tv.api.parser;
+package com.ikanbot.tv.api.parser;
 
 import android.util.Log;
 
-import com.fongmi.android.tv.bean.Channel;
-import com.fongmi.android.tv.bean.Epg;
-import com.fongmi.android.tv.bean.EpgData;
-import com.fongmi.android.tv.bean.Live;
-import com.fongmi.android.tv.bean.Tv;
-import com.fongmi.android.tv.utils.Download;
-import com.fongmi.android.tv.utils.FileUtil;
-import com.fongmi.android.tv.utils.Formatters;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.bean.Channel;
+import com.ikanbot.tv.bean.Epg;
+import com.ikanbot.tv.bean.EpgData;
+import com.ikanbot.tv.bean.Live;
+import com.ikanbot.tv.bean.Tv;
+import com.ikanbot.tv.utils.Download;
+import com.ikanbot.tv.utils.FileUtil;
+import com.ikanbot.tv.utils.Formatters;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.utils.Path;
 
 import org.simpleframework.xml.core.Persister;

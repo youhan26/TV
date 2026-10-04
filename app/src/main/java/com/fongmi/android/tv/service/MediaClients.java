@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.service;
+package com.ikanbot.tv.service;
 
 import androidx.annotation.NonNull;
 import androidx.media3.session.MediaSession;

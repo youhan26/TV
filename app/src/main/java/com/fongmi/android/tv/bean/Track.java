@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 
@@ -6,7 +6,7 @@ import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-import com.fongmi.android.tv.db.AppDatabase;
+import com.ikanbot.tv.db.AppDatabase;
 
 import java.util.Collections;
 import java.util.List;

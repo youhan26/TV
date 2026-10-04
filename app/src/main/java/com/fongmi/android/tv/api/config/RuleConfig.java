@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.api.config;
+package com.ikanbot.tv.api.config;
 
-import com.fongmi.android.tv.bean.Rule;
+import com.ikanbot.tv.bean.Rule;
 
 import java.util.ArrayList;
 import java.util.List;

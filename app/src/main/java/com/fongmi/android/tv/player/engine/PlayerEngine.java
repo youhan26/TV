@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.engine;
+package com.ikanbot.tv.player.engine;
 
 import androidx.annotation.Nullable;
 import androidx.media3.common.C;
@@ -7,9 +7,9 @@ import androidx.media3.common.Player;
 import androidx.media3.common.TrackSelectionOverride;
 import androidx.media3.ui.PlayerView;
 
-import com.fongmi.android.tv.bean.Sub;
-import com.fongmi.android.tv.player.effect.PlayerEffect;
-import com.fongmi.android.tv.player.media.PlaySpec;
+import com.ikanbot.tv.bean.Sub;
+import com.ikanbot.tv.player.effect.PlayerEffect;
+import com.ikanbot.tv.player.media.PlaySpec;
 
 import java.util.List;
 

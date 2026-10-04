@@ -1,15 +1,15 @@
-package com.fongmi.android.tv.api;
+package com.ikanbot.tv.api;
 
 import android.net.Uri;
 import android.text.TextUtils;
 
 import androidx.collection.ArrayMap;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Danmaku;
-import com.fongmi.android.tv.impl.ApiCallback;
-import com.fongmi.android.tv.setting.DanmakuSetting;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Danmaku;
+import com.ikanbot.tv.impl.ApiCallback;
+import com.ikanbot.tv.setting.DanmakuSetting;
+import com.ikanbot.tv.utils.ResUtil;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Trans;
 

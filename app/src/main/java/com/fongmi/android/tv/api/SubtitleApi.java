@@ -1,17 +1,17 @@
-package com.fongmi.android.tv.api;
+package com.ikanbot.tv.api;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.AssrtResponse;
-import com.fongmi.android.tv.bean.SubtitleSearchItem;
-import com.fongmi.android.tv.bean.SubtitleSearchPage;
-import com.fongmi.android.tv.impl.ApiCallback;
-import com.fongmi.android.tv.setting.SubtitleSetting;
-import com.fongmi.android.tv.utils.Download;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.SubtitleArchive;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.AssrtResponse;
+import com.ikanbot.tv.bean.SubtitleSearchItem;
+import com.ikanbot.tv.bean.SubtitleSearchPage;
+import com.ikanbot.tv.impl.ApiCallback;
+import com.ikanbot.tv.setting.SubtitleSetting;
+import com.ikanbot.tv.utils.Download;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.SubtitleArchive;
+import com.ikanbot.tv.utils.Task;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Trans;
 

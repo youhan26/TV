@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.DialogPlayerEngineBinding;
-import com.fongmi.android.tv.playback.PlaybackAction;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.ui.activity.PlaybackActivity;
+import com.ikanbot.tv.databinding.DialogPlayerEngineBinding;
+import com.ikanbot.tv.playback.PlaybackAction;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.ui.activity.PlaybackActivity;
 
 public final class PlayerEngineDialog extends BaseBottomSheetDialog {
 

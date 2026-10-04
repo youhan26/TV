@@ -1,15 +1,15 @@
-package com.fongmi.android.tv.playback.vod;
+package com.ikanbot.tv.playback.vod;
 
 import androidx.media3.common.MediaMetadata;
 
-import com.fongmi.android.tv.api.DanmakuApi;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Danmaku;
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.player.media.MediaItemFactory;
-import com.fongmi.android.tv.setting.DanmakuSetting;
+import com.ikanbot.tv.api.DanmakuApi;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Danmaku;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.player.media.MediaItemFactory;
+import com.ikanbot.tv.setting.DanmakuSetting;
 
 import java.util.function.Consumer;
 

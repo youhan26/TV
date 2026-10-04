@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.playback.vod;
+package com.ikanbot.tv.playback.vod;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.bean.Result;
+import com.ikanbot.tv.bean.Result;
 
 public record VodDetailResult(String key, String id, Result result) {
 

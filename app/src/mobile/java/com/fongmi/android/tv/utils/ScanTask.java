@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.bean.Device;
-import com.fongmi.android.tv.server.Server;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.bean.Device;
+import com.ikanbot.tv.server.Server;
 import com.github.catvod.net.OkHttp;
 
 import java.util.List;

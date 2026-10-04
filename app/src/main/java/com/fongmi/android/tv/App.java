@@ -1,4 +1,4 @@
-package com.fongmi.android.tv;
+package com.ikanbot.tv;
 
 import android.app.Activity;
 import android.app.Application;
@@ -12,8 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.os.HandlerCompat;
 
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.hook.Hook;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.hook.Hook;
 import com.github.catvod.Init;
 import com.google.gson.Gson;
 

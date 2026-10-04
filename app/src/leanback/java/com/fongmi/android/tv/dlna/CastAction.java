@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.dlna;
+package com.ikanbot.tv.dlna;
 
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.fongmi.android.tv.bean.Result;
+import com.ikanbot.tv.bean.Result;
 
 import java.util.HashMap;
 import java.util.Map;

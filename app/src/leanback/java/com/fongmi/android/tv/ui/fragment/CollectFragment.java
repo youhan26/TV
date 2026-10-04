@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.fragment;
+package com.ikanbot.tv.ui.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,21 +13,21 @@ import androidx.leanback.widget.ListRow;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.Product;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Collect;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.databinding.FragmentTypeBinding;
-import com.fongmi.android.tv.model.SiteViewModel;
-import com.fongmi.android.tv.ui.activity.VideoActivity;
-import com.fongmi.android.tv.ui.activity.VodActivity;
-import com.fongmi.android.tv.ui.base.BaseFragment;
-import com.fongmi.android.tv.ui.custom.CustomRowPresenter;
-import com.fongmi.android.tv.ui.custom.CustomScroller;
-import com.fongmi.android.tv.ui.custom.CustomSelector;
-import com.fongmi.android.tv.ui.presenter.VodPresenter;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.Product;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Collect;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.databinding.FragmentTypeBinding;
+import com.ikanbot.tv.model.SiteViewModel;
+import com.ikanbot.tv.ui.activity.VideoActivity;
+import com.ikanbot.tv.ui.activity.VodActivity;
+import com.ikanbot.tv.ui.base.BaseFragment;
+import com.ikanbot.tv.ui.custom.CustomRowPresenter;
+import com.ikanbot.tv.ui.custom.CustomScroller;
+import com.ikanbot.tv.ui.custom.CustomSelector;
+import com.ikanbot.tv.ui.presenter.VodPresenter;
+import com.ikanbot.tv.utils.ResUtil;
 import com.google.common.collect.Lists;
 
 import java.util.ArrayList;

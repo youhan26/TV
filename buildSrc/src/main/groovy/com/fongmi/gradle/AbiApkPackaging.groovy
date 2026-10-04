@@ -1,4 +1,4 @@
-package com.fongmi.gradle
+package com.ikanbot.gradle
 
 import org.gradle.api.Project
 

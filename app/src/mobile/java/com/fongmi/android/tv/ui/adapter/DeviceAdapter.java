@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,9 +6,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Device;
-import com.fongmi.android.tv.databinding.AdapterDeviceBinding;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Device;
+import com.ikanbot.tv.databinding.AdapterDeviceBinding;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,14 +1,14 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.api.config.LiveConfig;
-import com.fongmi.android.tv.bean.Live;
-import com.fongmi.android.tv.databinding.DialogLiveBinding;
-import com.fongmi.android.tv.impl.LiveListener;
-import com.fongmi.android.tv.ui.adapter.LiveAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.api.config.LiveConfig;
+import com.ikanbot.tv.bean.Live;
+import com.ikanbot.tv.databinding.DialogLiveBinding;
+import com.ikanbot.tv.impl.LiveListener;
+import com.ikanbot.tv.ui.adapter.LiveAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class LiveDialog extends BaseAlertDialog implements LiveAdapter.OnClickListener {

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.Manifest;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.provider.Settings;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
-import com.fongmi.android.tv.impl.PermissionCallback;
+import com.ikanbot.tv.impl.PermissionCallback;
 import com.permissionx.guolindev.PermissionMediator;
 import com.permissionx.guolindev.PermissionX;
 

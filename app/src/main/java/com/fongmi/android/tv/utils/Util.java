@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.app.Activity;
 import android.content.ClipData;
@@ -19,9 +19,9 @@ import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.BuildConfig;
-import com.fongmi.android.tv.R;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.BuildConfig;
+import com.ikanbot.tv.R;
 import com.github.catvod.utils.Shell;
 
 import java.net.NetworkInterface;

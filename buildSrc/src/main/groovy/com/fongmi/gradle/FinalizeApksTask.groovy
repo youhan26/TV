@@ -1,4 +1,4 @@
-package com.fongmi.gradle
+package com.ikanbot.gradle
 
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry
 import org.apache.commons.compress.archivers.zip.ZipArchiveOutputStream

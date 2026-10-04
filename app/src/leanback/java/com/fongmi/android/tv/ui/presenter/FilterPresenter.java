@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.presenter;
+package com.ikanbot.tv.ui.presenter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.leanback.widget.Presenter;
 
-import com.fongmi.android.tv.bean.Value;
-import com.fongmi.android.tv.databinding.AdapterFilterBinding;
+import com.ikanbot.tv.bean.Value;
+import com.ikanbot.tv.databinding.AdapterFilterBinding;
 
 public class FilterPresenter extends Presenter {
 

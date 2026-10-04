@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.setting;
+package com.ikanbot.tv.setting;
 
 import com.github.catvod.utils.Prefers;
 import com.google.android.material.slider.Slider;

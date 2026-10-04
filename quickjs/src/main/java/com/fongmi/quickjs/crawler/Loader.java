@@ -1,4 +1,4 @@
-package com.fongmi.quickjs.crawler;
+package com.ikanbot.quickjs.crawler;
 
 import com.whl.quickjs.android.QuickJSLoader;
 

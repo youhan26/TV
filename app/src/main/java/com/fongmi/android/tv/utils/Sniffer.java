@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.net.Uri;
 import android.text.SpannableStringBuilder;
@@ -6,9 +6,9 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.ClickableSpan;
 
-import com.fongmi.android.tv.api.config.RuleConfig;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Rule;
+import com.ikanbot.tv.api.config.RuleConfig;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Rule;
 import com.github.catvod.utils.Json;
 import com.github.catvod.utils.Trans;
 import com.github.catvod.utils.Util;

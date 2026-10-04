@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.exception;
+package com.ikanbot.tv.exception;
 
 import androidx.annotation.Nullable;
 

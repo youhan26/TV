@@ -1,12 +1,12 @@
-package com.fongmi.android.tv.player.extractor;
+package com.ikanbot.tv.player.extractor;
 
 import android.net.Uri;
 
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.bean.Flag;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.bean.Flag;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.utils.Task;
 
 import java.util.ArrayList;
 import java.util.Iterator;

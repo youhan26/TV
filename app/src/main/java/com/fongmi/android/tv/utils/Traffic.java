@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.net.TrafficStats;
 import android.view.View;
 import android.widget.TextView;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 
 import java.text.DecimalFormat;
 

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.fragment;
+package com.ikanbot.tv.ui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,22 +12,22 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.Product;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.bean.Style;
-import com.fongmi.android.tv.bean.Value;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.databinding.FragmentTypeBinding;
-import com.fongmi.android.tv.model.SiteViewModel;
-import com.fongmi.android.tv.ui.activity.SearchActivity;
-import com.fongmi.android.tv.ui.activity.VideoActivity;
-import com.fongmi.android.tv.ui.adapter.VodAdapter;
-import com.fongmi.android.tv.ui.base.BaseFragment;
-import com.fongmi.android.tv.ui.custom.CustomScroller;
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.Product;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.bean.Style;
+import com.ikanbot.tv.bean.Value;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.databinding.FragmentTypeBinding;
+import com.ikanbot.tv.model.SiteViewModel;
+import com.ikanbot.tv.ui.activity.SearchActivity;
+import com.ikanbot.tv.ui.activity.VideoActivity;
+import com.ikanbot.tv.ui.adapter.VodAdapter;
+import com.ikanbot.tv.ui.base.BaseFragment;
+import com.ikanbot.tv.ui.custom.CustomScroller;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.tv.utils.ResUtil;
 
 import java.util.HashMap;
 

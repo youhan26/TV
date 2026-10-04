@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -13,9 +13,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.DialogPassBinding;
-import com.fongmi.android.tv.impl.PassListener;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.databinding.DialogPassBinding;
+import com.ikanbot.tv.impl.PassListener;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class PassDialog extends BaseBottomSheetDialog {
 

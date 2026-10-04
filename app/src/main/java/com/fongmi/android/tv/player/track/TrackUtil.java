@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.track;
+package com.ikanbot.tv.player.track;
 
 import android.text.TextUtils;
 
@@ -11,7 +11,7 @@ import androidx.media3.common.TrackSelectionOverride;
 import androidx.media3.common.TrackSelectionParameters;
 import androidx.media3.common.Tracks;
 
-import com.fongmi.android.tv.bean.Track;
+import com.ikanbot.tv.bean.Track;
 
 import java.util.HashMap;
 import java.util.List;

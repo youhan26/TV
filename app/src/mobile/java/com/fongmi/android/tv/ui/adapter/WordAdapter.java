@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.bean.Word;
-import com.fongmi.android.tv.databinding.AdapterSearchWordBinding;
+import com.ikanbot.tv.bean.Word;
+import com.ikanbot.tv.databinding.AdapterSearchWordBinding;
 
 public class WordAdapter extends BaseDiffAdapter<Word.Data, WordAdapter.ViewHolder> {
 

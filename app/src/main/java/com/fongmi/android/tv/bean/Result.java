@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,15 +6,15 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.gson.DanmakuAdapter;
-import com.fongmi.android.tv.gson.FilterAdapter;
-import com.fongmi.android.tv.gson.HeaderAdapter;
-import com.fongmi.android.tv.gson.MsgAdapter;
-import com.fongmi.android.tv.gson.UrlAdapter;
-import com.fongmi.android.tv.setting.DanmakuSetting;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.gson.DanmakuAdapter;
+import com.ikanbot.tv.gson.FilterAdapter;
+import com.ikanbot.tv.gson.HeaderAdapter;
+import com.ikanbot.tv.gson.MsgAdapter;
+import com.ikanbot.tv.gson.UrlAdapter;
+import com.ikanbot.tv.setting.DanmakuSetting;
+import com.ikanbot.tv.utils.Util;
 import com.github.catvod.utils.Trans;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;

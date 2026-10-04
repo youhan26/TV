@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.impl;
+package com.ikanbot.tv.impl;
 
 import java.util.Map;
 

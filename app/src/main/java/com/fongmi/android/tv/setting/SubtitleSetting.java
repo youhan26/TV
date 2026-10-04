@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.setting;
+package com.ikanbot.tv.setting;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,9 +10,9 @@ import androidx.annotation.Nullable;
 import androidx.media3.ui.CaptionStyleCompat;
 import androidx.media3.ui.SubtitleView;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.player.subtitle.ExternalFont;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.player.subtitle.ExternalFont;
 import com.github.catvod.utils.Prefers;
 
 public class SubtitleSetting {

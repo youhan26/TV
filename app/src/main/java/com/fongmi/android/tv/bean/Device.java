@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 
@@ -9,13 +9,13 @@ import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Product;
-import com.fongmi.android.tv.db.AppDatabase;
-import com.fongmi.android.tv.impl.Diffable;
-import com.fongmi.android.tv.server.Server;
-import com.fongmi.android.tv.utils.UrlUtil;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Product;
+import com.ikanbot.tv.db.AppDatabase;
+import com.ikanbot.tv.impl.Diffable;
+import com.ikanbot.tv.server.Server;
+import com.ikanbot.tv.utils.UrlUtil;
+import com.ikanbot.tv.utils.Util;
 import com.google.gson.annotations.SerializedName;
 
 import org.jupnp.model.meta.RemoteDevice;

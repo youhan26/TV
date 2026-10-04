@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.KeyUtil;
 
 public class CustomLeftRightLayout extends LinearLayout {
 

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.gson;
+package com.ikanbot.tv.gson;
 
 import com.github.catvod.utils.Json;
 import com.google.gson.JsonDeserializationContext;

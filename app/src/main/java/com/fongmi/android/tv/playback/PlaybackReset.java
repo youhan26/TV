@@ -1,7 +1,7 @@
-package com.fongmi.android.tv.playback;
+package com.ikanbot.tv.playback;
 
-import com.fongmi.android.tv.bean.Track;
-import com.fongmi.android.tv.player.PlayerManager;
+import com.ikanbot.tv.bean.Track;
+import com.ikanbot.tv.player.PlayerManager;
 
 public final class PlaybackReset {
 

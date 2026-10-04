@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.app.Activity;
 import android.content.ContentResolver;
@@ -19,9 +19,9 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.ui.activity.FileActivity;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.ui.activity.FileActivity;
 import com.github.catvod.utils.Crypto;
 import com.github.catvod.utils.Path;
 

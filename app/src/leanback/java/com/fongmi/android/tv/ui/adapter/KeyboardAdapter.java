@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.AdapterKeyboardIconBinding;
-import com.fongmi.android.tv.databinding.AdapterKeyboardTextBinding;
-import com.fongmi.android.tv.setting.Setting;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.AdapterKeyboardIconBinding;
+import com.ikanbot.tv.databinding.AdapterKeyboardTextBinding;
+import com.ikanbot.tv.setting.Setting;
 
 import java.util.ArrayList;
 import java.util.Arrays;

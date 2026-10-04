@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.fragment;
+package com.ikanbot.tv.ui.fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +9,13 @@ import androidx.annotation.Nullable;
 import androidx.media3.common.DolbyVisionOutputPolicy;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.FragmentSettingDecodeBinding;
-import com.fongmi.android.tv.setting.DecodeSetting;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.base.BaseFragment;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.FragmentSettingDecodeBinding;
+import com.ikanbot.tv.setting.DecodeSetting;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.base.BaseFragment;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class SettingDecodeFragment extends BaseFragment {
 

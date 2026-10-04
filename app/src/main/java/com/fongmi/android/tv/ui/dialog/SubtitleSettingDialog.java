@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -11,11 +11,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.media3.ui.SubtitleView;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.DialogSubtitleSettingBinding;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.player.subtitle.ExternalFont;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.databinding.DialogSubtitleSettingBinding;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.player.subtitle.ExternalFont;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Util;
 
 public final class SubtitleSettingDialog {
 

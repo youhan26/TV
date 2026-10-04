@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.player.effect;
+package com.ikanbot.tv.player.effect;
 
-import com.fongmi.android.tv.player.effect.audio.AudioEffectBands;
-import com.fongmi.android.tv.player.engine.PlayerEngine;
-import com.fongmi.android.tv.setting.AudioSetting;
-import com.fongmi.android.tv.setting.SpeedSetting;
-import com.fongmi.android.tv.setting.VideoSetting;
+import com.ikanbot.tv.player.effect.audio.AudioEffectBands;
+import com.ikanbot.tv.player.engine.PlayerEngine;
+import com.ikanbot.tv.setting.AudioSetting;
+import com.ikanbot.tv.setting.SpeedSetting;
+import com.ikanbot.tv.setting.VideoSetting;
 
 import java.util.function.Supplier;
 

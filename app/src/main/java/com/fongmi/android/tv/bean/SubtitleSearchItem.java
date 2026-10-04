@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.player.track.TrackUtil;
-import com.fongmi.android.tv.utils.SubtitleArchive;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.player.track.TrackUtil;
+import com.ikanbot.tv.utils.SubtitleArchive;
+import com.ikanbot.tv.utils.UrlUtil;
 
 import java.io.File;
 import java.util.ArrayList;

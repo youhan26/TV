@@ -1,7 +1,7 @@
-package com.fongmi.android.tv.api.loader;
+package com.ikanbot.tv.api.loader;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.chaquo.Loader;
+import com.ikanbot.tv.App;
+import com.ikanbot.chaquo.Loader;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.crawler.SpiderNull;
 

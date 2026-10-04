@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.media;
+package com.ikanbot.tv.player.media;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,16 +9,16 @@ import androidx.media3.common.MediaItem;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.util.Util;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.BuildConfig;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Drm;
-import com.fongmi.android.tv.bean.Sub;
-import com.fongmi.android.tv.player.track.LangUtil;
-import com.fongmi.android.tv.player.track.TrackUtil;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.utils.ImgUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.BuildConfig;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Drm;
+import com.ikanbot.tv.bean.Sub;
+import com.ikanbot.tv.player.track.LangUtil;
+import com.ikanbot.tv.player.track.TrackUtil;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.utils.ImgUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 import java.nio.charset.StandardCharsets;
 import java.util.List;

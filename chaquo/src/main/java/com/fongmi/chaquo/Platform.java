@@ -1,4 +1,4 @@
-package com.fongmi.chaquo;
+package com.ikanbot.chaquo;
 
 import android.content.Context;
 import android.content.SharedPreferences;

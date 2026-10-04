@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.fragment;
+package com.ikanbot.tv.ui.fragment;
 
 import static androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_OPEN;
 
@@ -23,18 +23,18 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Word;
-import com.fongmi.android.tv.databinding.FragmentSearchBinding;
-import com.fongmi.android.tv.impl.Callback;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.adapter.RecordAdapter;
-import com.fongmi.android.tv.ui.adapter.WordAdapter;
-import com.fongmi.android.tv.ui.base.BaseFragment;
-import com.fongmi.android.tv.ui.custom.CustomTextListener;
-import com.fongmi.android.tv.ui.dialog.SiteDialog;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Word;
+import com.ikanbot.tv.databinding.FragmentSearchBinding;
+import com.ikanbot.tv.impl.Callback;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.adapter.RecordAdapter;
+import com.ikanbot.tv.ui.adapter.WordAdapter;
+import com.ikanbot.tv.ui.base.BaseFragment;
+import com.ikanbot.tv.ui.custom.CustomTextListener;
+import com.ikanbot.tv.ui.dialog.SiteDialog;
+import com.ikanbot.tv.utils.Util;
 import com.github.catvod.net.OkHttp;
 import com.google.android.flexbox.FlexDirection;
 import com.google.android.flexbox.FlexboxLayoutManager;

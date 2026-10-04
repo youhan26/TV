@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.effect.audio;
+package com.ikanbot.tv.player.effect.audio;
 
 import android.media.audiofx.DynamicsProcessing;
 import android.os.Build;
@@ -10,7 +10,7 @@ import androidx.media3.common.Format;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.ExoPlayer;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 
 import java.util.Arrays;
 

@@ -1,11 +1,11 @@
-package com.fongmi.android.tv.playback;
+package com.ikanbot.tv.playback;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.view.Surface;
 
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 public final class PlaybackOrientation {
 

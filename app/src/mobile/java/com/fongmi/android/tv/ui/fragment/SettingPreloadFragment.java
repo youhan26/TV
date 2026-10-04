@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.fragment;
+package com.ikanbot.tv.ui.fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,14 +8,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.FragmentSettingPreloadBinding;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.PreloadSetting;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.base.BaseFragment;
-import com.fongmi.android.tv.ui.dialog.PreloadDialog;
-import com.fongmi.android.tv.utils.FileUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.FragmentSettingPreloadBinding;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.PreloadSetting;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.base.BaseFragment;
+import com.ikanbot.tv.ui.dialog.PreloadDialog;
+import com.ikanbot.tv.utils.FileUtil;
 
 public class SettingPreloadFragment extends BaseFragment {
 

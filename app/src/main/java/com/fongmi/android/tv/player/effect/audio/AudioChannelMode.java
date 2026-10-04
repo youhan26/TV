@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.effect.audio;
+package com.ikanbot.tv.player.effect.audio;
 
 public final class AudioChannelMode {
 

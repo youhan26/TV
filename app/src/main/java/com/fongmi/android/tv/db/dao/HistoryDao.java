@@ -1,9 +1,9 @@
-package com.fongmi.android.tv.db.dao;
+package com.ikanbot.tv.db.dao;
 
 import androidx.room.Dao;
 import androidx.room.Query;
 
-import com.fongmi.android.tv.bean.History;
+import com.ikanbot.tv.bean.History;
 
 import java.util.List;
 

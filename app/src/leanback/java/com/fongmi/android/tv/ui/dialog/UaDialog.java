@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.text.TextUtils;
 import android.view.View;
@@ -7,15 +7,15 @@ import android.view.inputmethod.EditorInfo;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogUaBinding;
-import com.fongmi.android.tv.event.ServerEvent;
-import com.fongmi.android.tv.impl.UaListener;
-import com.fongmi.android.tv.server.Server;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.custom.CustomTextListener;
-import com.fongmi.android.tv.utils.QRCode;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogUaBinding;
+import com.ikanbot.tv.event.ServerEvent;
+import com.ikanbot.tv.impl.UaListener;
+import com.ikanbot.tv.server.Server;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.custom.CustomTextListener;
+import com.ikanbot.tv.utils.QRCode;
+import com.ikanbot.tv.utils.ResUtil;
 import com.github.catvod.utils.Util;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 

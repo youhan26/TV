@@ -1,17 +1,17 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogSpeedBinding;
-import com.fongmi.android.tv.setting.PreloadSetting;
-import com.fongmi.android.tv.ui.activity.SettingPreloadActivity;
-import com.fongmi.android.tv.utils.FileUtil;
-import com.fongmi.android.tv.utils.KeyUtil;
-import com.fongmi.android.tv.utils.SliderUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogSpeedBinding;
+import com.ikanbot.tv.setting.PreloadSetting;
+import com.ikanbot.tv.ui.activity.SettingPreloadActivity;
+import com.ikanbot.tv.utils.FileUtil;
+import com.ikanbot.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.SliderUtil;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class PreloadDialog extends BaseAlertDialog {

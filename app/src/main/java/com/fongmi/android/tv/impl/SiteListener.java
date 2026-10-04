@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.impl;
+package com.ikanbot.tv.impl;
 
-import com.fongmi.android.tv.bean.Site;
+import com.ikanbot.tv.bean.Site;
 
 public interface SiteListener {
 

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,57 +16,58 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Player;
 import androidx.media3.common.VideoSize;
+import com.ikanbot.tv.ui.custom.PlayerSeekView;
 import androidx.media3.ui.PlayerView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
 import com.bumptech.glide.request.transition.Transition;
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.config.LiveConfig;
-import com.fongmi.android.tv.bean.Channel;
-import com.fongmi.android.tv.bean.Config;
-import com.fongmi.android.tv.bean.Epg;
-import com.fongmi.android.tv.bean.EpgData;
-import com.fongmi.android.tv.bean.Group;
-import com.fongmi.android.tv.bean.Keep;
-import com.fongmi.android.tv.bean.Live;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.databinding.ActivityLiveBinding;
-import com.fongmi.android.tv.event.RefreshEvent;
-import com.fongmi.android.tv.impl.Callback;
-import com.fongmi.android.tv.impl.ConfigListener;
-import com.fongmi.android.tv.impl.CustomTarget;
-import com.fongmi.android.tv.impl.LiveListener;
-import com.fongmi.android.tv.impl.PassListener;
-import com.fongmi.android.tv.model.LiveViewModel;
-import com.fongmi.android.tv.playback.PlaybackAction;
-import com.fongmi.android.tv.playback.PlaybackReset;
-import com.fongmi.android.tv.playback.PlaybackResult;
-import com.fongmi.android.tv.playback.live.LivePlayRequest;
-import com.fongmi.android.tv.playback.live.LivePlaybackController;
-import com.fongmi.android.tv.playback.live.LivePlaybackHost;
-import com.fongmi.android.tv.player.extractor.Source;
-import com.fongmi.android.tv.service.PlaybackService;
-import com.fongmi.android.tv.setting.LiveSetting;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.ui.adapter.ChannelAdapter;
-import com.fongmi.android.tv.ui.adapter.EpgDataAdapter;
-import com.fongmi.android.tv.ui.adapter.GroupAdapter;
-import com.fongmi.android.tv.ui.custom.CustomKeyDownLive;
-import com.fongmi.android.tv.ui.custom.CustomLiveListView;
-import com.fongmi.android.tv.ui.dialog.HistoryDialog;
-import com.fongmi.android.tv.ui.dialog.LiveDialog;
-import com.fongmi.android.tv.ui.dialog.PassDialog;
-import com.fongmi.android.tv.ui.dialog.PlayerEngineDialog;
-import com.fongmi.android.tv.ui.dialog.SpeedSettingDialog;
-import com.fongmi.android.tv.ui.dialog.TrackDialog;
-import com.fongmi.android.tv.utils.Clock;
-import com.fongmi.android.tv.utils.ImgUtil;
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Traffic;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.config.LiveConfig;
+import com.ikanbot.tv.bean.Channel;
+import com.ikanbot.tv.bean.Config;
+import com.ikanbot.tv.bean.Epg;
+import com.ikanbot.tv.bean.EpgData;
+import com.ikanbot.tv.bean.Group;
+import com.ikanbot.tv.bean.Keep;
+import com.ikanbot.tv.bean.Live;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.databinding.ActivityLiveBinding;
+import com.ikanbot.tv.event.RefreshEvent;
+import com.ikanbot.tv.impl.Callback;
+import com.ikanbot.tv.impl.ConfigListener;
+import com.ikanbot.tv.impl.CustomTarget;
+import com.ikanbot.tv.impl.LiveListener;
+import com.ikanbot.tv.impl.PassListener;
+import com.ikanbot.tv.model.LiveViewModel;
+import com.ikanbot.tv.playback.PlaybackAction;
+import com.ikanbot.tv.playback.PlaybackReset;
+import com.ikanbot.tv.playback.PlaybackResult;
+import com.ikanbot.tv.playback.live.LivePlayRequest;
+import com.ikanbot.tv.playback.live.LivePlaybackController;
+import com.ikanbot.tv.playback.live.LivePlaybackHost;
+import com.ikanbot.tv.player.extractor.Source;
+import com.ikanbot.tv.service.PlaybackService;
+import com.ikanbot.tv.setting.LiveSetting;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.ui.adapter.ChannelAdapter;
+import com.ikanbot.tv.ui.adapter.EpgDataAdapter;
+import com.ikanbot.tv.ui.adapter.GroupAdapter;
+import com.ikanbot.tv.ui.custom.CustomKeyDownLive;
+import com.ikanbot.tv.ui.custom.CustomLiveListView;
+import com.ikanbot.tv.ui.dialog.HistoryDialog;
+import com.ikanbot.tv.ui.dialog.LiveDialog;
+import com.ikanbot.tv.ui.dialog.PassDialog;
+import com.ikanbot.tv.ui.dialog.PlayerEngineDialog;
+import com.ikanbot.tv.ui.dialog.SpeedSettingDialog;
+import com.ikanbot.tv.ui.dialog.TrackDialog;
+import com.ikanbot.tv.utils.Clock;
+import com.ikanbot.tv.utils.ImgUtil;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Traffic;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -140,6 +141,10 @@ public class LiveActivity extends PlaybackActivity implements GroupAdapter.OnCli
         return mBinding.player;
     }
 
+    @Override
+    protected PlayerSeekView getSeekView() {
+        return mBinding.control.seek;
+    }
 
     @Override
     protected void onServiceConnected() {

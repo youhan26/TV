@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 import com.github.catvod.utils.Trans;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;

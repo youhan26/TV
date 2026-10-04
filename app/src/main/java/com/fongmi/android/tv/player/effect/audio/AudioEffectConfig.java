@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.player.effect.audio;
+package com.ikanbot.tv.player.effect.audio;
 
-import com.fongmi.android.tv.setting.AudioSetting;
+import com.ikanbot.tv.setting.AudioSetting;
 
 import java.util.Arrays;
 

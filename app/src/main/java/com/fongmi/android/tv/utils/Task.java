@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

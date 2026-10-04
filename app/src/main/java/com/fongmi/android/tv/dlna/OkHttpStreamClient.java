@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.dlna;
+package com.ikanbot.tv.dlna;
 
 import org.jupnp.model.message.StreamRequestMessage;
 import org.jupnp.model.message.StreamResponseMessage;

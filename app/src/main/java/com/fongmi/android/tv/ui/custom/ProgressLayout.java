@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,8 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-import com.fongmi.android.tv.databinding.ViewEmptyBinding;
-import com.fongmi.android.tv.databinding.ViewProgressBinding;
+import com.ikanbot.tv.databinding.ViewEmptyBinding;
+import com.ikanbot.tv.databinding.ViewProgressBinding;
 
 import java.util.ArrayList;
 import java.util.List;

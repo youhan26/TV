@@ -1,19 +1,19 @@
-package com.fongmi.android.tv.api.config;
+package com.ikanbot.tv.api.config;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.api.Decoder;
-import com.fongmi.android.tv.api.loader.BaseLoader;
-import com.fongmi.android.tv.bean.Config;
-import com.fongmi.android.tv.bean.Depot;
-import com.fongmi.android.tv.bean.Parse;
-import com.fongmi.android.tv.bean.Rule;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.event.ConfigEvent;
-import com.fongmi.android.tv.event.RefreshEvent;
-import com.fongmi.android.tv.impl.Callback;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.api.Decoder;
+import com.ikanbot.tv.api.loader.BaseLoader;
+import com.ikanbot.tv.bean.Config;
+import com.ikanbot.tv.bean.Depot;
+import com.ikanbot.tv.bean.Parse;
+import com.ikanbot.tv.bean.Rule;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.event.ConfigEvent;
+import com.ikanbot.tv.event.RefreshEvent;
+import com.ikanbot.tv.impl.Callback;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.bean.Doh;
 import com.github.catvod.bean.Header;
 import com.github.catvod.bean.Proxy;

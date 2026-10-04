@@ -1,15 +1,15 @@
-package com.fongmi.android.tv.playback;
+package com.ikanbot.tv.playback;
 
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.media3.common.C;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.SpeedSetting;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.SpeedSetting;
+import com.ikanbot.tv.utils.ResUtil;
 
 public final class PlaybackAction {
 

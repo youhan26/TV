@@ -1,17 +1,17 @@
-package com.fongmi.android.tv.player.extractor;
+package com.ikanbot.tv.player.extractor;
 
 import android.net.Uri;
 import android.util.Base64;
 
 import androidx.media3.common.MimeTypes;
 
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Sub;
-import com.fongmi.android.tv.bean.Vod;
-import com.fongmi.android.tv.event.RefreshEvent;
-import com.fongmi.android.tv.impl.NewPipeImpl;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Sub;
+import com.ikanbot.tv.bean.Vod;
+import com.ikanbot.tv.event.RefreshEvent;
+import com.ikanbot.tv.impl.NewPipeImpl;
+import com.ikanbot.tv.utils.UrlUtil;
 
 import org.schabi.newpipe.extractor.ListExtractor;
 import org.schabi.newpipe.extractor.MediaFormat;

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.annotation.SuppressLint;
 import android.content.ComponentName;
@@ -14,29 +14,30 @@ import androidx.media3.common.C;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Player;
 import androidx.media3.common.VideoSize;
+import com.ikanbot.tv.ui.custom.PlayerSeekView;
 import androidx.media3.ui.PlayerView;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Sub;
-import com.fongmi.android.tv.databinding.ActivityCastBinding;
-import com.fongmi.android.tv.dlna.CastAction;
-import com.fongmi.android.tv.event.RefreshEvent;
-import com.fongmi.android.tv.playback.PlaybackAction;
-import com.fongmi.android.tv.player.media.MediaItemFactory;
-import com.fongmi.android.tv.service.DLNARendererService;
-import com.fongmi.android.tv.service.PlaybackService;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.ui.custom.CustomKeyDownVod;
-import com.fongmi.android.tv.ui.dialog.PlayerEngineDialog;
-import com.fongmi.android.tv.ui.dialog.SpeedSettingDialog;
-import com.fongmi.android.tv.ui.dialog.TrackDialog;
-import com.fongmi.android.tv.utils.Clock;
-import com.fongmi.android.tv.utils.KeyUtil;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Traffic;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Sub;
+import com.ikanbot.tv.databinding.ActivityCastBinding;
+import com.ikanbot.tv.dlna.CastAction;
+import com.ikanbot.tv.event.RefreshEvent;
+import com.ikanbot.tv.playback.PlaybackAction;
+import com.ikanbot.tv.player.media.MediaItemFactory;
+import com.ikanbot.tv.service.DLNARendererService;
+import com.ikanbot.tv.service.PlaybackService;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.ui.custom.CustomKeyDownVod;
+import com.ikanbot.tv.ui.dialog.PlayerEngineDialog;
+import com.ikanbot.tv.ui.dialog.SpeedSettingDialog;
+import com.ikanbot.tv.ui.dialog.TrackDialog;
+import com.ikanbot.tv.utils.Clock;
+import com.ikanbot.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Traffic;
 
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -82,6 +83,10 @@ public class CastActivity extends PlaybackActivity implements CustomKeyDownVod.L
         return mBinding.player;
     }
 
+    @Override
+    protected PlayerSeekView getSeekView() {
+        return mBinding.control.seek;
+    }
 
     @Override
     protected void onServiceConnected() {

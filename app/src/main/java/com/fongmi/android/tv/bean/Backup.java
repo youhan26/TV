@@ -1,9 +1,9 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.db.AppDatabase;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.db.AppDatabase;
 import com.github.catvod.utils.Prefers;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

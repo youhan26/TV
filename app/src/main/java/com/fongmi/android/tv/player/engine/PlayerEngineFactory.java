@@ -1,9 +1,9 @@
-package com.fongmi.android.tv.player.engine;
+package com.ikanbot.tv.player.engine;
 
 import androidx.media3.common.Player;
 
-import com.fongmi.android.tv.player.exo.ExoPlayerEngine;
-import com.fongmi.android.tv.player.media.PlaySpec;
+import com.ikanbot.tv.player.exo.ExoPlayerEngine;
+import com.ikanbot.tv.player.media.PlaySpec;
 
 public final class PlayerEngineFactory {
 

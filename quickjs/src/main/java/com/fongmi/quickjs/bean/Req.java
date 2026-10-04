@@ -1,4 +1,4 @@
-package com.fongmi.quickjs.bean;
+package com.ikanbot.quickjs.bean;
 
 import android.text.TextUtils;
 

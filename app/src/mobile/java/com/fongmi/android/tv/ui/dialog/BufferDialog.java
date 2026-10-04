@@ -1,15 +1,15 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.DialogInterface;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogBufferBinding;
-import com.fongmi.android.tv.impl.BufferListener;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.utils.SliderUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogBufferBinding;
+import com.ikanbot.tv.impl.BufferListener;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.utils.SliderUtil;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class BufferDialog extends BaseAlertDialog {

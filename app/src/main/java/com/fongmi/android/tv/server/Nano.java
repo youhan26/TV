@@ -1,15 +1,15 @@
-package com.fongmi.android.tv.server;
+package com.ikanbot.tv.server;
 
-import com.fongmi.android.tv.api.config.LiveConfig;
-import com.fongmi.android.tv.bean.Device;
-import com.fongmi.android.tv.server.impl.Process;
-import com.fongmi.android.tv.server.process.Action;
-import com.fongmi.android.tv.server.process.Cache;
-import com.fongmi.android.tv.server.process.Image;
-import com.fongmi.android.tv.server.process.Local;
-import com.fongmi.android.tv.server.process.Media;
-import com.fongmi.android.tv.server.process.Parse;
-import com.fongmi.android.tv.server.process.Proxy;
+import com.ikanbot.tv.api.config.LiveConfig;
+import com.ikanbot.tv.bean.Device;
+import com.ikanbot.tv.server.impl.Process;
+import com.ikanbot.tv.server.process.Action;
+import com.ikanbot.tv.server.process.Cache;
+import com.ikanbot.tv.server.process.Image;
+import com.ikanbot.tv.server.process.Local;
+import com.ikanbot.tv.server.process.Media;
+import com.ikanbot.tv.server.process.Parse;
+import com.ikanbot.tv.server.process.Proxy;
 import com.github.catvod.utils.Asset;
 
 import java.io.InputStream;

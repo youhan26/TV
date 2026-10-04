@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.playback.vod;
+package com.ikanbot.tv.playback.vod;
 
-import com.fongmi.android.tv.bean.Site;
+import com.ikanbot.tv.bean.Site;
 
 import java.util.List;
 

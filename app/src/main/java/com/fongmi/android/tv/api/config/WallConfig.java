@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.api.config;
+package com.ikanbot.tv.api.config;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -6,15 +6,15 @@ import android.media.MediaMetadataRetriever;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.bean.Config;
-import com.fongmi.android.tv.event.ConfigEvent;
-import com.fongmi.android.tv.impl.Callback;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.utils.Download;
-import com.fongmi.android.tv.utils.FileUtil;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.bean.Config;
+import com.ikanbot.tv.event.ConfigEvent;
+import com.ikanbot.tv.impl.Callback;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.utils.Download;
+import com.ikanbot.tv.utils.FileUtil;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.utils.Path;
 
 import java.io.File;

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.graphics.Rect;
 import android.view.View;
@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
 

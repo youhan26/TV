@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.impl;
+package com.ikanbot.tv.impl;
 
-import com.fongmi.android.tv.bean.Config;
+import com.ikanbot.tv.bean.Config;
 
 public interface ConfigListener {
 

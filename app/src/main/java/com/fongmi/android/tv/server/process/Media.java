@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.server.process;
+package com.ikanbot.tv.server.process;
 
 import android.net.Uri;
 
@@ -6,12 +6,12 @@ import androidx.media3.common.MediaItem;
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Player;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.server.Nano;
-import com.fongmi.android.tv.server.Server;
-import com.fongmi.android.tv.server.impl.Process;
-import com.fongmi.android.tv.service.PlaybackService;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.server.Nano;
+import com.ikanbot.tv.server.Server;
+import com.ikanbot.tv.server.impl.Process;
+import com.ikanbot.tv.service.PlaybackService;
 import com.google.gson.JsonObject;
 
 import java.util.Map;

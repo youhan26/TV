@@ -1,18 +1,18 @@
-package com.fongmi.android.tv;
+package com.ikanbot.tv;
 
 import android.view.View;
 
 import androidx.fragment.app.FragmentActivity;
 
-import com.fongmi.android.tv.impl.UpdateListener;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.dialog.UpdateDialog;
-import com.fongmi.android.tv.utils.Download;
-import com.fongmi.android.tv.utils.FileUtil;
-import com.fongmi.android.tv.utils.Github;
-import com.fongmi.android.tv.utils.Notify;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.impl.UpdateListener;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.dialog.UpdateDialog;
+import com.ikanbot.tv.utils.Download;
+import com.ikanbot.tv.utils.FileUtil;
+import com.ikanbot.tv.utils.Github;
+import com.ikanbot.tv.utils.Notify;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.Task;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Path;
 

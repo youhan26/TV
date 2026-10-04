@@ -1,13 +1,13 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.DialogRestoreBinding;
-import com.fongmi.android.tv.db.BackupManager;
-import com.fongmi.android.tv.impl.Callback;
-import com.fongmi.android.tv.ui.adapter.RestoreAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.databinding.DialogRestoreBinding;
+import com.ikanbot.tv.db.BackupManager;
+import com.ikanbot.tv.impl.Callback;
+import com.ikanbot.tv.ui.adapter.RestoreAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.io.File;

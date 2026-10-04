@@ -1,7 +1,7 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.server.Server;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.server.Server;
 import com.github.catvod.utils.Path;
 import com.github.catvod.utils.Util;
 

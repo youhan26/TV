@@ -1,13 +1,13 @@
-package com.fongmi.android.tv.dlna;
+package com.ikanbot.tv.dlna;
 
 import android.content.Context;
 import android.content.Intent;
 
 import androidx.media3.common.Player;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.ui.activity.CastActivity;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.ui.activity.CastActivity;
 import com.google.gson.reflect.TypeToken;
 
 import org.jupnp.model.types.UnsignedIntegerFourBytes;

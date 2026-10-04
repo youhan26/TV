@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.player.extractor;
+package com.ikanbot.tv.player.extractor;
 
 import android.net.Uri;
 
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.utils.Path;
 import com.p2p.P2PClass;
 

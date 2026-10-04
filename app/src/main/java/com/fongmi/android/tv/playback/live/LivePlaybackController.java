@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.playback.live;
+package com.ikanbot.tv.playback.live;
 
 import android.text.TextUtils;
 
@@ -6,15 +6,15 @@ import androidx.annotation.Nullable;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaMetadata;
 
-import com.fongmi.android.tv.api.config.LiveConfig;
-import com.fongmi.android.tv.bean.Channel;
-import com.fongmi.android.tv.bean.Epg;
-import com.fongmi.android.tv.bean.EpgData;
-import com.fongmi.android.tv.bean.Group;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.playback.PlaybackResult;
-import com.fongmi.android.tv.player.media.MediaItemFactory;
-import com.fongmi.android.tv.setting.LiveSetting;
+import com.ikanbot.tv.api.config.LiveConfig;
+import com.ikanbot.tv.bean.Channel;
+import com.ikanbot.tv.bean.Epg;
+import com.ikanbot.tv.bean.EpgData;
+import com.ikanbot.tv.bean.Group;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.playback.PlaybackResult;
+import com.ikanbot.tv.player.media.MediaItemFactory;
+import com.ikanbot.tv.setting.LiveSetting;
 
 public class LivePlaybackController {
 

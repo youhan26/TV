@@ -1,17 +1,17 @@
-package com.fongmi.android.tv.player.exo;
+package com.ikanbot.tv.player.exo;
 
 import androidx.media3.common.Format;
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.exoplayer.ExoPlayer;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.player.effect.PlayerEffect;
-import com.fongmi.android.tv.player.effect.audio.AudioEffectBands;
-import com.fongmi.android.tv.player.effect.audio.AudioEffectConfig;
-import com.fongmi.android.tv.player.effect.audio.ExoAudioEffectController;
-import com.fongmi.android.tv.player.effect.video.ExoVideoEffectController;
-import com.fongmi.android.tv.player.effect.video.VideoEffectProfile;
-import com.fongmi.android.tv.setting.VideoSetting;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.player.effect.PlayerEffect;
+import com.ikanbot.tv.player.effect.audio.AudioEffectBands;
+import com.ikanbot.tv.player.effect.audio.AudioEffectConfig;
+import com.ikanbot.tv.player.effect.audio.ExoAudioEffectController;
+import com.ikanbot.tv.player.effect.video.ExoVideoEffectController;
+import com.ikanbot.tv.player.effect.video.VideoEffectProfile;
+import com.ikanbot.tv.setting.VideoSetting;
 
 public final class ExoPlayerEffect implements PlayerEffect {
 

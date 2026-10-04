@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -22,7 +22,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 import androidx.core.content.ContextCompat;
 
-import com.fongmi.android.tv.App;
+import com.ikanbot.tv.App;
 
 public class ResUtil {
 

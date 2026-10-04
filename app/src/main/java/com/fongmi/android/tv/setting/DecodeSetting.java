@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.setting;
+package com.ikanbot.tv.setting;
 
 import com.github.catvod.utils.Prefers;
 

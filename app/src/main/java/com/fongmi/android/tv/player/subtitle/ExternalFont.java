@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.subtitle;
+package com.ikanbot.tv.player.subtitle;
 
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -7,8 +7,8 @@ import android.util.LruCache;
 
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.utils.FileUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.utils.FileUtil;
 import com.github.catvod.utils.Crypto;
 import com.github.catvod.utils.Path;
 

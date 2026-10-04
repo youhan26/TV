@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 
@@ -8,14 +8,14 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.loader.BaseLoader;
-import com.fongmi.android.tv.db.AppDatabase;
-import com.fongmi.android.tv.gson.ExtAdapter;
-import com.fongmi.android.tv.gson.HeaderAdapter;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.loader.BaseLoader;
+import com.ikanbot.tv.db.AppDatabase;
+import com.ikanbot.tv.gson.ExtAdapter;
+import com.ikanbot.tv.gson.HeaderAdapter;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.crawler.Spider;
 import com.github.catvod.utils.Trans;
 import com.google.common.net.HttpHeaders;

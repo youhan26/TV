@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.annotation.SuppressLint;
 
@@ -7,7 +7,7 @@ import androidx.leanback.widget.HorizontalGridView;
 import androidx.leanback.widget.ListRowPresenter;
 import androidx.leanback.widget.RowPresenter;
 
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class CustomRowPresenter extends ListRowPresenter {
 

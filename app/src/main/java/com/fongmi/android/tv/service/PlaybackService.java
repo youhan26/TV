@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.service;
+package com.ikanbot.tv.service;
 
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -24,18 +24,18 @@ import androidx.media3.session.SessionCommands;
 import androidx.media3.session.SessionError;
 import androidx.media3.session.SessionResult;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.BuildConfig;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.browse.BrowseTree;
-import com.fongmi.android.tv.event.ActionEvent;
-import com.fongmi.android.tv.event.ConfigEvent;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.player.media.ArtworkBitmapLoader;
-import com.fongmi.android.tv.player.media.PlaySpec;
-import com.fongmi.android.tv.server.Server;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.BuildConfig;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.browse.BrowseTree;
+import com.ikanbot.tv.event.ActionEvent;
+import com.ikanbot.tv.event.ConfigEvent;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.player.media.ArtworkBitmapLoader;
+import com.ikanbot.tv.player.media.PlaySpec;
+import com.ikanbot.tv.server.Server;
+import com.ikanbot.tv.utils.Task;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;

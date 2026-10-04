@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,18 +18,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewpager.widget.ViewPager;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Collect;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.databinding.ActivityCollectBinding;
-import com.fongmi.android.tv.model.SiteViewModel;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.adapter.CollectAdapter;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.ui.fragment.CollectFragment;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Collect;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.databinding.ActivityCollectBinding;
+import com.ikanbot.tv.model.SiteViewModel;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.adapter.CollectAdapter;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.ui.fragment.CollectFragment;
+import com.ikanbot.tv.utils.ResUtil;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;

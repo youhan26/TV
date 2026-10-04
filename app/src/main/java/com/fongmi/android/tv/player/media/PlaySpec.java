@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.media;
+package com.ikanbot.tv.player.media;
 
 import android.net.Uri;
 
@@ -6,12 +6,12 @@ import androidx.annotation.Nullable;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaMetadata;
 
-import com.fongmi.android.tv.bean.Danmaku;
-import com.fongmi.android.tv.bean.Drm;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Sub;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.bean.Danmaku;
+import com.ikanbot.tv.bean.Drm;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Sub;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.google.common.net.HttpHeaders;
 
 import java.util.ArrayList;

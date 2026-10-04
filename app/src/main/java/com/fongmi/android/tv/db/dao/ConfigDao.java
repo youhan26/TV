@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.db.dao;
+package com.ikanbot.tv.db.dao;
 
 import androidx.room.Dao;
 import androidx.room.Query;
 import androidx.room.RoomWarnings;
 
-import com.fongmi.android.tv.bean.Config;
+import com.ikanbot.tv.bean.Config;
 
 import java.util.List;
 

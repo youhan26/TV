@@ -1,6 +1,6 @@
-package com.fongmi.android.tv.service;
+package com.ikanbot.tv.service;
 
-import com.fongmi.android.tv.dlna.DLNAServiceConfiguration;
+import com.ikanbot.tv.dlna.DLNAServiceConfiguration;
 
 import org.jupnp.UpnpServiceConfiguration;
 import org.jupnp.android.AndroidUpnpServiceImpl;

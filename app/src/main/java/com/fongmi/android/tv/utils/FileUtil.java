@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -9,9 +9,9 @@ import android.text.TextUtils;
 
 import androidx.core.content.FileProvider;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.impl.Callback;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.impl.Callback;
 import com.github.catvod.utils.Path;
 
 import java.io.BufferedInputStream;

@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.dlna;
+package com.ikanbot.tv.dlna;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.CastVideo;
-import com.fongmi.android.tv.bean.Device;
-import com.fongmi.android.tv.utils.Notify;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.CastVideo;
+import com.ikanbot.tv.bean.Device;
+import com.ikanbot.tv.utils.Notify;
 
 import org.jupnp.controlpoint.ControlPoint;
 import org.jupnp.model.action.ActionInvocation;

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.presenter;
+package com.ikanbot.tv.ui.presenter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +8,11 @@ import androidx.annotation.NonNull;
 import androidx.leanback.widget.Presenter;
 
 import com.bumptech.glide.Glide;
-import com.fongmi.android.tv.Product;
-import com.fongmi.android.tv.bean.History;
-import com.fongmi.android.tv.databinding.AdapterVodBinding;
-import com.fongmi.android.tv.utils.ImgUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.Product;
+import com.ikanbot.tv.bean.History;
+import com.ikanbot.tv.databinding.AdapterVodBinding;
+import com.ikanbot.tv.utils.ImgUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class HistoryPresenter extends Presenter {
 

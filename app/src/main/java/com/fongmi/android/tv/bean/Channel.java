@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 import android.view.View;
@@ -6,12 +6,12 @@ import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.gson.HeaderAdapter;
-import com.fongmi.android.tv.utils.Formatters;
-import com.fongmi.android.tv.utils.ImgUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.gson.HeaderAdapter;
+import com.ikanbot.tv.utils.Formatters;
+import com.ikanbot.tv.utils.ImgUtil;
+import com.ikanbot.tv.utils.ResUtil;
 import com.github.catvod.utils.Trans;
 import com.google.common.net.HttpHeaders;
 import com.google.gson.JsonElement;

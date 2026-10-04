@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.net.Uri;
 import android.text.TextUtils;
@@ -6,8 +6,8 @@ import android.text.TextUtils;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 

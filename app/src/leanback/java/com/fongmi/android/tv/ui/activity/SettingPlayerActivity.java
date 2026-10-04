@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,16 +7,16 @@ import android.view.View;
 
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.ActivitySettingPlayerBinding;
-import com.fongmi.android.tv.impl.BufferListener;
-import com.fongmi.android.tv.impl.UaListener;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.ui.dialog.BufferDialog;
-import com.fongmi.android.tv.ui.dialog.UaDialog;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.ActivitySettingPlayerBinding;
+import com.ikanbot.tv.impl.BufferListener;
+import com.ikanbot.tv.impl.UaListener;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.ui.dialog.BufferDialog;
+import com.ikanbot.tv.ui.dialog.UaDialog;
+import com.ikanbot.tv.utils.ResUtil;
 
 public class SettingPlayerActivity extends BaseActivity implements UaListener, BufferListener {
 

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,14 +7,14 @@ import android.view.View;
 
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.ActivitySettingPreloadBinding;
-import com.fongmi.android.tv.setting.PlayerSetting;
-import com.fongmi.android.tv.setting.PreloadSetting;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.ui.dialog.PreloadDialog;
-import com.fongmi.android.tv.utils.FileUtil;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.ActivitySettingPreloadBinding;
+import com.ikanbot.tv.setting.PlayerSetting;
+import com.ikanbot.tv.setting.PreloadSetting;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.ui.dialog.PreloadDialog;
+import com.ikanbot.tv.utils.FileUtil;
 
 public class SettingPreloadActivity extends BaseActivity {
 

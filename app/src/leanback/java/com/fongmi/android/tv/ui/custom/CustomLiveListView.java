@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.leanback.widget.VerticalGridView;
 
-import com.fongmi.android.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.KeyUtil;
 
 public class CustomLiveListView extends VerticalGridView {
 

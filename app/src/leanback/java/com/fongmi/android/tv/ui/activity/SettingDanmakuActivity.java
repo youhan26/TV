@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.activity;
+package com.ikanbot.tv.ui.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,13 +8,13 @@ import android.view.View;
 
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.ActivitySettingDanmakuBinding;
-import com.fongmi.android.tv.impl.DanmakuListener;
-import com.fongmi.android.tv.setting.DanmakuSetting;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.base.BaseActivity;
-import com.fongmi.android.tv.ui.dialog.DanmakuApiDialog;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.ActivitySettingDanmakuBinding;
+import com.ikanbot.tv.impl.DanmakuListener;
+import com.ikanbot.tv.setting.DanmakuSetting;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.base.BaseActivity;
+import com.ikanbot.tv.ui.dialog.DanmakuApiDialog;
 
 public class SettingDanmakuActivity extends BaseActivity implements DanmakuListener {
 

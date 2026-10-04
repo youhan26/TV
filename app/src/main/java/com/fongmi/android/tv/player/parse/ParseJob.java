@@ -1,19 +1,19 @@
-package com.fongmi.android.tv.player.parse;
+package com.ikanbot.tv.player.parse;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.api.loader.BaseLoader;
-import com.fongmi.android.tv.bean.Parse;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.impl.ParseCallback;
-import com.fongmi.android.tv.server.Server;
-import com.fongmi.android.tv.ui.custom.CustomWebView;
-import com.fongmi.android.tv.utils.Task;
-import com.fongmi.android.tv.utils.UrlUtil;
-import com.fongmi.android.tv.utils.WebViewUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.api.loader.BaseLoader;
+import com.ikanbot.tv.bean.Parse;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.impl.ParseCallback;
+import com.ikanbot.tv.server.Server;
+import com.ikanbot.tv.ui.custom.CustomWebView;
+import com.ikanbot.tv.utils.Task;
+import com.ikanbot.tv.utils.UrlUtil;
+import com.ikanbot.tv.utils.WebViewUtil;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Json;
 import com.github.catvod.utils.Util;

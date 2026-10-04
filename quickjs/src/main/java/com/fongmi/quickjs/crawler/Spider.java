@@ -1,14 +1,14 @@
-package com.fongmi.quickjs.crawler;
+package com.ikanbot.quickjs.crawler;
 
 import android.content.Context;
 
-import com.fongmi.quickjs.bean.Res;
-import com.fongmi.quickjs.method.Console;
-import com.fongmi.quickjs.method.Global;
-import com.fongmi.quickjs.method.Local;
-import com.fongmi.quickjs.utils.Async;
-import com.fongmi.quickjs.utils.JSUtil;
-import com.fongmi.quickjs.utils.Module;
+import com.ikanbot.quickjs.bean.Res;
+import com.ikanbot.quickjs.method.Console;
+import com.ikanbot.quickjs.method.Global;
+import com.ikanbot.quickjs.method.Local;
+import com.ikanbot.quickjs.utils.Async;
+import com.ikanbot.quickjs.utils.JSUtil;
+import com.ikanbot.quickjs.utils.Module;
 import com.github.catvod.utils.Asset;
 import com.github.catvod.utils.Json;
 import com.github.catvod.utils.UriUtil;

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.player.effect.audio;
+package com.ikanbot.tv.player.effect.audio;
 
 import androidx.annotation.NonNull;
 import androidx.media3.common.C;

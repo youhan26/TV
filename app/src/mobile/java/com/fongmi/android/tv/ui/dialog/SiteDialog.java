@@ -1,15 +1,15 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.databinding.DialogSiteBinding;
-import com.fongmi.android.tv.impl.SiteListener;
-import com.fongmi.android.tv.ui.adapter.SiteAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.databinding.DialogSiteBinding;
+import com.ikanbot.tv.impl.SiteListener;
+import com.ikanbot.tv.ui.adapter.SiteAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.utils.ResUtil;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class SiteDialog extends BaseAlertDialog implements SiteAdapter.OnClickListener {

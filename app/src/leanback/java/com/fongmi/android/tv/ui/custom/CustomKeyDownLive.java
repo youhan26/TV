@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.content.Context;
 import android.view.GestureDetector;
@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.utils.KeyUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.utils.KeyUtil;
 
 public class CustomKeyDownLive extends GestureDetector.SimpleOnGestureListener {
 

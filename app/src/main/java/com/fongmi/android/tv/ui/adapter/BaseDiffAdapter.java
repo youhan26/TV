@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.ViewGroup;
 
@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.AsyncListDiffer;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.impl.Diffable;
+import com.ikanbot.tv.impl.Diffable;
 
 import java.util.ArrayList;
 import java.util.List;

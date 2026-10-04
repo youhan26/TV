@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.ActivitySearchBinding;
-import com.fongmi.android.tv.ui.adapter.KeyboardAdapter;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.ActivitySearchBinding;
+import com.ikanbot.tv.ui.adapter.KeyboardAdapter;
 
 public class CustomKeyboard implements KeyboardAdapter.OnClickListener {
 

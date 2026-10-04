@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.DialogInterface;
 import android.text.TextUtils;
@@ -7,10 +7,10 @@ import android.view.inputmethod.EditorInfo;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.DialogUaBinding;
-import com.fongmi.android.tv.impl.DanmakuListener;
-import com.fongmi.android.tv.setting.DanmakuSetting;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.DialogUaBinding;
+import com.ikanbot.tv.impl.DanmakuListener;
+import com.ikanbot.tv.setting.DanmakuSetting;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class DanmakuApiDialog extends BaseAlertDialog {

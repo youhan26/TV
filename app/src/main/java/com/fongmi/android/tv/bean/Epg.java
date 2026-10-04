@@ -1,10 +1,10 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.text.TextUtils;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.api.parser.EpgParser;
-import com.fongmi.android.tv.utils.Formatters;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.api.parser.EpgParser;
+import com.ikanbot.tv.utils.Formatters;
 import com.github.catvod.utils.Json;
 import com.google.gson.annotations.SerializedName;
 

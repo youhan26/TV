@@ -1,8 +1,8 @@
-package com.fongmi.android.tv.event;
+package com.ikanbot.tv.event;
 
-import com.fongmi.android.tv.bean.Config;
-import com.fongmi.android.tv.bean.Device;
-import com.fongmi.android.tv.bean.History;
+import com.ikanbot.tv.bean.Config;
+import com.ikanbot.tv.bean.Device;
+import com.ikanbot.tv.bean.History;
 
 import org.greenrobot.eventbus.EventBus;
 

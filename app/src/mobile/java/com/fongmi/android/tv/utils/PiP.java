@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -15,10 +15,10 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.StringRes;
 import androidx.media3.ui.R;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.event.ActionEvent;
-import com.fongmi.android.tv.receiver.ActionReceiver;
-import com.fongmi.android.tv.setting.PlayerSetting;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.event.ActionEvent;
+import com.ikanbot.tv.receiver.ActionReceiver;
+import com.ikanbot.tv.setting.PlayerSetting;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +62,7 @@ public class PiP {
         try {
             if (noPiP()) return;
             List<RemoteAction> actions = new ArrayList<>();
-            actions.add(buildRemoteAction(activity, com.fongmi.android.tv.R.drawable.ic_action_audio, R.string.exo_controls_hide, ActionEvent.AUDIO));
+            actions.add(buildRemoteAction(activity, com.ikanbot.tv.R.drawable.ic_action_audio, R.string.exo_controls_hide, ActionEvent.AUDIO));
             actions.add(getPlayPauseAction(activity, play));
             actions.add(buildRemoteAction(activity, R.drawable.exo_icon_next, R.string.exo_controls_next_description, ActionEvent.NEXT));
             activity.setPictureInPictureParams(builder.setActions(actions).build());

@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.fongmi.android.tv.utils.KeyUtil;
+import com.ikanbot.tv.utils.KeyUtil;
 import com.google.android.material.textview.MaterialTextView;
 
 public class CustomUpDownView extends MaterialTextView {

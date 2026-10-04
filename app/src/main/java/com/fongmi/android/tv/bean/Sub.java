@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.bean;
+package com.ikanbot.tv.bean;
 
 import android.net.Uri;
 import android.text.TextUtils;
@@ -7,9 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.media3.common.C;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.player.track.TrackUtil;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.player.track.TrackUtil;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.utils.Trans;
 import com.google.gson.annotations.SerializedName;
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.fongmi.android.tv.ui.custom.ProgressLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ikanbot.tv.ui.custom.ProgressLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/progressLayout"
@@ -26,7 +26,7 @@
             style="@style/Player.Vod"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:surface_type="none" />
+            app:surface_type="surface_view" />
 
         <include
             android:id="@+id/widget"
@@ -174,7 +174,7 @@
             android:focusableInTouchMode="true"
             android:gravity="center"
             android:nextFocusUp="@id/actor"
-            android:nextFocusDown="@id/flag"
+            android:nextFocusDown="@id/array"
             android:singleLine="true"
             android:text="@string/detail_desc"
             android:textColor="@color/white"
@@ -192,7 +192,7 @@
             android:focusableInTouchMode="true"
             android:gravity="center"
             android:nextFocusUp="@id/actor"
-            android:nextFocusDown="@id/flag"
+            android:nextFocusDown="@id/array"
             android:singleLine="true"
             android:text="@string/keep"
             android:textColor="@color/white"
@@ -210,7 +210,7 @@
             android:gravity="center"
             android:nextFocusRight="@id/change"
             android:nextFocusUp="@id/actor"
-            android:nextFocusDown="@id/flag"
+            android:nextFocusDown="@id/array"
             android:singleLine="true"
             android:text="@string/play_change"
             android:textColor="@color/white"
@@ -233,7 +233,7 @@
             android:paddingBottom="8dp">
 
             <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/flag"
+                android:id="@+id/array"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -241,11 +241,10 @@
                 android:clipToPadding="false"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
-                android:visibility="gone"
-                tools:visibility="visible" />
+                android:visibility="gone" />
 
             <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/quality"
+                android:id="@+id/flag"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -268,7 +267,7 @@
                 android:visibility="gone" />
 
             <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/array"
+                android:id="@+id/quality"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
@@ -276,18 +275,8 @@
                 android:clipToPadding="false"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
-                android:visibility="gone" />
-
-            <androidx.leanback.widget.HorizontalGridView
-                android:id="@+id/part"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:clipChildren="false"
-                android:clipToPadding="false"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
-                android:visibility="gone" />
+                android:visibility="gone"
+                tools:visibility="visible" />
 
             <androidx.leanback.widget.HorizontalGridView
                 android:id="@+id/quick"
@@ -302,4 +291,4 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.core.widget.NestedScrollView>
-</com.fongmi.android.tv.ui.custom.ProgressLayout>
+</com.ikanbot.tv.ui.custom.ProgressLayout>

@@ -1,4 +1,4 @@
-package com.fongmi.hook;
+package com.ikanbot.hook;
 
 import android.content.ComponentName;
 import android.content.Intent;

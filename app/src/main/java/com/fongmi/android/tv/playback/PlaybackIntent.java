@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.playback;
+package com.ikanbot.tv.playback;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -8,8 +8,8 @@ import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.utils.FileUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.utils.FileUtil;
 
 import java.util.ArrayList;
 import java.util.List;

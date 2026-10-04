@@ -1,4 +1,4 @@
-package com.fongmi.quickjs.utils;
+package com.ikanbot.quickjs.utils;
 
 import com.whl.quickjs.wrapper.JSArray;
 import com.whl.quickjs.wrapper.JSObject;

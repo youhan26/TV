@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.adapter;
+package com.ikanbot.tv.ui.adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.databinding.AdapterDohBinding;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.databinding.AdapterDohBinding;
 import com.github.catvod.bean.Doh;
 
 import java.util.List;

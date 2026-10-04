@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import android.Manifest;
 import android.app.Notification;
@@ -13,8 +13,8 @@ import androidx.core.app.NotificationChannelCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.databinding.ViewProgressBinding;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.databinding.ViewProgressBinding;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class Notify {

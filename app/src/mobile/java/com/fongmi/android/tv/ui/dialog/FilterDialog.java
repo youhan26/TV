@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -8,10 +8,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.bean.Filter;
-import com.fongmi.android.tv.databinding.DialogFilterBinding;
-import com.fongmi.android.tv.impl.FilterListener;
-import com.fongmi.android.tv.ui.adapter.FilterAdapter;
+import com.ikanbot.tv.bean.Filter;
+import com.ikanbot.tv.databinding.DialogFilterBinding;
+import com.ikanbot.tv.impl.FilterListener;
+import com.ikanbot.tv.ui.adapter.FilterAdapter;
 
 import java.util.List;
 

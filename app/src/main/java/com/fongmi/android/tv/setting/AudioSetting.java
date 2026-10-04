@@ -1,9 +1,9 @@
-package com.fongmi.android.tv.setting;
+package com.ikanbot.tv.setting;
 
-import com.fongmi.android.tv.player.effect.audio.AudioChannelMode;
-import com.fongmi.android.tv.player.effect.audio.AudioEffectBands;
-import com.fongmi.android.tv.player.effect.audio.AudioEffectPreset;
-import com.fongmi.android.tv.player.effect.audio.AudioPresetLevels;
+import com.ikanbot.tv.player.effect.audio.AudioChannelMode;
+import com.ikanbot.tv.player.effect.audio.AudioEffectBands;
+import com.ikanbot.tv.player.effect.audio.AudioEffectPreset;
+import com.ikanbot.tv.player.effect.audio.AudioPresetLevels;
 import com.github.catvod.utils.Prefers;
 
 public class AudioSetting {

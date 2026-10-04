@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.text.TextUtils;
 import android.view.View;
@@ -6,9 +6,9 @@ import android.view.View;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.DialogInfoBinding;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.utils.Util;
+import com.ikanbot.tv.databinding.DialogInfoBinding;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.utils.Util;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.LinkedHashMap;

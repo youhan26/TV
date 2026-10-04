@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.view.View;
 
@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.api.config.VodConfig;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.databinding.DialogSiteBinding;
-import com.fongmi.android.tv.impl.SiteListener;
-import com.fongmi.android.tv.setting.Setting;
-import com.fongmi.android.tv.ui.adapter.SiteAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.api.config.VodConfig;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.databinding.DialogSiteBinding;
+import com.ikanbot.tv.impl.SiteListener;
+import com.ikanbot.tv.setting.Setting;
+import com.ikanbot.tv.ui.adapter.SiteAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class SiteDialog extends BaseAlertDialog implements SiteAdapter.OnClickListener {
@@ -55,7 +55,7 @@ public class SiteDialog extends BaseAlertDialog implements SiteAdapter.OnClickLi
     }
 
     private int getIcon() {
-        return list() ? com.fongmi.android.tv.R.drawable.ic_site_grid : com.fongmi.android.tv.R.drawable.ic_site_list;
+        return list() ? com.ikanbot.tv.R.drawable.ic_site_grid : com.ikanbot.tv.R.drawable.ic_site_list;
     }
 
     private float getWidth() {

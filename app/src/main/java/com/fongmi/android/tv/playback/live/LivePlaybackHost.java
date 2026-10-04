@@ -1,12 +1,12 @@
-package com.fongmi.android.tv.playback.live;
+package com.ikanbot.tv.playback.live;
 
 import androidx.annotation.Nullable;
 import androidx.media3.common.MediaMetadata;
 
-import com.fongmi.android.tv.bean.Channel;
-import com.fongmi.android.tv.bean.EpgData;
-import com.fongmi.android.tv.bean.Group;
-import com.fongmi.android.tv.bean.Result;
+import com.ikanbot.tv.bean.Channel;
+import com.ikanbot.tv.bean.EpgData;
+import com.ikanbot.tv.bean.Group;
+import com.ikanbot.tv.bean.Result;
 
 import java.time.ZoneId;
 

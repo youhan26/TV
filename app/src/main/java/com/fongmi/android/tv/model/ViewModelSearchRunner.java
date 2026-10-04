@@ -1,9 +1,9 @@
-package com.fongmi.android.tv.model;
+package com.ikanbot.tv.model;
 
-import com.fongmi.android.tv.Constant;
-import com.fongmi.android.tv.bean.Result;
-import com.fongmi.android.tv.bean.Site;
-import com.fongmi.android.tv.utils.Task;
+import com.ikanbot.tv.Constant;
+import com.ikanbot.tv.bean.Result;
+import com.ikanbot.tv.bean.Site;
+import com.ikanbot.tv.utils.Task;
 import com.google.common.util.concurrent.FluentFuture;
 import com.google.common.util.concurrent.MoreExecutors;
 

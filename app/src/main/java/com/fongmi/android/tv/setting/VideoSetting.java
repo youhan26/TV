@@ -1,7 +1,7 @@
-package com.fongmi.android.tv.setting;
+package com.ikanbot.tv.setting;
 
-import com.fongmi.android.tv.player.effect.video.VideoEffectPreset;
-import com.fongmi.android.tv.player.effect.video.VideoEffectProfile;
+import com.ikanbot.tv.player.effect.video.VideoEffectPreset;
+import com.ikanbot.tv.player.effect.video.VideoEffectProfile;
 import com.github.catvod.utils.Prefers;
 
 public class VideoSetting {

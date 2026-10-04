@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.utils;
+package com.ikanbot.tv.utils;
 
 import com.github.catvod.utils.Crypto;
 import com.github.catvod.utils.Path;

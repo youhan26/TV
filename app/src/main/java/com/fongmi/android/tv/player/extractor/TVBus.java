@@ -1,16 +1,16 @@
-package com.fongmi.android.tv.player.extractor;
+package com.ikanbot.tv.player.extractor;
 
 import android.net.Uri;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.api.config.LiveConfig;
-import com.fongmi.android.tv.bean.Core;
-import com.fongmi.android.tv.exception.ExtractException;
-import com.fongmi.android.tv.setting.LiveSetting;
-import com.fongmi.android.tv.utils.Download;
-import com.fongmi.android.tv.utils.ResUtil;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.api.config.LiveConfig;
+import com.ikanbot.tv.bean.Core;
+import com.ikanbot.tv.exception.ExtractException;
+import com.ikanbot.tv.setting.LiveSetting;
+import com.ikanbot.tv.utils.Download;
+import com.ikanbot.tv.utils.ResUtil;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.utils.Path;
 import com.google.gson.JsonObject;
 import com.orhanobut.logger.Logger;

@@ -1,11 +1,11 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.databinding.DialogDohBinding;
-import com.fongmi.android.tv.ui.adapter.DohAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.databinding.DialogDohBinding;
+import com.ikanbot.tv.ui.adapter.DohAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
 import com.github.catvod.bean.Doh;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 

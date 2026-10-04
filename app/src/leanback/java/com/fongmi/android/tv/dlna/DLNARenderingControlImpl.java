@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.dlna;
+package com.ikanbot.tv.dlna;
 
 import android.content.Context;
 import android.media.AudioManager;

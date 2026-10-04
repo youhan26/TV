@@ -1,11 +1,11 @@
-package com.fongmi.android.tv.ui.holder;
+package com.ikanbot.tv.ui.holder;
 
 import androidx.annotation.NonNull;
 
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.databinding.AdapterEpisodeGridBinding;
-import com.fongmi.android.tv.ui.adapter.EpisodeAdapter;
-import com.fongmi.android.tv.ui.base.BaseEpisodeHolder;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.databinding.AdapterEpisodeGridBinding;
+import com.ikanbot.tv.ui.adapter.EpisodeAdapter;
+import com.ikanbot.tv.ui.base.BaseEpisodeHolder;
 
 public class EpisodeGridHolder extends BaseEpisodeHolder {
 

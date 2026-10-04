@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.custom;
+package com.ikanbot.tv.ui.custom;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -20,11 +20,11 @@ import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.ui.PlayerView;
 import androidx.palette.graphics.Palette;
 
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.databinding.ViewWallBinding;
-import com.fongmi.android.tv.event.ConfigEvent;
-import com.fongmi.android.tv.event.RefreshEvent;
-import com.fongmi.android.tv.setting.Setting;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.databinding.ViewWallBinding;
+import com.ikanbot.tv.event.ConfigEvent;
+import com.ikanbot.tv.event.RefreshEvent;
+import com.ikanbot.tv.setting.Setting;
 import com.github.catvod.utils.Path;
 
 import org.greenrobot.eventbus.EventBus;

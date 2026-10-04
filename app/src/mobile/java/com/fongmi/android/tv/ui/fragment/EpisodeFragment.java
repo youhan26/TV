@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.fragment;
+package com.ikanbot.tv.ui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,11 +9,11 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.bean.Episode;
-import com.fongmi.android.tv.databinding.FragmentEpisodeBinding;
-import com.fongmi.android.tv.ui.adapter.EpisodeAdapter;
-import com.fongmi.android.tv.ui.base.BaseFragment;
-import com.fongmi.android.tv.ui.base.ViewType;
+import com.ikanbot.tv.bean.Episode;
+import com.ikanbot.tv.databinding.FragmentEpisodeBinding;
+import com.ikanbot.tv.ui.adapter.EpisodeAdapter;
+import com.ikanbot.tv.ui.base.BaseFragment;
+import com.ikanbot.tv.ui.base.ViewType;
 
 import java.util.ArrayList;
 import java.util.List;

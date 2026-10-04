@@ -1,7 +1,7 @@
-package com.fongmi.android.tv.gson;
+package com.ikanbot.tv.gson;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.bean.Danmaku;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.bean.Danmaku;
 import com.github.catvod.utils.Json;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

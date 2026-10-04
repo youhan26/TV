@@ -1,4 +1,4 @@
-package com.fongmi.quickjs.method;
+package com.ikanbot.quickjs.method;
 
 import com.orhanobut.logger.Logger;
 import com.whl.quickjs.wrapper.QuickJSContext;

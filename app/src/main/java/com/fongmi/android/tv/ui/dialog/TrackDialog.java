@@ -1,4 +1,4 @@
-package com.fongmi.android.tv.ui.dialog;
+package com.ikanbot.tv.ui.dialog;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -21,18 +21,18 @@ import androidx.media3.ui.SubtitleView;
 import androidx.media3.ui.TrackNameProvider;
 import androidx.viewbinding.ViewBinding;
 
-import com.fongmi.android.tv.App;
-import com.fongmi.android.tv.R;
-import com.fongmi.android.tv.bean.Sub;
-import com.fongmi.android.tv.bean.Track;
-import com.fongmi.android.tv.databinding.DialogTrackBinding;
-import com.fongmi.android.tv.player.PlayerManager;
-import com.fongmi.android.tv.player.track.TrackUtil;
-import com.fongmi.android.tv.ui.adapter.TrackAdapter;
-import com.fongmi.android.tv.ui.custom.SpaceItemDecoration;
-import com.fongmi.android.tv.utils.FileChooser;
-import com.fongmi.android.tv.utils.FileUtil;
-import com.fongmi.android.tv.utils.ResUtil;
+import com.ikanbot.tv.App;
+import com.ikanbot.tv.R;
+import com.ikanbot.tv.bean.Sub;
+import com.ikanbot.tv.bean.Track;
+import com.ikanbot.tv.databinding.DialogTrackBinding;
+import com.ikanbot.tv.player.PlayerManager;
+import com.ikanbot.tv.player.track.TrackUtil;
+import com.ikanbot.tv.ui.adapter.TrackAdapter;
+import com.ikanbot.tv.ui.custom.SpaceItemDecoration;
+import com.ikanbot.tv.utils.FileChooser;
+import com.ikanbot.tv.utils.FileUtil;
+import com.ikanbot.tv.utils.ResUtil;
 
 import java.util.ArrayList;
 import java.util.List;

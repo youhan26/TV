@@ -1,14 +1,14 @@
-package com.fongmi.android.tv.api.parser;
+package com.ikanbot.tv.api.parser;
 
 import androidx.media3.common.MimeTypes;
 
-import com.fongmi.android.tv.bean.Catchup;
-import com.fongmi.android.tv.bean.Channel;
-import com.fongmi.android.tv.bean.ClearKey;
-import com.fongmi.android.tv.bean.Drm;
-import com.fongmi.android.tv.bean.Group;
-import com.fongmi.android.tv.bean.Live;
-import com.fongmi.android.tv.utils.UrlUtil;
+import com.ikanbot.tv.bean.Catchup;
+import com.ikanbot.tv.bean.Channel;
+import com.ikanbot.tv.bean.ClearKey;
+import com.ikanbot.tv.bean.Drm;
+import com.ikanbot.tv.bean.Group;
+import com.ikanbot.tv.bean.Live;
+import com.ikanbot.tv.utils.UrlUtil;
 import com.github.catvod.net.OkHttp;
 import com.github.catvod.utils.Json;
 
