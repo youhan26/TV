@@ -26,15 +26,17 @@ public class SourceGroup {
     private final FlagAdapter flagAdapter;
     private final EpisodeAdapter episodeAdapter;
     private final Listener listener;
-    private List<Flag> flags;
+    private final List<Flag> flags = new ArrayList<>();
+    private List<Episode> episodes = new ArrayList<>();
     private Flag flag;
+    private int flagPosition = -1;
+    private int episodePosition = -1;
     private String key;
     private Vod vod;
 
     public SourceGroup(@NonNull ViewGroup parent, @NonNull Listener listener) {
         binding = ItemSourceBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         this.listener = listener;
-        this.flags = new ArrayList<>();
         flagAdapter = new FlagAdapter(this::onFlagClick);
         episodeAdapter = new EpisodeAdapter(item -> listener.onEpisodeClick(this, flag, item));
         binding.flag.setAdapter(flagAdapter);
@@ -43,19 +45,15 @@ public class SourceGroup {
         binding.flag.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
         binding.episode.setHorizontalSpacing(ResUtil.dp2px(8));
         binding.episode.setRowHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        binding.flag.setId(View.generateViewId());
+        binding.episode.setId(View.generateViewId());
+        flagAdapter.setNextFocusDown(binding.episode.getId());
+        episodeAdapter.setNextFocusUp(binding.flag.getId());
         binding.flag.addOnChildViewHolderSelectedListener(new OnChildViewHolderSelectedListener() {
             @Override
             public void onChildViewHolderSelected(@NonNull RecyclerView parent, @Nullable RecyclerView.ViewHolder child, int position, int subposition) {
-                if (flagAdapter.getItemCount() > 0) onFlagClick(flagAdapter.get(position));
+                if (position >= 0 && position < flags.size()) onFlagSelected(position);
             }
-        });
-    }
-
-    private void onFlagClick(Flag item) {
-        binding.flag.post(() -> {
-            flag = item;
-            selectFlag(item);
-            renderEpisodes(item.getEpisodes());
         });
     }
 
@@ -83,40 +81,78 @@ public class SourceGroup {
         return binding.getRoot();
     }
 
-    public FlagAdapter getFlagAdapter() {
-        return flagAdapter;
+    public int getFlagId() {
+        return binding.flag.getId();
     }
 
-    public EpisodeAdapter getEpisodeAdapter() {
-        return episodeAdapter;
+    public int getEpisodeId() {
+        return binding.episode.getId();
+    }
+
+    public void setEpisodeNextFocusDown(int id) {
+        episodeAdapter.setNextFocusDown(id);
     }
 
     public void renderFlags(List<Flag> items) {
-        flags = items == null ? new ArrayList<>() : items;
+        flags.clear();
+        if (items != null) flags.addAll(items);
+        flag = null;
+        flagPosition = -1;
+        episodePosition = -1;
         binding.flag.setVisibility(flags.isEmpty() ? View.GONE : View.VISIBLE);
         flagAdapter.addAll(flags);
-        if (!flags.isEmpty()) onFlagClick(flags.get(0));
+        if (!flags.isEmpty()) selectFlagAt(0, flags.get(0));
     }
 
     public void renderEpisodes(List<Episode> items) {
-        List<Episode> episodes = items == null ? new ArrayList<>() : items;
-        binding.episode.setVisibility(episodes.isEmpty() ? View.GONE : View.VISIBLE);
-        episodeAdapter.addAll(episodes);
+        renderEpisodes(items, false);
+    }
+
+    public void renderEpisodes(List<Episode> items, boolean force) {
+        List<Episode> next = items == null ? new ArrayList<>() : items;
+        boolean changed = force || next != episodes;
+        episodes = next;
+        binding.episode.setVisibility(next.isEmpty() ? View.GONE : View.VISIBLE);
+        if (changed) {
+            episodePosition = -1;
+            episodeAdapter.addAll(next);
+        }
     }
 
     public void selectFlag(Flag item) {
-        for (Flag f : flags) f.setSelected(item);
-        binding.flag.post(() -> {
-            flagAdapter.notifyDataSetChanged();
-            binding.flag.setSelectedPosition(flagAdapter.indexOf(item));
-        });
+        int position = flagAdapter.indexOf(item);
+        if (position < 0) position = 0;
+        if (position >= flags.size()) return;
+        selectFlagAt(position, flags.get(position));
     }
 
     public void selectEpisode(Episode item) {
-        binding.episode.post(() -> {
-            episodeAdapter.notifyDataSetChanged();
-            binding.episode.setSelectedPosition(episodeAdapter.getPosition());
-        });
+        int position = episodeAdapter.getPosition();
+        if (position < 0 || position >= episodes.size()) return;
+        int prev = episodePosition;
+        episodePosition = position;
+        if (prev >= 0 && prev != position && prev < episodes.size()) episodeAdapter.notifyItemChanged(prev);
+        episodeAdapter.notifyItemChanged(position);
+    }
+
+    private void onFlagClick(Flag item) {
+        onFlagSelected(flagAdapter.indexOf(item));
+    }
+
+    private void onFlagSelected(int position) {
+        if (position < 0 || position >= flags.size()) return;
+        if (flags.get(position) == flag) return;
+        selectFlagAt(position, flags.get(position));
+    }
+
+    private void selectFlagAt(int position, Flag item) {
+        flag = item;
+        for (Flag f : flags) f.setSelected(item);
+        int prev = flagPosition;
+        flagPosition = position;
+        if (prev >= 0 && prev != position && prev < flags.size()) flagAdapter.notifyItemChanged(prev);
+        flagAdapter.notifyItemChanged(position);
+        renderEpisodes(item.getEpisodes());
     }
 
     public interface Listener {

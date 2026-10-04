@@ -558,7 +558,7 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
     @Override
     public void renderReverseEpisodes(List<Episode> items, boolean scroll) {
         SourceGroup group = getGroup(getKey());
-        if (group != null) group.renderEpisodes(items);
+        if (group != null) group.renderEpisodes(items, true);
     }
 
     @Override
@@ -731,9 +731,10 @@ public class VideoActivity extends PlaybackActivity implements VodPlaybackHost, 
         group.setKey(site.getKey());
         group.setTitle(title);
         group.setVod(vod);
-        if (vod != null) group.renderFlags(vod.getFlags());
+        if (!mGroups.isEmpty()) mGroups.get(mGroups.size() - 1).setEpisodeNextFocusDown(group.getFlagId());
         mGroups.add(group);
         mBinding.sources.addView(group.getView());
+        if (vod != null) group.renderFlags(vod.getFlags());
         return group;
     }
 

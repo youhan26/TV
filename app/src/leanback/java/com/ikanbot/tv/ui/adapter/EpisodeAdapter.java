@@ -65,11 +65,13 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHold
     }
 
     public void setNextFocusDown(int nextFocusDown) {
+        if (this.nextFocusDown == nextFocusDown) return;
         this.nextFocusDown = nextFocusDown;
         notifyDataSetChanged();
     }
 
     public void setNextFocusUp(int nextFocusUp) {
+        if (this.nextFocusUp == nextFocusUp) return;
         this.nextFocusUp = nextFocusUp;
         notifyDataSetChanged();
     }
